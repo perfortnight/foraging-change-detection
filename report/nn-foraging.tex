@@ -1,0 +1,233 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%%
+%%
+%% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%%
+%%
+\documentclass[preprint,12pt,3p]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+\journal{Nuclear Physics B}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Sample article to present \texttt{elsarticle} class\tnoteref{label0}}
+\tnotetext[label0]{This is only an example}
+
+
+\author[label1,label2]{Author One\corref{cor1}\fnref{label3}}
+\address[label1]{Address One}
+\address[label2]{Address Two\fnref{label4}}
+
+\cortext[cor1]{I am corresponding author}
+\fntext[label3]{I also want to inform about\ldots}
+\fntext[label4]{Small city}
+
+\ead{author.one@mail.com}
+\ead[url]{author-one-homepage.com}
+
+\author[label5]{Author Two}
+\address[label5]{Some University}
+\ead{author.two@mail.com}
+
+\author[label1,label5]{Author Three}
+\ead{author.three@mail.com}
+
+\begin{abstract}
+Text of abstract. Text of abstract. Text of abstract. Text of abstract. Text of abstract. 
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+foraging \sep active learning \sep template
+%% MSC codes here, in the form: \MSC code \sep code
+ or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{sec:intro}
+
+\begin{enumerate}
+\item Why did I do the work?
+	Robots exploring the world right now either depend highly on their controllers to give them objectives or they are planning with some global knowledge.  Operating in these kinds of conditions puts constraints on robot exploration opterations by relying on either humans to make decisions or a significant amount of scouting.
+
+	Relying on humans to make decisions means that remote operators require considerable bandwidth to acquire sufficient situational awareness.  Conducting sufficient reconnaissance to make good decisions often obviates the need to send a robotic agent.
+
+	What is lacking in the literature are robots that make decisions about what to investigate \emph{in situ} without reliance on humans and without necessarily having global knowledge.
+	\item What were the central motivations and hypotheses?
+	Animals, e.g. human geologists, make decisions about investigating phenomena in the world without necessarily having access to high resolution satellite imagery.  Despite this lack they are able to chose between sampling from materials in front of them and moving on to determine more profitable sampling locations.
+
+	While these decisions may not be globally optimal they do demonstrate an ability that is lacking from exploration robots: to make decisions to stop and engage with the environment or to continue travelling in the hopes of finding more informative sampling locations.
+	\end{enumerate}
+
+
+\section{Background}
+\label{sec:background}
+
+	Who else has done what?
+
+	- Work in the 1970's about foraging.  About making value judgements.
+- Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
+
+	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
+	- See also maximum entropy sampling
+	- See also mutual information sampling.
+- Also consider active learning solutions (they all end up being the same anyway)
+
+	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
+	1. match templates.
+	2. seek improbable things.
+	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
+
+	1 and 2 say nothing about the information content of the material under investigation.
+	3 does not have the level of autonomy that we need for truly long-term or remote operations.
+
+	How?
+
+	What have we previously done:
+	- D.R. Thompson's work
+	- Only looking at satellite imagery.  Good but not sufficient.
+	- Trey's work
+	- Using POMDPs not scalable to a planet.
+	- Mine. Where does my previous work fall short?
+- Not bayesian (not a big deal?)
+	- Still has the problem on knowing the number of sampling opportunities remaining.
+
+
+\section{Method}
+\label{sec:method}
+
+	The experiment builds on prior work.  
+
+	- Combining foraging models with bandit literature 
+	- Previous work had a limit on the number of samples it could take
+	- This experiment models a type of prospecting where the number of samples isn't limited but they do take time. 
+	- To that end we are looking at productivity.
+
+	-  This experiment is more akin to contextual bandits.  
+	- The image represents a context, the NIRVSS 
+	- Apply texturecam classification of a scene, as the context
+	- the choice is to sample or continue
+
+	- Productivity 
+
+
+\section{Results}
+\label{sec:results}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+	%% The Appendices part is started with the command \appendix;
+	%% appendix sections are then done as normal sections
+\appendix
+
+\section{Section in Appendix}
+\label{appendix-sec1}
+
+	Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+	Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+	Sample text. 
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% References with bibTeX database:
+
+\bibliographystyle{elsarticle-num}
+
+
+\bibliography{sample}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-num.tex'.
+
