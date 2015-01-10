@@ -1,0 +1,147 @@
+\section{BACKGROUND}
+\label{sec:background}
+
+%\cite{thompson2008intelligent} work in the Atacama desert was about geologic survey and the construction of scientific maps.  The strategy relied on prior knowledge in the form of satellite imagery.  Further the work did not correlate the remote sensing with a secondary, hidden parameter, as is the case for characterising sub-surface habitats.  From \cite{smith2008xxx} employed a POMDP appraoch to address this problem, finding trajectories that maximize the probability of finding life, however their things do not scale to planetary scale.  
+
+%The approach used in multi-armed bandit models scale more effectively than
+%POMDPs.  Multi-armed bandits is a formulation for the sequential selection of
+%experiments which models the different possible experiments as arms of a slot
+%machine, with each arm.  
+Previous approaches to planetary scale science autonomy fall down in two
+respects.  Firstly, these approaches model scientific exploration as a standard
+exploration/exploitation problem.  A model that does not necessarily hold for
+planetary exploration.  Secondly, they do not use the output of the scientific
+measurements to improve how the robots select between sampling actions.  For
+stationary processes Bayesian experiment design dictates that the optimal set
+of experiments can be determined without ever knowing the results of those
+experiments \cite{srinivas2009gaussian}.  However real world quantities are not
+necessarily stationarity and they may not even obey a function.
+
+\subsection{Foraging as Exploration}
+
+The exploration/exploitation problem asks the question: Is an agent rewarded
+better by exploiting already acquired knowledge or by exploring different
+options and improving that knowledge?  The multi-armed bandit
+\cite{robbins1952some} was introduced to address the exploration/exploitation
+trade-off with a limited sampling budget.  Multi-armed bandits model a fixed
+list of experiments as different slot machines each with their own random
+payout.  An arm of a bandit is a metaphor for a random variable and
+the reward for playing that arm reveals information about that random variable.
+A shortcoming of the multi-armed bandit approach is that it assumes that at any
+given time all random variables are known and are available to conduct.  
+
+% The exploration/exploitation problem is about deciding if it is more
+% informative to try different machines to learn about their expected payoffs or
+% if it is best to continue to play the machine that is currently considered the
+% most rewarding.  
+
+
+Active learning assumes an oracle and as such does not map well to exploration
+in unknown environments.  In approaches like those of Robbins
+\cite{robbins1952some} or Balcan \cite{balcan2006agnostic} the agent conducting
+experiments has at any time the opportunity to sample random variable they
+are characterizing.  This is not the case in planetary exploration, we can only
+sample from those random variables that are present as robots follow their
+trajectories.  The inaccuracy of the oracle model has been previously identified by Donmez and Carbonell \cite{donmez2008proactive}.
+
+Foraging theory provides an answer to the question of whether to stay or to go
+ in the face of unknown future opportunities.  This stands in contrast to the
+standard exploration/exploitation problem choosing from known sampling
+opportunities.
+
+Optimal foraging strategies devised by Charnov \cite{charnov1976optimal}
+describe how predators hunt in different geographic regions with different
+levels of resources.  Animals make the decision to forage by comparing the
+value of the options it has in front of it to the expected value of what it may
+obtain by searching for better options \cite{kolling2012neural}, less the cost
+of conducting a search.  The distinction between exploration/exploitation and
+forage/engage is determined by two things: the recognition that there is not
+always a choice of what to explore and the realisation that the choice is
+between what is available and what may yet be encountered.  
+
+Kolling \emph{et al} \cite{kolling2012neural} found that humans make foraging
+decisions based on the arithmetic mean of the estimated values of the
+options they are presented with and the options that remain in the surrounding
+environment.  From foraging literature we learn to compute the value of
+searching in an environment by taking the arithmetic mean of what is thought to
+be in that environment.  The decision rule to stay or leave is a very simple
+comparison between the value of the current opportunity and the value of the
+environment.
+
+Optimal foragers considering three things when choosing to leave a resource:
+Expected value of the current opportunity, the expected value of the rest of
+the environment, and the cost of searching for new opportunities
+\cite{charnov1976optimal},\cite{kolling2012neural}.  To adapt foraging to
+exploration we need to answer the question: What is the value of
+an option presented to the explorer?  To answer that question we look to active
+learning.
+
+\subsection{Active learning}
+
+In active learning agents get to choose examples in order to resolve
+uncertainty or inaccuracy in models they are learning.  An early version of
+active learning is the multi-armed bandit problem.  The k-armed bandit was
+introduced in \cite{robbins1952some} as a means of sequentially selecting which
+experiments to conduct.  In Robbins' work \cite{robbins1952some} selecting which
+experiment to conduct next is modelled on determining the payouts of one-armed
+bandit machines, where each machine represents a different experiment.  The
+player has a fixed sampling budget and has to sequentially choose which machine
+to play, trading off exploiting the expected rewards for the different arms and
+exploring the different arms learning more accurately the payouts of those
+arms.  
+
+Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
+Bound (UCB) rule which values sampling opportunities with the sum of the expected reward for a sampling opportunity and a term that tries to balance the samples amongst all types of sampling opportunities.
+
+$$
+Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
+$$
+
+Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of times $i$ has been sampled, and $T$ is the total number of samples distributed.  Work on proving the bounds of this algorithm has been continued by Agarawal \cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
+
+%  In the UCB algorithm the measure of
+%informativeness is the standard error of the reward function, a value that
+%decreases not only with the number of samples taken but also with the
+%variability of the reward distribution. 
+%\cite{agrawal1995sample} and \cite{auer2010ucb} continue
+%work on UCB algorithms and introduce a metric that
+%combines reward and a measure of how infrequently a given arm has been sampled
+%relative to the total samples spent.
+
+Other approaches to the bandit problem use reward plus the uncertainty of that
+reward to indicate value.  We see this in the work of Burnetas and Katehakis
+\cite{burnetas1997optimal}, and Auer \cite{auer2003using}.  This is a sentiment
+seen in other work, like the optimistic planners of Jurgen Schmidhuber's group
+\cite{schmidhuber1997what,schmidhuber2003exploring,schmidhuber2009simple,sun2011planning}.
+They choose actions that maximize the expected information gain with respect to
+some model they are learning.  The most valuable actions are the ones that
+result in the greatest shift in the distribution the learner is building.
+
+Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
+requesting samples in the input space of the function where the classification
+error is the greatest.  Classification error and uncertainty in function value
+are fungible quantities in this case.  An analogy can be drawn between
+the classifiers used in \cite{balcan2006agnostic} and the bandit arms used by
+Auer and Ortner\cite{auer2010ucb}.
+
+Thompson and Wettergreen \cite{thompson2008intelligent} maximize diversity of
+collected samples by using mutual information sampling.  This approach ensures
+diversity in the collected sample set, an act that reduces uncertainty in the
+input space of a function.  Neither mutual information nor maximum entropy
+sampling methods, when used with stationary Gaussian processes, take into
+account the dependent variable when selecting samples.  
+
+The prior work described above assumes one is choosing among a number of
+options and want to choose the maximally informative one.  While choosing the
+maximally informative option is a useful guiding principle when robot explorers
+are presented with a number of sampling opportunities, it does not address the
+problem that explorers may have to give up a sampling opportunity in the hopes
+of finding better ones.  Further it is not guaranteed that there is no cost
+associated with getting to sampling opportunities, an assumption commonly made when querying an oracle.
+
+The prior work yields two observations.  Firstly, foraging, a better model for
+planetary exploration, requires a measure of value of the sampling
+opportunities available to the exploring agent.  Secondly, active learning uses
+uncertainty -- in both input and output space of a function -- to value potential exploration opportunities.  What follows next is a method
+for exploring that reflects the limitations of a planetary setting and
+incorporates the result of sampling operations into decision making processes.
