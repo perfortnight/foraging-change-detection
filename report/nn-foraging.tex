@@ -78,7 +78,7 @@
 % \biboptions{}
 
 
-\journal{Nuclear Physics B}
+\journal{Neural Networks}
 
 \begin{document}
 
@@ -145,6 +145,10 @@ foraging \sep active learning \sep template
 \section{Background}
 \label{sec:background}
 
+	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
+			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
+			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+
 	Who else has done what?
 
 	- Work in the 1970's about foraging.  About making value judgements.
@@ -174,14 +178,47 @@ foraging \sep active learning \sep template
 - Not bayesian (not a big deal?)
 	- Still has the problem on knowing the number of sampling opportunities remaining.
 
+	- Piroli 1999 - has come up with a very similar formulation as the one that 
+		Mike and I came up with.
+		- Something to consider is that we only get to take one sample per patch 
+			because of science differentiation requirements (i.e. RP can't have 
+			samples closer than 10cm to each other, maybe as far as 1m)
+		- We could also incorporate the different cost it takes to identify things 
+			in the scene.
+		- We also have different times between patches.
+		- Should it come to multiple contexts then we have the contextual bandit 
+			problem
+				- This means that we could keep different distributions of classes per 
+					environment.
+
+
+	%\input{background}
+	%\input{background2}
+
 
 \section{Method}
 \label{sec:method}
 
+	- figure method.1: An example of a path the rover might be following with sampling opportunities on it.  Changes over time. i.e. do two or more pictures showing how things change over time.
+	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
+	- figure method.3: texture cam, raw image and texture labelled image.
+
 	The experiment builds on prior work.  
 
+	- The reward for sampling a class is an analog for the definition of surprise as defined by the Koch et al {cite papers}.  Koch looked at the change in the distribution that resulted in a Bayesian update.  Because this work uses a non-parametric kernel density estimation we compare $\frac{p(x|D\cup{x})}{p(x|D)}$
+
 	- Combining foraging models with bandit literature 
+		- The previous work on foraging assumed an inherent value to
+			options that the agent cared about.  Specifically, energy stored up.
+		- We use a valuation model taken from bandit literature.  
+		- We use the reward function from Koch's attention models
+		- We use the decision making process from foraging. 
+		- We add the concept of multi-arrival rate things, awareness of time limits.
 	- Previous work had a limit on the number of samples it could take
+		- We realized that the actual quantity that limits the exploration process
+			is time.
+		- By limiting the time and (in this case) relaxing the limit on sample sizes
+			we more accurately deal with productivity.  
 	- This experiment models a type of prospecting where the number of samples isn't limited but they do take time. 
 	- To that end we are looking at productivity.
 
@@ -195,6 +232,11 @@ foraging \sep active learning \sep template
 
 \section{Results}
 \label{sec:results}
+
+
+- Figure results.1: Overall error at the end of the trial with unlimited sampling and without weighing by the rarity (1/prob of occurrence) of the class
+- Figure results.2: overall error at the end of the trial with unlimited sampling and with weighing by the rarity of the class
+- Figure results.3: Overall performance when combining limited time and limited sample budgets.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -223,7 +265,7 @@ foraging \sep active learning \sep template
 \bibliographystyle{elsarticle-num}
 
 
-\bibliography{sample}
+\bibliography{merged}
 
 
 \end{document}

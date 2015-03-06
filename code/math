@@ -1,0 +1,19 @@
+f(x) = (1-x^2)*u(|x|<1)
+
+g(z) = int_{-inf}^{inf} f(z-y)f(y) dy
+
+int_{-inf}^{inf} (1-(z-y)^2)Ind(|z-y| < 1)(1-y^2)Ind(|y|<1) dy
+
+Ind(|y| < 1) = h(y+1) - h(y-1)
+Ind(|z-y| < 1) = h(z-y+1) - h(z-y-1)
+
+int_{-inf}^{inf} (1 - (z^2 -2zy + y^2))(1-y^2)[h(y+1)-h(y-1)][h(z-y+1) - h(z-y-1)]
+int_{-inf}^{inf} (1 - z^2 + 2zy - y^2)(1-y^2)[h(y+1)-h(y-1)][h(z-y+1) - h(z-y-1)]
+int_{-inf}^{inf} (1 -y^2 - z^2 +(y^2)(z^2) + 2zy -2(y^2)z - y^2 +y^3)[h(y+1)-h(y-1)][h(z-y+1) - h(z-y-1)]
+int_{-inf}^{inf} (1 - 2y^2 - z^2 +(y^2)(z^2) + 2zy -2(y^2)z +y^3)[h(y+1)-h(y-1)][h(z-y+1) - h(z-y-1)]
+int_{-inf}^{inf} (1 - y^2(2 +(z^2)) - z^2  + 2z(y -(y^2)) +y^3)[h(y+1)-h(y-1)][h(z-y+1) - h(z-y-1)]
+
+
+int_{0}^{inf}(1-(z-y)^2)u(|z-y| < 1)(1-y^2)u(|y|<1)dy + int_{-inf}^{0}(1-(z-y)^2)u(|z-y| < 1)(1-y^2)u(|y|<1)dy
+
+
