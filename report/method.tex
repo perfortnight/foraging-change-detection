@@ -57,9 +57,10 @@ reasonable approximation for shorter-range traverses.
 
 \subsection{Algorithms}
 
-	- figure method.3: texture cam, raw image and texture labelled image.
+	% This is only relevant in the larger work.
+	% - figure method.3: texture cam, raw image and texture labelled image.
 
-	The experiment builds on prior work.  
+	The experiment builds on prior work.  Here we present three algorithms that are being testing on the simulated transect described above.
 
 \subsubsection{Uniform Sampling}
 
@@ -79,7 +80,7 @@ The reward for sampling a class is an analog for the definition of surprise
 as defined by the Koch et al {cite papers}.  Koch looked at the change in the
 distribution that resulted in a Bayesian update.  Because this work uses a
 non-parametric kernel density estimation we compare
-$\log\left(\frac{\hat{p}(x|D\cup{x})}{\hat{p}(x|D)}\right)$.  To be compatiable
+$\log\left(\frac{\hat{p}(x|D\cup \left\{x\right\})}{\hat{p}(x|D)}\right)$.  To be compatiable
 with optimal foraging algorithms, specifically the Marginal Value Theorem of
 Charnov \cite{charnov1973optimal} the reward function must have dimishing
 returns.  In the case of information update the Bayes Factor will eventually
