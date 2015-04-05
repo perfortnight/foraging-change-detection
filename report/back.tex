@@ -1,0 +1,56 @@
+\section{Background}
+\label{sec:background}
+
+	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
+			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
+			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+
+	Who else has done what?
+
+	- Work in the 1970's about foraging.  About making value judgements.
+		- Key point from Charnov's work is that there has to be diminishing returns
+		for extracting from a field (specifically towards an asymptote)
+		- Different from our setting is that diminishing your reward in one area 
+		contributes to diminishing your reward elsewhere. It isn't like picking
+		apples off one tree, and finding a new tree with unpicked apples.
+
+- Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
+
+	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
+	- See also maximum entropy sampling
+	- See also mutual information sampling.
+- Also consider active learning solutions (they all end up being the same anyway)
+
+	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
+	1. match templates.
+	2. seek improbable things.
+	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
+
+	1 and 2 say nothing about the information content of the material under investigation.
+	3 does not have the level of autonomy that we need for truly long-term or remote operations.
+
+	How?
+
+	What have we previously done:
+	- D.R. Thompson's work
+	- Only looking at satellite imagery.  Good but not sufficient.
+	- Trey's work
+	- Using POMDPs not scalable to a planet.
+	- Mine. Where does my previous work fall short?
+- Not bayesian (not a big deal?)
+	- Still has the problem on knowing the number of sampling opportunities remaining.
+
+	- Piroli 1999 - has come up with a very similar formulation as the one that 
+		Mike and I came up with.
+		- Something to consider is that we only get to take one sample per patch 
+			because of science differentiation requirements (i.e. RP can't have 
+			samples closer than 10cm to each other, maybe as far as 1m)
+		- We could also incorporate the different cost it takes to identify things 
+			in the scene.
+		- We also have different times between patches.
+		- Should it come to multiple contexts then we have the contextual bandit 
+			problem
+				- This means that we could keep different distributions of classes per 
+					environment.
+
+
