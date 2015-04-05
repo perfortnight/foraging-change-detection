@@ -12,9 +12,13 @@ Figure \ref{fig:transect} gives an example of a simulated transect. As we can
 see there are sampling opportunities of different types scattered along the
 path that the robot travels along.  
 
-	- figure method.1: An example of a path the rover might be following with
-	sampling opportunities on it.  Changes over time. i.e. do two or more
-	pictures showing how things change over time.
+\begin{figure}[htpd!]
+	\centering 
+	\includegraphics[width=0.8\textwidth]{transect}
+	\caption{A cartoon illustrating a transect a robot might be encountering and how samping opportunities of different types may be distributed along it.  In the field the robot would start at one end of the path and follow it to the other end.  There is one path that the rover may follow across the terrain resulting in it encountering different types of sampling opportunities.}
+	\label{fig:transect}
+\end{figure}
+
 
 The primary objective of the robot is to learn distributions behind different
 classes of objects.  For example they may be the probability distribution
@@ -29,7 +33,7 @@ this research could correspond to those soil classes.
 \subsection{Experiment}
 
 The experiment presented in this paper is a modification of the experiments
-presented in \cite{furlong2014icra} and \cite{furlong2015isairas}.  In the
+presented in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  In the
 prior work agents were equipped with limited sampling budgets.  In this
 experiment the agents have an unlimited capacity to take samples, but the time
 to take the sample is non-zero and there is an overall limit on the duration of
@@ -62,7 +66,7 @@ reasonable approximation for shorter-range traverses.
 The Uniform Sampling algorithm attempts to distribute the number of samples it
 can collect evenly between the different types of objects present on the
 transect.  This is chosen because it was a robustly successful algorithm, as
-seen in the prior work \cite{furlong2014icra} and \cite{furlong2014isairas}.
+seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014isairas}.
 
 The Uniform Sampling algorithm does not consider the time remaining in the
 transect, nor the time to complete sampling.
@@ -77,7 +81,7 @@ distribution that resulted in a Bayesian update.  Because this work uses a
 non-parametric kernel density estimation we compare
 $\log\left(\frac{\hat{p}(x|D\cup{x})}{\hat{p}(x|D)}\right)$.  To be compatiable
 with optimal foraging algorithms, specifically the Marginal Value Theorem of
-Charnov \cite{charnov1076optimal} the reward function must have dimishing
+Charnov \cite{charnov1973optimal} the reward function must have dimishing
 returns.  In the case of information update the Bayes Factor will eventually
 converge to approximately 1, likewise our estimated empirical bayes factor.  We
 take the log of this approximation such that it converges to zero as more
@@ -96,8 +100,7 @@ samples are collected.
 	- Previous work had a limit on the number of samples it could take
 		- We realized that the actual quantity that limits the exploration process
 			is time.
-		- By limiting the time and (in this case) relaxing the limit on sample sizes
-			we more accurately deal with productivity.  
+		- By limiting the time and (in this case) relaxing the limit on sample sizes we more accurately deal with productivity.  
 	- This experiment models a type of prospecting where the number of samples isn't limited but they do take time. 
 	- To that end we are looking at productivity.
 
