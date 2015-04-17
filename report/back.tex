@@ -73,6 +73,16 @@ It is only recently that robots have been employed to conduct scientific explora
 				- This means that we could keep different distributions of classes per 
 					environment.
 
+\cite{kolling2012neural} studies how humans engage in a gambling task where
+they have to consider the option they have before them and the opportunities
+the environment provides.  In the described experiment subjects were repeatedly
+presented with a choice of playing a gambling game or being randomly presented
+with a different game.  Each game was a Bernoulli trial with some unknown
+probability of success.  Kolling \emph{et al.} identify possible neural
+substrates for foraging decision making in humans.  The behaviour was near
+optimal, with some skewing of probabilities at the extreme ends of the scale,
+i.e. near 0 or near 1.
+
 
 \subsection{Science Autonomy}
 
@@ -90,6 +100,26 @@ It is only recently that robots have been employed to conduct scientific explora
 
 	- Dudek and co., using novelty to slow down the driving an collect more data.
 		- Ditto their other paper.
+
+In \cite{gridhar2013autonomous} and \cite{girdhar2013Aautonomous} Girdhar
+\emph{et al.} present an approach to autonomous exploration where the robot
+investigates a scene when it encounters phenomena that do not reflect its
+current model of the world.  Specifically they use topic models to describe
+scenes, and when they encounter scenes that do not fit into the topic models
+they have constructed.  In these works the vehicle has no limit on its sampling
+capacity and is always collecting data.  By slowing the vehicle down more
+samples are collected in anomalous scenes.  In this fashion this is very
+similar to the work in \cite{thompson2013adaptive}.
+
+Additionally Girdhar \emph{et al.} use their anomaly detection techniques in
+\cite{girdhar2013autonomous} to develop a path planning method to maximize
+information gain of paths \cite{girdhar2014curiosity}.  In that respect it is
+belongs with the family of curiosity-driven algorithms pioneered by
+Schmidh{\"u}ber \emph{et al.} \cite{schmidhuber1997what},
+\cite{schmidhuber2003exploring}, \cite{schmidhuber2009simple},
+\cite{sun2011planning}.  The fundamental concept behind these approaches is
+that an explorer should spend their time investigating regions of the world (or
+hypothesis space) where their models are the least certain.
 
 \subsubsection{Our Prior Work}
 		- Apply optimal foraging, specifically Charnov's marginal value theorem

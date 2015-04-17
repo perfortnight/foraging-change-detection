@@ -91,6 +91,13 @@ zero as more samples are collected.
 
 	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
 
+\begin{figure}[htpd!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/cumulative-reward.png}
+	\caption{As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
+	\label{fig:reward}
+\end{figure}
+
 	- Combining foraging models with bandit literature 
 		- The previous work on foraging assumed an inherent value to
 			options that the agent cared about.  Specifically, energy stored up.
