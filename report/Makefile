@@ -1,15 +1,15 @@
 all: paper.pdf
 
-paper.pdf: typeinst.tex 
-	pdflatex typeinst.tex
-	pdflatex typeinst.tex
-	bibtex typeinst.tex
-	pdflatex typeinst.tex
-	pdflatex typeinst.tex
+paper.pdf: main.tex 
+	pdflatex main.tex
+	pdflatex main.tex
+	bibtex main.tex
+	pdflatex main.tex
+	pdflatex main.tex
 
 plot_results.eps: plots/results.gnuplot 
 	gnuplot plots/results.gnuplot
 
 
 clean:
-	rm -f *log *aux *bbl *converted-to.pdf typeinst.pdf *spl
+	rm -f *log *aux *bbl *converted-to.pdf main.pdf *spl

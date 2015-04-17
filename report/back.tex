@@ -1,18 +1,9 @@
 \section{Background}
 \label{sec:background}
 
-	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
-			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
-			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+
 
 	Who else has done what?
-
-	- Work in the 1970's about foraging.  About making value judgements.
-		- Key point from Charnov's work is that there has to be diminishing returns
-		for extracting from a field (specifically towards an asymptote)
-		- Different from our setting is that diminishing your reward in one area 
-		contributes to diminishing your reward elsewhere. It isn't like picking
-		apples off one tree, and finding a new tree with unpicked apples.
 
 - Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
 
@@ -40,6 +31,33 @@
 - Not bayesian (not a big deal?)
 	- Still has the problem on knowing the number of sampling opportunities remaining.
 
+\subsection{The Secretary Problem}
+
+		- Secretary problem
+			- They know what the value of their choice is, in many cases.
+			- They know how many candidates there are.
+			- We have rates of arrival, they just have a queue.
+			- While our sampling time cost implies an upper bound on the number of 
+			candidates we don't have a lower bound necessarily.
+
+\subsection{Multi-armed bandits}
+
+		- Multi-armed bandit
+			- Assumes you can access any arm at any time
+			- Many settings don't have a switching cost between arms.
+			- Gittins showed that if you have a switching cost and diminishing returns you can solve the problem.
+			- We say is we will be randomly assigned an arm and a switching cost.
+
+\subsection{Optimal Foraging}
+
+	- Work in the 1970's about foraging.  About making value judgements.
+		- Key point from Charnov's work is that there has to be diminishing returns
+		for extracting from a field (specifically towards an asymptote)
+		- Different from our setting is that diminishing your reward in one area 
+		contributes to diminishing your reward elsewhere. It isn't like picking
+		apples off one tree, and finding a new tree with unpicked apples.
+
+
 	- Piroli 1999 - has come up with a very similar formulation as the one that 
 		Mike and I came up with.
 		- Something to consider is that we only get to take one sample per patch 
@@ -53,4 +71,32 @@
 				- This means that we could keep different distributions of classes per 
 					environment.
 
+
+\subsection{Science Autonomy}
+
+	- Thompson, Asher Bender and Stephane Williams Group
+			- making selections based on maps.  
+			- Maximum entropy/mutual information smapling.
+			- They assume global knowledge, we don't have that.  It is reasonable
+			in many settings of interest, can reduce cost.
+
+
+	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
+			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
+			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+
+
+	- Dudek and co., using novelty to slow down the driving an collect more data.
+		- Ditto their other paper.
+
+\subsubsection{Our Prior Work}
+		- Apply optimal foraging, specifically Charnov's marginal value theorem
+		model of foraging to the problem of science autonomy* in the following setting:	
+			- Limited sampling budget
+			- Attempting to learn distributions not acquire quantities of some object.
+			- Trying to learn information objectively without an objective. 
+			- Can't know the reward until you sample.
+			- It's a fusion of bandits and foraging.  The fact that we are focusing on gaining information gives us diminishing returns which lets us use 
+			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
+			- Don't have the choice of what objects you encounter.
 
