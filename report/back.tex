@@ -1,6 +1,8 @@
 \section{Background}
 \label{sec:background}
 
+Automating experiment design is not without precedent.  Kristine Smith started the field of optimal experiment design in 1918 \cite{smith1918standard}.
+It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
 
 	Who else has done what?
@@ -100,3 +102,4 @@
 			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
 			- Don't have the choice of what objects you encounter.
 
+As seen above real robots may not be able to predict the rewards they will earn from their actions and have to deal with unreliable arrival rates for sampling opportunities.  These are concerns that are not modelled in typical sequential experiment selection algorithms such as the Multi-armed bandit or secretary problems.  This motivates the problem setting used in this paper, and that describe in detail in the following section.

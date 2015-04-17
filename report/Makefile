@@ -3,7 +3,7 @@ all: paper.pdf
 paper.pdf: main.tex 
 	pdflatex main.tex
 	pdflatex main.tex
-	bibtex main.tex
+	bibtex main
 	pdflatex main.tex
 	pdflatex main.tex
 
