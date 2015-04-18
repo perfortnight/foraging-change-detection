@@ -35,14 +35,33 @@ It is only recently that robots have been employed to conduct scientific explora
 
 \subsection{The Secretary Problem}
 
-		- Secretary problem
-			- They know what the value of their choice is, in many cases.
-			- They know how many candidates there are.
-			- We have rates of arrival, they just have a queue.
-			- While our sampling time cost implies an upper bound on the number of 
-			candidates we don't have a lower bound necessarily.
+The secretary problem\footnote{Also known as the fiance problem or the game of
+Googol} asks a decision maker to select the best candidate from sequentially
+presented candidates where it is not possible to return to previously rejected
+candidates.  In the original setting there is only one position to for the
+candidate to fill \cite{ferguson1989solved}, and the optimal strategy is to
+reject the first $\frac{N}{e}$ candidates and then take the first candidate who
+is ranked better than any of the previously seen candidates or hte final
+candidate.  In the original setting the decision maker was able to objectively
+rank the candidates.   
 
-			\cite{ferguson1989solved}, \cite{presman1972best}, \cite{vanderbei1980optimal}
+There have been many variations on this problem including selecting multiple
+candidates \cite{vanderbei1980optimal}, or when the total number of candidates
+is random \cite{presman1972best}, for more variations \cite{ferguson1989solved}
+is an excellent source.  What distinguishes the secretary problem from the
+science autonomy problem we propose is that we do not know the value of a
+candidate, or class, when we encounter it.  Additionally repeatedly sampling
+the same class decreases the value to the decision maker. 
+
+
+% 		- Secretary problem
+% 			- They know what the value of their choice is, in many cases.
+% 			- They know how many candidates there are.
+% 			- We have rates of arrival, they just have a queue.
+% 			- While our sampling time cost implies an upper bound on the number of 
+% 			candidates we don't have a lower bound necessarily.
+% 
+% 			\cite{ferguson1989solved}, \cite{presman1972best}, \cite{vanderbei1980optimal}
 
 \subsection{Multi-armed bandits}
 
@@ -50,21 +69,26 @@ Sequential experiment selection, a type of active learning, is addressed in the
 multi-armed bandit literature.  The multi-armed bandit was introduced in
 \cite{robbins1952some} as a means of sequentially selecting which experiments
 to conduct with a limited budget.  In Robbins' work \cite{robbins1952some}
-selecting experiments is modelled on determining the
-payouts of one-armed bandit machines -- each machine represents a different
-experiment.  The player has a fixed sampling budget and has to sequentially
-choose which machine to play, trading off exploiting the expected rewards for
-the different arms and exploring the different arms learning more accurately
-the payouts of those arms.  
+selecting experiments is modelled on determining the payouts of one-armed
+bandit machines -- each machine represents a different experiment.  The player
+has a fixed sampling budget and has to sequentially choose which machine to
+play, trading off exploiting the expected rewards for the different arms and
+exploring the different arms learning more accurately the payouts of those
+arms.  
 
 Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
-Bound (UCB) rule which values sampling opportunities with the sum of the expected reward for a sampling opportunity and a term that tries to balance the samples amongst all types of sampling opportunities.
+Bound (UCB) rule which values sampling opportunities with the sum of the
+expected reward for a sampling opportunity and a term that tries to balance the
+samples amongst all types of sampling opportunities.
 
 $$
 Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
 $$
 
-Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of times $i$ has been sampled, and $T$ is the total number of samples distributed.  Work on proving the bounds of this algorithm has been continued by Agarawal \cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
+Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of
+times $i$ has been sampled, and $T$ is the total number of samples distributed.
+Work on proving the bounds of this algorithm has been continued by Agarawal
+\cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
 
 
 Other approaches to the bandit problem use reward plus the uncertainty of that
@@ -103,14 +127,40 @@ rates of the different classes.
 
 \subsection{Optimal Foraging}
 
-	- Work in the 1970's about foraging.  About making value judgements.
-		- Key point from Charnov's work is that there has to be diminishing returns
-		for extracting from a field (specifically towards an asymptote)
-		- Different from our setting is that diminishing your reward in one area 
-		contributes to diminishing your reward elsewhere. It isn't like picking
-		apples off one tree, and finding a new tree with unpicked apples.
-		\cite{charnov1973optimal},\cite{charnov1976optimal}.
+Foraging is the problem encountered by animals seeking to maximize the intake
+of energy when operating in an unknown environment.  The central question to
+solving the problem is: Is it more valuable to continue extracting resources
+from the current location or to seek out new locations to extract resources
+from?  Charnov introduced a technique for dealing with what he called
+``patchy'' environments, where there are localized regions that contain
+different classes of resources \cite{charnov1973optimal},
+\cite{charnov1976optimal}.  The forager can extract value from these patches,
+with diminishing returns, or choose to continue to wander randomly through the
+environment in the hopes of encountering a more valuable location.
 
+The time to leave the environment, according to the Marignal Value Theorem
+\cite{charnov1973optimal}, was when the expected return from continuing to
+sample from this patch is less than the expected return from wandering in the
+environment.  In this formulation the expected return from both the current
+patch and the environment are offset by the cost of extracting resources in
+this patch as well as the energy spent seeking a new patch to extract resources
+from.
+
+% 	- Work in the 1970's about foraging.  About making value judgements.  - Key
+% 	point from Charnov's work is that there has to be diminishing returns for
+% 	extracting from a field (specifically towards an asymptote) - Different from
+% 	our setting is that diminishing your reward in one area contributes to
+% 	diminishing your reward elsewhere. It isn't like picking apples off one tree,
+% 	and finding a new tree with unpicked apples.
+% 	\cite{charnov1973optimal},\cite{charnov1976optimal}.
+ 
+
+
+\cite{pirolli1999information} introduced a model of researchers attempting to
+acquire information.  They modelled the rate of information gain and had their
+agent decide to leave the patch they were in when the rate of information gain
+was lower than that of the environment.  What differentiates their setting from
+ours is TODO
 
 	- Piroli 1999 - has come up with a very similar formulation as the one that 
 		Mike and I came up with.
