@@ -24,7 +24,7 @@ The primary objective of the robot is to learn distributions behind different
 classes of objects.  For example they may be the probability distribution
 governing the density of sub surface microbial life in different classes of
 soil.  Previous work have identified that texture information can successfully
-classify different types of soil material \cite{paper_that_trey_and_thompson_cite_in_their_image_return_paper}.  
+classify different types of soil material \cite{dunlop2006automatic}.  
 We imagine that the classes of objects in
 this research could correspond to those soil classes.
 
@@ -67,7 +67,7 @@ reasonable approximation for shorter-range traverses.
 The Uniform Sampling algorithm attempts to distribute the number of samples it
 can collect evenly between the different types of objects present on the
 transect.  This is chosen because it was a robustly successful algorithm, as
-seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014isairas}.
+seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014budgeting}.
 
 The Uniform Sampling algorithm does not consider the time remaining in the
 transect, nor the time to complete sampling.
@@ -94,7 +94,7 @@ zero as more samples are collected.
 \begin{figure}[htpd!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/cumulative-reward.png}
-	\caption{As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
+	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
 	\label{fig:reward}
 \end{figure}
 

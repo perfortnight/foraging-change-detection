@@ -5,33 +5,33 @@ Automating experiment design is not without precedent.  Kristine Smith started t
 It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
 
-	Who else has done what?
-
-- Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
-
-	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
-	- See also maximum entropy sampling
-	- See also mutual information sampling.
-- Also consider active learning solutions (they all end up being the same anyway)
-
-	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
-	1. match templates.
-	2. seek improbable things.
-	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
-
-	1 and 2 say nothing about the information content of the material under investigation.
-	3 does not have the level of autonomy that we need for truly long-term or remote operations.
-
-	How?
-
-	What have we previously done:
-	- D.R. Thompson's work
-	- Only looking at satellite imagery.  Good but not sufficient.
-	- Trey's work
-	- Using POMDPs not scalable to a planet.
-	- Mine. Where does my previous work fall short?
-- Not bayesian (not a big deal?)
-	- Still has the problem on knowing the number of sampling opportunities remaining.
+% 	Who else has done what?
+% 
+% - Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
+% 
+% 	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
+% 	- See also maximum entropy sampling
+% 	- See also mutual information sampling.
+% - Also consider active learning solutions (they all end up being the same anyway)
+% 
+% 	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
+% 	1. match templates.
+% 	2. seek improbable things.
+% 	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
+% 
+% 	1 and 2 say nothing about the information content of the material under investigation.
+% 	3 does not have the level of autonomy that we need for truly long-term or remote operations.
+% 
+% 	How?
+% 
+% 	What have we previously done:
+% 	- D.R. Thompson's work
+% 	- Only looking at satellite imagery.  Good but not sufficient.
+% 	- Trey's work
+% 	- Using POMDPs not scalable to a planet.
+% 	- Mine. Where does my previous work fall short?
+% - Not bayesian (not a big deal?)
+% 	- Still has the problem on knowing the number of sampling opportunities remaining.
 
 \subsection{The Secretary Problem}
 
@@ -42,13 +42,64 @@ It is only recently that robots have been employed to conduct scientific explora
 			- While our sampling time cost implies an upper bound on the number of 
 			candidates we don't have a lower bound necessarily.
 
+			\cite{ferguson1989solved}, \cite{presman1972best}, \cite{vanderbei1980optimal}
+
 \subsection{Multi-armed bandits}
 
-		- Multi-armed bandit
-			- Assumes you can access any arm at any time
-			- Many settings don't have a switching cost between arms.
-			- Gittins showed that if you have a switching cost and diminishing returns you can solve the problem.
-			- We say is we will be randomly assigned an arm and a switching cost.
+Sequential experiment selection, a type of active learning, is addressed in the
+multi-armed bandit literature.  The multi-armed bandit was introduced in
+\cite{robbins1952some} as a means of sequentially selecting which experiments
+to conduct with a limited budget.  In Robbins' work \cite{robbins1952some}
+selecting experiments is modelled on determining the
+payouts of one-armed bandit machines -- each machine represents a different
+experiment.  The player has a fixed sampling budget and has to sequentially
+choose which machine to play, trading off exploiting the expected rewards for
+the different arms and exploring the different arms learning more accurately
+the payouts of those arms.  
+
+Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
+Bound (UCB) rule which values sampling opportunities with the sum of the expected reward for a sampling opportunity and a term that tries to balance the samples amongst all types of sampling opportunities.
+
+$$
+Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
+$$
+
+Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of times $i$ has been sampled, and $T$ is the total number of samples distributed.  Work on proving the bounds of this algorithm has been continued by Agarawal \cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
+
+
+Other approaches to the bandit problem use reward plus the uncertainty of that
+reward to indicate value.  We see this in the work of Burnetas and Katehakis
+\cite{burnetas1997optimal} and Auer \cite{auer2003using}.  This is a sentiment
+seen in other work, like the optimistic planners of Jurgen Schmidhuber's group
+\cite{schmidhuber1997what,schmidhuber2003exploring,schmidhuber2009simple,sun2011planning}.
+They choose actions that maximize the expected information gain with respect to
+some model they are learning.  The most valuable actions are the ones that
+result in the greatest shift in the distribution the learner is building.
+
+Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
+requesting samples from the input space with the greatest classification
+error.  Classification error and uncertainty in function value
+are fungible quantities in this case.  An analogy can be drawn between
+the classifiers used in \cite{balcan2006agnostic} and the bandit arms used by
+Auer and Ortner\cite{auer2010ucb}.
+
+% 		- Multi-armed bandit
+% 			- Assumes you can access any arm at any time
+% 			- Many settings don't have a switching cost between arms.
+% 			- Gittins showed that if you have a switching cost and diminishing returns you can solve the problem.
+% 			- We say is we will be randomly assigned an arm and a switching cost.
+
+There are a number of distinguishing factors between the multi-armed bandit
+(MAB) setting and the setting explored in this paper.  First, in MAB the agent
+has access to any arm it chooses at any given time.  The arms in MAB are
+analogous to the classes in our setting.  The agent in our setting does not get
+to choose which of the classes it can investigate.  Any previously seen classes
+are no longer available and new classes are randomly assigned.  Additionally
+the standard MAB setting does not have switching costs, although there are some
+formulations which do account for switching costs
+\cite{switchingBanditPapersFindOne}.  In our setting there is a cost incurred
+with every choice to continue exploring, and it is a function of the arrival
+rates of the different classes.
 
 \subsection{Optimal Foraging}
 
@@ -58,6 +109,7 @@ It is only recently that robots have been employed to conduct scientific explora
 		- Different from our setting is that diminishing your reward in one area 
 		contributes to diminishing your reward elsewhere. It isn't like picking
 		apples off one tree, and finding a new tree with unpicked apples.
+		\cite{charnov1973optimal},\cite{charnov1976optimal}.
 
 
 	- Piroli 1999 - has come up with a very similar formulation as the one that 
@@ -81,7 +133,7 @@ with a different game.  Each game was a Bernoulli trial with some unknown
 probability of success.  Kolling \emph{et al.} identify possible neural
 substrates for foraging decision making in humans.  The behaviour was near
 optimal, with some skewing of probabilities at the extreme ends of the scale,
-i.e. near 0 or near 1.
+i.e. $p \approx 0$ or $p \approx 1$.
 
 
 \subsection{Science Autonomy}
@@ -91,6 +143,26 @@ i.e. near 0 or near 1.
 			- Maximum entropy/mutual information smapling.
 			- They assume global knowledge, we don't have that.  It is reasonable
 			in many settings of interest, can reduce cost.
+
+Thompson and Wettergreen \cite{thompson2008intelligent} maximize diversity of
+collected samples by using mutual information sampling.  This approach ensures
+diversity in the collected sample set, an act that reduces uncertainty in the
+input space of a function.  Neither mutual information nor maximum entropy
+sampling methods, when used with stationary Gaussian processes, take into
+account the dependent variable when selecting samples.  
+
+
+\cite{bender2013autonomous} makes a modification to the work of
+\cite{thompson2008intelligent}, in that it uses Gaussian processes to
+identified hypothesized distributions of life across the sea floor to direct
+exploratory actions.  The prior maps were generated by vessels passing over the
+sea floor prior to the robot's exploration mission, not unlike using satellite
+imagery in \cite{thompson2008intelligent}.  The advance of
+\cite{bender2013autonomous} is that it uses \emph{in situ} measurements to
+update the Gaussian process it is learning.  Bender \emph{et al.}'s rover can
+be said to be generating and testing hypotheses.  However they are severely
+limited by a budgeting size of six ``gulpers'' -- devices for collecting
+seawater samples.
 
 
 	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
