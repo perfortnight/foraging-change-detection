@@ -3,37 +3,82 @@ from numpy import ma
 import matplotlib.pyplot as plt
 from DensityEstimator import *
 
-from scipy.stats import norm, uniform
+from scipy.stats import norm, uniform, gaussian_kde
 
-import cPickle as pickle
+import sys
+sys.path.append('/opt/useful/python')
+import plotting
+
+# import cPickle as pickle
+
+def prob(data,x):
+	if len(data) == 0:
+		return 0.000001
+	### end if
+	if len(data) == 1:
+		n = norm(loc=data[0],scale=1.)
+		return n.pdf(x)
+	### end if
+
+	pdf = gaussian_kde(data)
+	return pdf(x)
+### end prob
+
+def reward(data,x):
+	p_before = prob(data,x)
+	data.append(x)
+	p_after = prob(data,x)
+	return np.log(p_after/p_before)
+### end reward
 
 
-def main():
-	dist = density_estimator()
-	seed = 201570123
-	np.random.seed(seed)
-	ent = []
-	num_samples = 100
-	samples = np.random.normal(loc=0.,scale=10.,size=(num_samples,1))
-# 	samples = np.random.uniform(low=0.,high=1.,size=(num_samples,1))
+def get_cumulative_values(num_samples):
+
+# 	samples = np.random.normal(loc=0.,scale=1.,size=(num_samples,1))
+	samples = np.random.uniform(low=0.,high=1.,size=(num_samples,1))
 
 	count = 0
-	before = []
-	after = []
+	data = []
+	values = []
 	for sample in samples:
-		before.append(dist(sample))
-		dist.add_data(sample)
-		dist.update()
-		after.append(dist(sample))
-# 		ent.append(entropy(dist))
-		if count % 10 == 0:
-			print 'sample ',count
+		values.append(reward(data,sample[0]))
+# 		if count % 10 == 0:
+# 			print 'sample ',count
 		### end if count % 10 == 0
 		count += 1
 	### end for i in range(1000)
+	return np.cumsum(values)
+
+### end get_cumulative_values
+
+
+def main():
+	plotting.init()
+	dist = density_estimator()
+	seeds = [201570123,17526317,81715,1270957,6571]
+	ent = []
+	num_samples = 4000
+	value = np.zeros((len(seeds),num_samples))
+	for (idx,seed) in enumerate(seeds):
+		np.random.seed(seed)
+		value[idx,:] = get_cumulative_values(num_samples)
+	### end for
+
+
+	#plt.plot(range(num_samples),np.mean(value,axis=0))
+
+	plotting.plot_confidence(np.mean(value,axis=0),np.std(value,axis=0)/np.sqrt(len(seeds)),'-','b')
+	ax = plt.gca()
+	plotting.adjust_spines(ax)
+
+	plt.title('Average cumulative value vs number of samples taken.  N = %d' % (len(seeds)))
+	plt.xlabel('Number of samples')
+	plt.ylabel('Cumulative Reward')
+
+	plt.show()
 
 	
-	pickle.dump((samples,before,after,dist),open('test-entropy.pkl','wb'))
+# 	pickle.dump((samples,before,after,dist),open('test-entropy.pkl','wb'))
 # 
 # 	plt.figure(1)
 # 

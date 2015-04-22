@@ -23,6 +23,7 @@ def main():
 	if len(sys.argv) < 3:
 		print 'Error, incorrect input.'
 		print 'Usage: python ' + sys.argv[0] + ' symbol_params.pkl seeds.txt'
+		exit()
 	### end if len(sys.argv) < 3
 
 	dist_param_filename = os.path.abspath(os.path.expanduser(sys.argv[1]))
@@ -44,6 +45,7 @@ def main():
 		### end for symbol in symbols
 		# sort and save the arrival rates
 		arrivals = arrivals[arrivals[:,0].argsort()]
+		arrivals[1:,0] = np.diff(arrivals[:,0])
 		np.savetxt('../data/input/trial-'+str(idx).zfill(2)+'.txt',arrivals)
 	### end for (idx,seed) in enumerate(seed)
 ### end main

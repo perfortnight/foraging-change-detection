@@ -55,9 +55,10 @@ def score(agent,truth):
 	return (results,score)
 ### end score
 
-def main(trial_name,param_data_file):
+def main(trial_name,param_data_file,agent_type):
 	sample_cost = 1e-1 # arbitrary number. 
 										 # If you scale the time range do the same here.
+	max_time = 1000.
 	# load transect
 	trial = np.loadtxt(trial_name)
 	param_data = pickle.load(open(param_data_file,'rb'))
@@ -65,8 +66,13 @@ def main(trial_name,param_data_file):
 	truth = {k: norm(loc=params[k][0],scale=params[k][1]) for k in params.keys()}
 	# instantiate the agent
 	# run agent on transect
-# 	agent = UniformSampling()
-	agent = ForagingSampling()
+	agent = None
+	if agent_type == 'uniform':
+		agent = UniformSampling()
+	elif agent_type == 'foraging':
+		agent = ForagingSampling()
+	### end if
+
 	for option in trial:
 		#print option	
 		time = option[0]
@@ -78,7 +84,12 @@ def main(trial_name,param_data_file):
 			agent.update(time,symbol,value,cost)
 			# In the future with random costs:
 			#agent.update(option[1],option[2],option[3])
+		# end if
 	# compute error from true distributions.
+		if agent.current_time > max_time:
+			break
+		# end if
+	# end for
 	print score(agent,truth)
 
 ### end main
@@ -86,4 +97,5 @@ def main(trial_name,param_data_file):
 if __name__=='__main__':
 	trial_name = os.path.abspath(os.path.expanduser(sys.argv[1]))
 	params_data = os.path.abspath(os.path.expanduser(sys.argv[2]))
-	main(trial_name,params_data)
+	agent_type = sys.argv[3]
+	main(trial_name,params_data,agent_type)

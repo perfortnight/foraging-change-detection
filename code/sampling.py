@@ -103,7 +103,7 @@ class ForagingSampling:
 		### end if
 
 		reward = np.log(after(val)/before(val))
-		print symb, reward
+# 		print symb, reward
 		### end if
 		self.rewards[symb].append(reward)
 
@@ -137,6 +137,41 @@ class UniformSampling:
 			retval = 'sample'
 			self.samples_taken += 1
 		### end 
+		return retval
+	### end query
+
+	def update(self,time,symb,val,cost):
+		self.current_time += cost
+		self.distribution.update([symb])
+		if not symb in self.samples.keys():
+			self.samples[symb] = []
+		### end
+		#print symb, self.samples[symb]
+		self.samples[symb].append(val)
+	### end update
+
+### end class UniformSampling
+
+class ExhaustiveSampling:
+	def __init__(self):
+		self.symbols = []
+		self.distribution = Counter()
+		self.samples_taken = 0
+		self.samples= {}
+		self.current_time = 0.
+	### end __init__
+
+	def __call__(self,time,symb):
+		retval = 'sample' 
+		self.current_time += time
+	
+# 		if len(self.distribution.values()) == 0:
+# 			retval = 'sample'
+# 		elif (self.distribution[symb] < max(self.distribution.values()) or \
+# 				  self.distribution[symb] == min(self.distribution.values()) ):
+# 			retval = 'sample'
+# 			self.samples_taken += 1
+# 		### end 
 		return retval
 	### end query
 

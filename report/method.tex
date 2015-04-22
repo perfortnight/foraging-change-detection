@@ -62,6 +62,11 @@ reasonable approximation for shorter-range traverses.
 
 	The experiment builds on prior work.  Here we present three algorithms that are being testing on the simulated transect described above.
 
+\subsubsection{Exhaustive Sampling}
+
+The Exhaustive Sampling algorithm samples at every opportunity until the time limit on the mission expires.
+
+
 \subsubsection{Uniform Sampling}
 
 The Uniform Sampling algorithm attempts to distribute the number of samples it
@@ -70,7 +75,10 @@ transect.  This is chosen because it was a robustly successful algorithm, as
 seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014budgeting}.
 
 The Uniform Sampling algorithm does not consider the time remaining in the
-transect, nor the time to complete sampling.
+transect, nor the time to complete sampling.  In this setting the algorithm
+chooses to sample a class either if it does not have the most samples of all
+the encountered classes or if is the max and all other classes have been
+sampled an equal number of times.
 
 \subsubsection{Foraging}
 
