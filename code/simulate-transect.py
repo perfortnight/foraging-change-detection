@@ -55,8 +55,8 @@ def score(agent,truth):
 	return (results,score)
 ### end score
 
-def main(trial_name,param_data_file,agent_type):
-	sample_cost = 1e-1 # arbitrary number. 
+def main(trial_name,param_data_file,agent_type,sample_cost):
+	#sample_cost = 1e-1 # arbitrary number. 
 										 # If you scale the time range do the same here.
 	max_time = 1000.
 	# load transect
@@ -98,4 +98,5 @@ if __name__=='__main__':
 	trial_name = os.path.abspath(os.path.expanduser(sys.argv[1]))
 	params_data = os.path.abspath(os.path.expanduser(sys.argv[2]))
 	agent_type = sys.argv[3]
-	main(trial_name,params_data,agent_type)
+	sample_cost = float(sys.argv[4])
+	main(trial_name,params_data,agent_type,sample_cost)
