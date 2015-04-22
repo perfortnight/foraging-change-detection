@@ -5,6 +5,8 @@
 *.spl
 *.aux
 *.pdf
+*.bbl
+*.blg
 
 
 # Byte-compiled / optimized / DLL files
