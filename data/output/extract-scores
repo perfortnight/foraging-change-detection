@@ -1,0 +1,6 @@
+#!/bin/bash
+
+filename=$1
+
+grep "^(" $filename | sed -e 's/(//g' | sed -e 's/)//g' | sed -e 's/\[//g' | sed -e 's/\]//g' | cut -d ',' -f 19
+

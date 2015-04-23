@@ -26,6 +26,14 @@ def kl_integrand(x,p,q):
 def entropy_integrand(x,p):
 	return -p.pdf(x)*np.log(p.pdf(x))
 
+def make_estimator(data):
+	if len(data) == 0:
+		return lambda x: 0.000001
+	elif len(data) == 1:
+		dist = norm(loc=data[0],scale=1.)
+		return lambda x: dist.pdf(x)
+	else:
+		return gaussian_kde(data)
 
 def score(agent,truth):
 	symbols = truth.keys()
@@ -36,12 +44,14 @@ def score(agent,truth):
 		tail_len = 4*truth[symbol].var()
 		true_mean = truth[symbol].mean()
 		int_range = [true_mean - tail_len,true_mean + tail_len]
-		samples = agent.samples[symbol]
+		estimator = None
+		if symbol in agent.samples.keys():
+			samples = agent.samples[symbol]
+			estimator = make_estimator(samples)
+		else:
+			estimator = make_estimator([])
 		# fit kde
-		try:
-			estimator = gaussian_kde(samples)
-		except ValueError:
-			print symbol, samples
+# 		print symbol, samples
 		# use the scipy integrator to compute the kl divergence.
 		integral = quad(score_integrand,int_range[0],int_range[1],args=(truth[symbol],estimator),limit=100)
 		#else:
@@ -50,7 +60,11 @@ def score(agent,truth):
 		#	integral = quad(entropy_integrand,int_range[0],int_range[1],args=(truth[symbol],))
 		### end if
 		score += integral[0]
-		results.append((symbol,len(agent.samples[symbol]),integral[0]))
+		num_samples = 0
+		if symbol in agent.samples.keys():
+			num_samples = len(agent.samples[symbol])
+		### end if
+		results.append((symbol,num_samples,integral[0]))
 	### end for
 	return (results,score)
 ### end score

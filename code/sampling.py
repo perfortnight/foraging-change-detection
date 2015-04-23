@@ -2,6 +2,8 @@ import numpy as np
 from collections import Counter
 from scipy.stats import gaussian_kde
 
+import koch_reward
+
 # Considering two different foraging algorithms.
 # The first is one that considers the arrival times of each
 # different sampling type and computes the environment value that way
@@ -82,27 +84,33 @@ class ForagingSampling:
 		# In the default case we have to show some improvement.
 		# Make it the same for all of them so they have the same
 		# starting point, why not?
-		before = lambda x: 0.0000001
-		after = lambda x: 0.00001
-		if len(self.samples[symb]) > 1:
-			try:
-				before = gaussian_kde(self.samples[symb])
-# 			except (RuntimeError,TypeError,NameError,ValueError):
-			except np.linalg.linalg.LinAlgError:
-				print 'Before singular matrix:'
-				print self.samples
-		### end if
-		self.samples[symb].append(val)
-		if len(self.samples[symb]) > 1:
-			try:
-				after = gaussian_kde(self.samples[symb])
-# 			except (RuntimeError,TypeError,NameError,ValueError):
-			except np.linalg.linalg.LinAlgError:
-				print 'After singular matrix:'
-				print self.samples
-		### end if
+# 		before = lambda x: 0.0000001
+# 		after = lambda x: 0.00001
+# 		if len(self.samples[symb]) > 1:
+# 			try:
+# 				before = gaussian_kde(self.samples[symb])
+# # 			except (RuntimeError,TypeError,NameError,ValueError):
+# 			except np.linalg.linalg.LinAlgError:
+# 				print 'Before singular matrix:'
+# 				print self.samples
+# 		### end if
+# 		self.samples[symb].append(val)
+# 		if len(self.samples[symb]) > 1:
+# 			try:
+# 				after = gaussian_kde(self.samples[symb])
+# # 			except (RuntimeError,TypeError,NameError,ValueError):
+# 			except np.linalg.linalg.LinAlgError:
+# 				print 'After singular matrix:'
+# 				print self.samples
+# 		### end if
+# 
+# 		reward = np.log(after(val)/before(val))
 
-		reward = np.log(after(val)/before(val))
+		len_before = len(self.samples[symb])
+		reward = koch_reward.reward(self.samples[symb],val)
+		len_after = len(self.samples[symb])
+		assert(len_before != len_after)
+
 # 		print symb, reward
 		### end if
 		self.rewards[symb].append(reward)

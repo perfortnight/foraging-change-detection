@@ -1,0 +1,9 @@
+#!/bin/bash
+
+alg1=uniform
+alg2=foraging
+cost=$1
+
+echo "# ${alg1} ${alg2}" > cost-${cost}.txt
+
+paste <(../extract-scores ${alg1}-cost-${cost}-results.txt) <(../extract-scores ${alg2}-cost-${cost}-results.txt) >> cost-${cost}.txt

@@ -9,7 +9,8 @@ if (( $# > 2 )); then
 fi
 
 
-for sample_cost in 0.001 0.01 0.1 1.0 10.0 100.0 ; do
+# for sample_cost in 0.001 0.01 0.1 1.0 10.0 100.0 ; do
+for sample_cost in 100.0 10.0 1.0 0.1 0.01 0.001 ; do
 	for i in $(ls ../data/input/$params/trial-*txt); do 
 		mkdir -p ../data/output/$params;
 		python -u simulate-transect.py $i ../data/input/$params-params.pkl $agent_type $sample_cost | tee -a ../data/output/$params/${agent_type}-cost-${sample_cost}-results.txt;
