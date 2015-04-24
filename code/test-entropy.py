@@ -9,27 +9,7 @@ import sys
 sys.path.append('/opt/useful/python')
 import plotting
 
-# import cPickle as pickle
-
-def prob(data,x):
-	if len(data) == 0:
-		return 0.000001
-	### end if
-	if len(data) == 1:
-		n = norm(loc=data[0],scale=1.)
-		return n.pdf(x)
-	### end if
-
-	pdf = gaussian_kde(data)
-	return pdf(x)
-### end prob
-
-def reward(data,x):
-	p_before = prob(data,x)
-	data.append(x)
-	p_after = prob(data,x)
-	return np.log(p_after/p_before)
-### end reward
+import koch_reward
 
 
 def get_cumulative_values(num_samples):
@@ -41,7 +21,7 @@ def get_cumulative_values(num_samples):
 	data = []
 	values = []
 	for sample in samples:
-		values.append(reward(data,sample[0]))
+		values.append(koch_reward.reward(data,sample[0]))
 # 		if count % 10 == 0:
 # 			print 'sample ',count
 		### end if count % 10 == 0
@@ -64,9 +44,14 @@ def main():
 		value[idx,:] = get_cumulative_values(num_samples)
 	### end for
 
+	plt.figure(1)
+	v_mu = np.mean(value,axis=0)
+	diff_v = np.zeros(v_mu.shape)
+	diff_v[0] = v_mu[0]
+	diff_v[1:] = np.diff(v_mu)
+	plt.plot(range(num_samples),diff_v)
 
-	#plt.plot(range(num_samples),np.mean(value,axis=0))
-
+	plt.figure(2)
 	plotting.plot_confidence(np.mean(value,axis=0),np.std(value,axis=0)/np.sqrt(len(seeds)),'-','b')
 	ax = plt.gca()
 	plotting.adjust_spines(ax)

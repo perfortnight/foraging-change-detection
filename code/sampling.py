@@ -24,16 +24,23 @@ class ForagingSampling:
 		self.samples = {}
 	### end __init__
 
-	def dist_value(self,symbol):
+
+	def productivity(self,symbol):
+		'''
+		Computes the value of the individual symbols, hence not accounting for IAT
+		'''
+		return np.mean(self.rewards[symbol])/(np.mean(self.cost[symbol]))
+	### end value
+
+
+	def dist_productivity(self,symbol):
 		# Consider predicting the next reward from the previous one.
 		# Should be able to learn a curve here.
 		return np.mean(self.rewards[symbol])/(np.mean(self.symbol_iat[symbol]) + np.mean(self.cost[symbol]))
-	### end value
+	### end dist_value
 
-	def value(self,symbol):
-		return np.mean(self.rewards[symbol])/np.mean(self.cost[symbol])
 
-	def env_value(self):
+	def env_productivity(self):
 		# should this be:
 		# rate_{symb} = avg_{symb}[value]/(avg_{symb}[iat]+sampling_time)
 		# We want this one ultimately:
@@ -42,7 +49,7 @@ class ForagingSampling:
 		# The other alternative would be avg_{symb}[value]/(avg[iat] + avg_{symb}[sampling_time])
 		# where we learn the probability of which symbol we'd encounter at any given time.
 		num_keys = len(self.samples.keys())
-		result = np.mean([self.dist_value(key) for key in self.samples.keys()])
+		result = np.mean([self.dist_productivity(key) for key in self.samples.keys()])
 		return result
 	### end env_value
 
@@ -59,10 +66,11 @@ class ForagingSampling:
 			retval = 'sample'
 		else:
 			sampling_cost = np.mean(self.cost[symb])
-			symbol_value = self.value(symb)
-			env_value = self.env_value()
+			symbol_value = self.productivity(symb)
+			env_value = self.env_productivity()
 # 			print symbol_value,sampling_cost, env_value
-			if symbol_value/sampling_cost >= env_value:
+# 			print symbol_value,env_value
+			if symbol_value >= env_value:
 				retval = 'sample'
 			### end
 
@@ -84,27 +92,6 @@ class ForagingSampling:
 		# In the default case we have to show some improvement.
 		# Make it the same for all of them so they have the same
 		# starting point, why not?
-# 		before = lambda x: 0.0000001
-# 		after = lambda x: 0.00001
-# 		if len(self.samples[symb]) > 1:
-# 			try:
-# 				before = gaussian_kde(self.samples[symb])
-# # 			except (RuntimeError,TypeError,NameError,ValueError):
-# 			except np.linalg.linalg.LinAlgError:
-# 				print 'Before singular matrix:'
-# 				print self.samples
-# 		### end if
-# 		self.samples[symb].append(val)
-# 		if len(self.samples[symb]) > 1:
-# 			try:
-# 				after = gaussian_kde(self.samples[symb])
-# # 			except (RuntimeError,TypeError,NameError,ValueError):
-# 			except np.linalg.linalg.LinAlgError:
-# 				print 'After singular matrix:'
-# 				print self.samples
-# 		### end if
-# 
-# 		reward = np.log(after(val)/before(val))
 
 		len_before = len(self.samples[symb])
 		reward = koch_reward.reward(self.samples[symb],val)
