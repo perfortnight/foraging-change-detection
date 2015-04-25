@@ -8,9 +8,29 @@
 \end{quote}
 
 
+This work continues the process of introducing sequential analysis to the field of science autonomy.  Additionally we produce a new algorithm by combining sequential analysis for experiment selection (Multi-armed bandits) with models of optimal foraging behaviour (Marginal value theorem).  For certain regiemes of operation the new algorithm is better than an algorithm based on optimal experiment design.
+
 We observe three things:
 
-1. For small sampling costs relative to the duration of the transect the foraging algorithm produces about a 50\% reduction in accumulated error.
+1. For small sampling costs relative to the duration of the transect the foraging algorithm produces about a 50\% reduction in accumulated error.  For the small sampling costs the effect size is substantial and our Bayesian paired t-test gives us 95\% confidence that the increase in performance is non-zero.
 
-2. When the sampling cost is large relative to the duration of the transect Uniform sampling is as good as or better than foraging.  This makes sense.  The early samples are the most informative.  By making sure you distribute the samples across the different classes of objects increases
+2. When the sampling cost is large relative to the duration of the transect Uniform sampling is as good as or better than foraging.  This makes sense.  The early samples are the most informative.  By making sure you distribute the samples across the different classes of objects increases when your sampling time is limited will ensure the greatest short-term reduction in error.
+
+3. When the sampling cost gets sufficiently large foraging again becomes a competative algorithm.  It is the authors hope that with modification the gap can be reduced in future experiments.
+
+
+\subsection{Future Work}
+
+1. Implement on a real robot (of course).  Integrate some sensor processing algorithm (texturecam?) to abstract from images/whatever to categories as used in this paper.
+
+2. Multi-objective optimization (different sensors with different costs)
+
+3. Vary the arrival rates much more (have sims set up for that, haven't finished executing them yet.  Seriously! Yes, yes, write it in C next time.)
+
+4. Handle when the distributions change. 
+
+5. Handle when arrival rates change.
+
+
+
 

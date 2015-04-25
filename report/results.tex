@@ -8,13 +8,13 @@
 
 % Different arrival rates and different distributions.
 
-\begin{figure}[htpd]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/diff-diff.pdf}
-	\caption{Analysis of the basic scenario with different arrival rates and standard deviations.  We see here the effect size in the reduction in terminal error is 3.2, by Cohen's d measure.  This qualifies as a ``very large'' effect.}
-	\label{fig:diff-diff}
-\end{figure}
-
+% \begin{figure}[htpd]
+% 	\centering
+% 	\includegraphics[width=0.8\textwidth]{images/diff-diff.pdf}
+% 	\caption{Analysis of the basic scenario with different arrival rates and standard deviations.  We see here the effect size in the reduction in terminal error is 3.2, by Cohen's d measure.  This qualifies as a ``very large'' effect.}
+% 	\label{fig:diff-diff}
+% \end{figure}
+% 
 
 % Accumulated Error 
 \begin{figure}[htpd!]
@@ -24,3 +24,29 @@
 	\caption{For sampling costs that are small, relative to the duration of the transect, the foraging algorithm presents a significant improvement over the uniform algorithm.}
 	\label{fig:err}
 \end{figure}
+
+
+\subsection{Analysis}
+
+For each of the twenty-one trials the agents were scored on the data they collected when given a fixed sampling cost.  For each sampling cost the performance was tested with a Bayesian paired t-test \cite{baath2014bayesian}.  The paired t-test returns an average difference between the paired trials as well as a 95\% credible interval around that difference.  We accept that the difference is non-zero when the credible interval does not contain 0.  
+
+Additionally the test described in \cite{baath2015bayesian} returns a measure of effect size.  It uses the ratio of the mean difference to the standard deviation of the difference between the tests.  This is a variation of Cohen's $d$ value\cite{cohen2013statistical}.  With this number we consider a value greater than 1.3 to be very large, above 0.8 to be significant and below 0.5 to be insignificant.  Table \ref{tbl:ttest} gives the results of the Bayesian paired t-test at different values of sampling cost.
+
+
+
+\begin{table}[htpd!]
+	\centering
+	\begin{tabular}{lccc}
+		Cost & Reduction in Error & Credible Interval & Effect Size \\
+		\hline
+		\textbf{0.001} & \textbf{0.40} & \textbf{[0.34,0.46]} & \textbf{3.5}\\
+		\textbf{0.01} & \textbf{0.38} & \textbf{[0.32,0.45]} & \textbf{2.8}\\
+		\textbf{0.1} & \textbf{0.24} & \textbf{[0.17,0.31]} & \textbf{1.8}\\
+		1.0 & 0.04 & [-0.041,0.11] & 0.24\\
+		10.0 & -0.88 & [-1.1,-0.62] & 1.6\\
+		100.0 & -0.27 & [-0.53,-0.006] & 0.48\\
+		\hline \\
+	\end{tabular}
+	\caption{Selected datapoints along the graph in Figure \ref{fig:err} along with the associated credible intervals of the difference and the effect size.  Bold rows are case where the foraging algorithm provides a statistically signficant improvement over the uniform sampling algorithm.}
+	\label{tbl:ttest}
+\end{table}
