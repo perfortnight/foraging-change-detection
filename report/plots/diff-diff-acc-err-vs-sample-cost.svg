@@ -10,13 +10,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="441pt"
+   height="555.3725"
    version="1.1"
-   viewBox="0 0 1010 441"
-   width="1010pt"
+   viewBox="0 0 1010.7 444.298"
+   width="1263.375"
    id="svg2"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="diff-diff-acc-err-vs-sample-cost.svg">
+   sodipodi:docname="diff-diff-acc-err-vs-sample-cost.pdf">
   <metadata
      id="metadata1195">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,15 +42,20 @@
      inkscape:window-height="709"
      id="namedview1193"
      showgrid="false"
-     inkscape:zoom="1.4854022"
-     inkscape:cx="287.52801"
-     inkscape:cy="225.64675"
+     inkscape:zoom="0.32"
+     inkscape:cx="1387.262"
+     inkscape:cy="0.93752975"
      inkscape:window-x="0"
      inkscape:window-y="29"
      inkscape:window-maximized="0"
-     inkscape:current-layer="ytick_1" />
+     inkscape:current-layer="matplotlib.axis_1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
-     id="defs4">
+     id="defs4"
+     style="stroke-linecap:square;stroke-linejoin:round">
     <style
        type="text/css"
        id="style6">
@@ -58,1741 +63,2112 @@
   </style>
   </defs>
   <g
-     id="figure_1">
+     id="figure_1"
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-2.2070313e-6,0)">
     <g
-       id="patch_1">
+       id="patch_1"
+       style="stroke-linecap:square;stroke-linejoin:round">
       <path
-         d=" M0 441 L1010.7 441 L1010.7 0 L0 0 z "
-         style="fill:#ffffff;"
-         id="path10" />
+         d="m 0,441 1010.7,0 0,-441 L 0,0 z"
+         style="fill:#ffffff;stroke-linecap:square;stroke-linejoin:round"
+         id="path10"
+         inkscape:connector-curvature="0" />
     </g>
     <g
-       id="axes_1">
+       id="axes_1"
+       style="stroke-linecap:square;stroke-linejoin:round">
       <g
-         id="patch_2">
+         id="patch_2"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
-           d=" M126.337 380.571 L909.63 380.571 L909.63 44.1 L126.337 44.1 z "
-           style="fill:#ffffff;"
-           id="path14" />
+           d="m 126.337,380.571 783.293,0 0,-336.471 -783.293,0 z"
+           style="fill:#ffffff;stroke-linecap:square;stroke-linejoin:round"
+           id="path14"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="PolyCollection_1">
+         id="PolyCollection_1"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <defs
            id="defs17">
           <path
-             d=" M126.337 -119.41 L126.337 -111.945 L256.886 -112.099 L387.435 -111.877 L517.984 -113.438 L557.283 -116.634 L609.233 -131.482 L635.881 -142.88 L648.532 -146.933 L687.832 -181.262 L739.782 -242.529 L766.43 -284.629 L779.081 -315.491 L789.418 -321.321 L802.07 -340.546 L802.07 -394.466 L802.07 -394.466 L789.418 -370.044 L779.081 -350.1 L766.43 -323.169 L739.782 -266.508 L687.832 -202.392 L648.532 -162.497 L635.881 -157.599 L609.233 -141.77 L557.283 -127.977 L517.984 -122.856 L387.435 -119.343 L256.886 -119.538 L126.337 -119.41 z "
-             id="C0_0_28865af3e1" />
+             d="m 126.337,-119.41 0,7.465 130.549,-0.154 130.549,0.222 130.549,-1.561 39.299,-3.196 51.95,-14.848 26.648,-11.398 12.651,-4.053 39.3,-34.329 51.95,-61.267 26.648,-42.1 12.651,-30.862 10.337,-5.83 12.652,-19.225 0,-53.92 0,0 -12.652,24.422 -10.337,19.944 -12.651,26.931 -26.648,56.661 -51.95,64.116 -39.3,39.895 -12.651,4.898 -26.648,15.829 -51.95,13.793 -39.299,5.121 -130.549,3.513 -130.549,-0.195 -130.549,0.128 z"
+             id="C0_0_28865af3e1"
+             inkscape:connector-curvature="0"
+             style="stroke-linecap:square;stroke-linejoin:round" />
         </defs>
         <g
            clip-path="url(#pebc2ae3c62)"
-           id="g20">
+           id="g20"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <use
-             style="fill:#0000ff;opacity:0.2;stroke:#0000ff;stroke-linecap:butt;"
+             style="opacity:0.2;fill:#0000ff;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:round"
              x="0"
              xlink:href="#C0_0_28865af3e1"
-             y="441.0"
-             id="use22" />
+             y="441"
+             id="use22"
+             width="1010"
+             height="441" />
         </g>
       </g>
       <g
-         id="PolyCollection_2">
+         id="PolyCollection_2"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <defs
            id="defs25">
           <path
-             d=" M126.337 -90.2224 L126.337 -85.8698 L256.886 -86.4927 L387.435 -94.8563 L517.984 -111.978 L557.283 -124.895 L609.233 -152.123 L635.881 -180.352 L648.532 -200.887 L687.832 -227.504 L739.782 -286.067 L766.43 -320.501 L779.081 -336.459 L789.418 -344.27 L802.07 -352.662 L802.07 -393.049 L802.07 -393.049 L789.418 -378.009 L779.081 -366.373 L766.43 -350.81 L739.782 -321.732 L687.832 -271.452 L648.532 -227.398 L635.881 -205.887 L609.233 -173.86 L557.283 -135.948 L517.984 -119.39 L387.435 -102.111 L256.886 -93.1931 L126.337 -90.2224 z "
-             id="C1_0_7a8659fde4" />
+             d="m 126.337,-90.2224 0,4.3526 130.549,-0.6229 130.549,-8.3636 130.549,-17.1217 39.299,-12.917 51.95,-27.228 26.648,-28.229 12.651,-20.535 39.3,-26.617 51.95,-58.563 26.648,-34.434 12.651,-15.958 10.337,-7.811 12.652,-8.392 0,-40.387 0,0 -12.652,15.04 -10.337,11.636 -12.651,15.563 -26.648,29.078 -51.95,50.28 -39.3,44.054 -12.651,21.511 -26.648,32.027 -51.95,37.912 -39.299,16.558 -130.549,17.279 -130.549,8.9179 -130.549,2.9707 z"
+             id="C1_0_7a8659fde4"
+             inkscape:connector-curvature="0"
+             style="stroke-linecap:square;stroke-linejoin:round" />
         </defs>
         <g
            clip-path="url(#pebc2ae3c62)"
-           id="g28">
+           id="g28"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <use
-             style="fill:#ffa500;opacity:0.2;stroke:#ffa500;stroke-linecap:butt;"
+             style="opacity:0.2;fill:#ffa500;stroke:#ffa500;stroke-linecap:butt;stroke-linejoin:round"
              x="0"
              xlink:href="#C1_0_7a8659fde4"
-             y="441.0"
-             id="use30" />
+             y="441"
+             id="use30"
+             width="1010"
+             height="441" />
         </g>
       </g>
       <g
-         id="line2d_1">
+         id="line2d_1"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
            clip-path="url(#pebc2ae3c62)"
-           d=" M126.337 325.323 L256.886 325.182 L387.435 325.39 L517.984 322.853 L557.283 318.694 L609.233 304.374 L635.881 290.76 L648.532 286.285 L687.832 249.173 L739.782 186.481 L766.43 137.101 L779.081 108.205 L789.418 95.3177 L802.07 73.4941"
-           style="fill:none;stroke:#0000ff;stroke-width:2.0;"
-           id="path33" />
+           d="m 126.337,325.323 130.549,-0.141 130.549,0.208 130.549,-2.537 39.299,-4.159 51.95,-14.32 26.648,-13.614 12.651,-4.475 39.3,-37.112 51.95,-62.692 26.648,-49.38 12.651,-28.896 10.337,-12.8873 12.652,-21.8236"
+           style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:round"
+           id="path33"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="line2d_2">
+         id="line2d_2"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
            clip-path="url(#pebc2ae3c62)"
-           d=" M126.337 352.954 L256.886 351.157 L387.435 342.517 L517.984 325.316 L557.283 310.579 L609.233 278.008 L635.881 247.881 L648.532 226.858 L687.832 191.522 L739.782 137.101 L766.43 105.345 L779.081 89.5842 L789.418 79.8602 L802.07 68.1442"
-           style="fill:none;stroke:#ffa500;stroke-width:2.0;"
-           id="path36" />
+           d="m 126.337,352.954 130.549,-1.797 130.549,-8.64 130.549,-17.201 39.299,-14.737 51.95,-32.571 26.648,-30.127 12.651,-21.023 39.3,-35.336 51.95,-54.421 26.648,-31.756 12.651,-15.7608 10.337,-9.724 12.652,-11.716"
+           style="fill:none;stroke:#ffa500;stroke-width:2;stroke-linecap:square;stroke-linejoin:round"
+           id="path36"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="matplotlib.axis_1">
+         id="matplotlib.axis_1"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <g
-           id="xtick_1">
+           id="xtick_1"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_3">
+             id="line2d_3"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs41">
               <path
-                 d=" M0 0 L0 4"
+                 d="M 0,0 0,4"
                  id="m476344969c"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g44">
+               id="g44"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use46" />
+                 y="380.57144"
+                 id="use46"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_4">
+             id="line2d_4"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs49">
               <path
-                 d=" M0 0 L0 -4"
+                 d="M 0,0 0,-4"
                  id="m0012dd4eef"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g52">
+               id="g52"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use54" />
+                 y="44.099998"
+                 id="use54"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_2">
+           id="xtick_2"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_5">
+             id="line2d_5"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g75">
+               id="g75"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="256.88625"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="256.88626"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use77" />
+                 y="380.57144"
+                 id="use77"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_6">
+             id="line2d_6"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g80">
+               id="g80"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="256.88625"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="256.88626"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use82" />
-            </g>
-          </g>
-          <g
-             id="text_2">
-            <!-- $\mathdefault{10^{-2}}$ -->
-            <defs
-               id="defs85">
-              <path
-                 d=" M19.1875 8.29688 L53.6094 8.29688 L53.6094 0 L7.32812 0 L7.32812 8.29688 Q12.9375 14.1094 22.625 23.8906 Q32.3281 33.6875 34.8125 36.5312 Q39.5469 41.8438 41.4219 45.5312 Q43.3125 49.2188 43.3125 52.7812 Q43.3125 58.5938 39.2344 62.25 Q35.1562 65.9219 28.6094 65.9219 Q23.9688 65.9219 18.8125 64.3125 Q13.6719 62.7031 7.8125 59.4219 L7.8125 69.3906 Q13.7656 71.7812 18.9375 73 Q24.125 74.2188 28.4219 74.2188 Q39.75 74.2188 46.4844 68.5469 Q53.2188 62.8906 53.2188 53.4219 Q53.2188 48.9219 51.5312 44.8906 Q49.8594 40.875 45.4062 35.4062 Q44.1875 33.9844 37.6406 27.2188 Q31.1094 20.4531 19.1875 8.29688"
-                 id="DejaVuSans-32" />
-            </defs>
-            <g
-               transform="translate(244.40625 402.011428571)scale(0.12 -0.12)"
-               id="g88">
-              <path
-                 id="use90"
-                 d="m 12.4062,10.531255 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use92"
-                 d="m 95.404247,68.640575 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use94"
-                 d="m 130.66953,82.020295 18.41873,0 0,-5.6 -18.41873,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <use
-                 transform="translate(152.504882812 60.046875)scale(0.7)"
-                 xlink:href="#DejaVuSans-32"
-                 id="use96" />
+                 y="44.099998"
+                 id="use82"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_3">
+           id="xtick_3"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_7">
+             id="line2d_7"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g100">
+               id="g100"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="387.435"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use102" />
+                 y="380.57144"
+                 id="use102"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_8">
+             id="line2d_8"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g105">
+               id="g105"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="387.435"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use107" />
-            </g>
-          </g>
-          <g
-             id="text_3">
-            <!-- $\mathdefault{10^{-1}}$ -->
-            <g
-               transform="translate(374.955 401.891428571)scale(0.12 -0.12)"
-               id="g110">
-              <path
-                 id="use112"
-                 d="m 12.4062,10.450005 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use114"
-                 d="m 95.404247,68.559325 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use116"
-                 d="m 130.66953,81.939045 18.41873,0 0,-5.6 -18.41873,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use118"
-                 d="m 161.18922,65.773441 11.27658,0 0,38.937519 -12.27184,-2.46099 0,6.28908 12.20625,2.46092 6.90151,0 0,-45.226529 11.27658,0 0,-5.807816 -29.38908,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
+                 y="44.099998"
+                 id="use107"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_4">
+           id="xtick_4"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_9">
+             id="line2d_9"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g122">
+               id="g122"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="517.98375"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="517.98376"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use124" />
+                 y="380.57144"
+                 id="use124"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_10">
+             id="line2d_10"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g127">
+               id="g127"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="517.98375"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="517.98376"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use129" />
-            </g>
-          </g>
-          <g
-             id="text_4">
-            <!-- $\mathdefault{10^{0}}$ -->
-            <g
-               transform="translate(507.00375 402.011428571)scale(0.12 -0.12)"
-               id="g132">
-              <path
-                 id="use134"
-                 d="m 12.4062,10.531255 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use136"
-                 d="m 95.404247,68.640575 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use138"
-                 d="m 149.49293,106.53122 q -5.32651,0 -8.01717,-5.25 -2.67967,-5.239015 -2.67967,-15.771845 0,-10.48908 2.67967,-15.73908 2.69066,-5.249986 8.01717,-5.249986 5.37033,0 8.05,5.249986 2.69066,5.25 2.69066,15.73908 0,10.53283 -2.69066,15.771845 -2.67967,5.25 -8.05,5.25 m 0,5.46881 q 8.58599,0 13.11408,-6.79223 4.52816,-6.781255 4.52816,-19.698425 0,-12.88434 -4.52816,-19.676566 -4.52809,-6.78125 -13.11408,-6.78125 -8.575,0 -13.10309,6.78125 -4.52812,6.792226 -4.52812,19.676566 0,12.91717 4.52812,19.698425 4.52809,6.79223 13.10309,6.79223"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
+                 y="44.099998"
+                 id="use129"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_5">
+           id="xtick_5"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_11">
+             id="line2d_11"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g142">
+               id="g142"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="648.5325"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="648.53247"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use144" />
+                 y="380.57144"
+                 id="use144"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_12">
+             id="line2d_12"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g147">
+               id="g147"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="648.5325"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="648.53247"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use149" />
-            </g>
-          </g>
-          <g
-             id="text_5">
-            <!-- $\mathdefault{10^{1}}$ -->
-            <g
-               transform="translate(637.5525 401.891428571)scale(0.12 -0.12)"
-               id="g152">
-              <path
-                 id="use154"
-                 d="m 12.4062,10.450005 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use156"
-                 d="m 95.404247,68.559325 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use158"
-                 d="m 135.93043,65.773441 11.27658,0 0,38.937519 -12.27184,-2.46099 0,6.28908 12.20625,2.46092 6.90151,0 0,-45.226529 11.27658,0 0,-5.807816 -29.38908,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
+                 y="44.099998"
+                 id="use149"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_6">
+           id="xtick_6"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_13">
+             id="line2d_13"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g162">
+               id="g162"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="779.08125"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="779.08124"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use164" />
+                 y="380.57144"
+                 id="use164"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_14">
+             id="line2d_14"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g167">
+               id="g167"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="779.08125"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="779.08124"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use169" />
-            </g>
-          </g>
-          <g
-             id="text_6">
-            <!-- $\mathdefault{10^{2}}$ -->
-            <g
-               transform="translate(768.10125 402.011428571)scale(0.12 -0.12)"
-               id="g172">
-              <path
-                 id="use174"
-                 d="m 12.4062,10.531255 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use176"
-                 d="m 95.404247,68.640575 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <use
-                 transform="translate(127.24609375 60.046875)scale(0.7)"
-                 xlink:href="#DejaVuSans-32"
-                 id="use178" />
+                 y="44.099998"
+                 id="use169"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_7">
+           id="xtick_7"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_15">
+             id="line2d_15"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g182">
+               id="g182"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#m476344969c"
-                 y="380.571428571"
-                 id="use184" />
+                 y="380.57144"
+                 id="use184"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_16">
+             id="line2d_16"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g187">
+               id="g187"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#m0012dd4eef"
-                 y="44.1"
-                 id="use189" />
-            </g>
-          </g>
-          <g
-             id="text_7">
-            <!-- $\mathdefault{10^{3}}$ -->
-            <g
-               transform="translate(898.65 402.011428571)scale(0.12 -0.12)"
-               id="g192">
-              <path
-                 id="use194"
-                 d="m 12.4062,10.531255 16.1094,0 0,55.62502 -17.5312,-3.5157 0,8.9844 17.4375,3.5156 9.8593,0 0,-64.60932 16.1094,0 0,-8.29688 -41.9844,0 z"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use196"
-                 d="m 95.404247,68.640575 q -7.6093,0 -11.4531,-7.5 -3.8281,-7.4843 -3.8281,-22.5312 0,-14.9844 3.8281,-22.4844 3.8438,-7.49998 11.4531,-7.49998 7.671903,0 11.500003,7.49998 3.8438,7.5 3.8438,22.4844 0,15.0469 -3.8438,22.5312 -3.8281,7.5 -11.500003,7.5 m 0,7.8126 q 12.265703,0 18.734403,-9.7032 6.4688,-9.6875 6.4688,-28.1406 0,-18.4062 -6.4688,-28.10938 -6.4687,-9.6875 -18.734403,-9.6875 -12.25,0 -18.7187,9.6875 -6.46875,9.70318 -6.46875,28.10938 0,18.4531 6.46875,28.1406 6.4687,9.7032 18.7187,9.7032"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
-              <path
-                 id="use198"
-                 d="m 155.65076,87.565625 q 4.95467,-1.06092 7.73283,-4.41875 2.78908,-3.34684 2.78908,-8.26875 0,-7.54691 -5.19533,-11.692184 -5.19533,-4.134382 -14.76559,-4.134382 -3.20474,0 -6.60632,0.634379 -3.40151,0.634374 -7.02184,1.903121 l 0,6.660976 q 2.86566,-1.673476 6.27816,-2.526594 3.42342,-0.853132 7.15309,-0.853132 6.48592,0 9.8875,2.559396 3.40158,2.55934 3.40158,7.44842 0,4.51717 -3.16099,7.05467 -3.16092,2.54842 -8.79368,2.54842 l -5.95,0 0,5.67658 6.22342,0 q 5.08592,0 7.7875,2.03441 2.70158,2.03434 2.70158,5.8625 0,3.926505 -2.78908,6.026505 -2.77816,2.111 -7.97342,2.111 -2.84382,0 -6.09224,-0.6235 -3.24842,-0.6125 -7.14217,-1.90308 l 0,6.1469 q 3.9375,1.09369 7.37191,1.6406 3.43434,0.5469 6.475,0.5469 7.86401,0 12.43592,-3.57657 4.58276,-3.56566 4.58276,-9.646915 0,-4.24375 -2.42809,-7.16401 -2.42809,-2.92033 -6.90158,-4.04691"
-                 inkscape:connector-curvature="0"
-                 style="stroke-linecap:square;stroke-linejoin:round" />
+                 y="44.099998"
+                 id="use189"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_8">
+           id="xtick_8"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_17">
+             id="line2d_17"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs202">
               <path
-                 d=" M0 0 L0 2"
+                 d="M 0,0 0,2"
                  id="m9ad4d917ad"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g205">
+               id="g205"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="165.636589646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="165.6366"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use207" />
+                 y="380.57144"
+                 id="use207"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_18">
+             id="line2d_18"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs210">
               <path
-                 d=" M0 0 L0 -2"
+                 d="M 0,0 0,-2"
                  id="m69b1a1edd1"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g213">
+               id="g213"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="165.636589646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="165.6366"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use215" />
+                 y="44.099998"
+                 id="use215"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_9">
+           id="xtick_9"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_19">
+             id="line2d_19"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g219">
+               id="g219"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="188.625083402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="188.62508"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use221" />
+                 y="380.57144"
+                 id="use221"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_20">
+             id="line2d_20"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g224">
+               id="g224"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="188.625083402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="188.62508"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use226" />
+                 y="44.099998"
+                 id="use226"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_10">
+           id="xtick_10"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_21">
+             id="line2d_21"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g230">
+               id="g230"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="204.935679293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="204.93568"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use232" />
+                 y="380.57144"
+                 id="use232"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_22">
+             id="line2d_22"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g235">
+               id="g235"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="204.935679293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="204.93568"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use237" />
+                 y="44.099998"
+                 id="use237"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_11">
+           id="xtick_11"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_23">
+             id="line2d_23"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g241">
+               id="g241"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="217.587160354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="217.58716"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use243" />
+                 y="380.57144"
+                 id="use243"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_24">
+             id="line2d_24"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g246">
+               id="g246"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="217.587160354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="217.58716"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use248" />
+                 y="44.099998"
+                 id="use248"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_12">
+           id="xtick_12"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_25">
+             id="line2d_25"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g252">
+               id="g252"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="227.924173049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="227.92418"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use254" />
+                 y="380.57144"
+                 id="use254"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_26">
+             id="line2d_26"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g257">
+               id="g257"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="227.924173049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="227.92418"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use259" />
+                 y="44.099998"
+                 id="use259"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_13">
+           id="xtick_13"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_27">
+             id="line2d_27"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g263">
+               id="g263"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="236.663992751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="236.66399"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use265" />
+                 y="380.57144"
+                 id="use265"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_28">
+             id="line2d_28"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g268">
+               id="g268"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="236.663992751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="236.66399"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use270" />
+                 y="44.099998"
+                 id="use270"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_14">
+           id="xtick_14"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_29">
+             id="line2d_29"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g274">
+               id="g274"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="244.234768939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="244.23477"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use276" />
+                 y="380.57144"
+                 id="use276"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_30">
+             id="line2d_30"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g279">
+               id="g279"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="244.234768939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="244.23477"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use281" />
+                 y="44.099998"
+                 id="use281"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_15">
+           id="xtick_15"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_31">
+             id="line2d_31"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g285">
+               id="g285"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="250.912666804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="250.91267"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use287" />
+                 y="380.57144"
+                 id="use287"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_32">
+             id="line2d_32"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g290">
+               id="g290"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="250.912666804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="250.91267"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use292" />
+                 y="44.099998"
+                 id="use292"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_16">
+           id="xtick_16"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_33">
+             id="line2d_33"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g296">
+               id="g296"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="296.185339646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="296.18533"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use298" />
+                 y="380.57144"
+                 id="use298"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_34">
+             id="line2d_34"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g301">
+               id="g301"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="296.185339646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="296.18533"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use303" />
+                 y="44.099998"
+                 id="use303"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_17">
+           id="xtick_17"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_35">
+             id="line2d_35"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g307">
+               id="g307"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="319.173833402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="319.17383"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use309" />
+                 y="380.57144"
+                 id="use309"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_36">
+             id="line2d_36"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g312">
+               id="g312"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="319.173833402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="319.17383"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use314" />
+                 y="44.099998"
+                 id="use314"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_18">
+           id="xtick_18"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_37">
+             id="line2d_37"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g318">
+               id="g318"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="335.484429293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="335.48444"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use320" />
+                 y="380.57144"
+                 id="use320"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_38">
+             id="line2d_38"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g323">
+               id="g323"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="335.484429293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="335.48444"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use325" />
+                 y="44.099998"
+                 id="use325"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_19">
+           id="xtick_19"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_39">
+             id="line2d_39"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g329">
+               id="g329"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="348.135910354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="348.13593"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use331" />
+                 y="380.57144"
+                 id="use331"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_40">
+             id="line2d_40"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g334">
+               id="g334"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="348.135910354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="348.13593"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use336" />
+                 y="44.099998"
+                 id="use336"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_20">
+           id="xtick_20"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_41">
+             id="line2d_41"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g340">
+               id="g340"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="358.472923049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="358.47293"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use342" />
+                 y="380.57144"
+                 id="use342"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_42">
+             id="line2d_42"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g345">
+               id="g345"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="358.472923049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="358.47293"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use347" />
+                 y="44.099998"
+                 id="use347"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_21">
+           id="xtick_21"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_43">
+             id="line2d_43"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g351">
+               id="g351"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="367.212742751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="367.21274"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use353" />
+                 y="380.57144"
+                 id="use353"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_44">
+             id="line2d_44"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g356">
+               id="g356"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="367.212742751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="367.21274"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use358" />
+                 y="44.099998"
+                 id="use358"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_22">
+           id="xtick_22"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_45">
+             id="line2d_45"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g362">
+               id="g362"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="374.783518939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="374.78351"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use364" />
+                 y="380.57144"
+                 id="use364"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_46">
+             id="line2d_46"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g367">
+               id="g367"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="374.783518939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="374.78351"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use369" />
+                 y="44.099998"
+                 id="use369"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_23">
+           id="xtick_23"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_47">
+             id="line2d_47"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g373">
+               id="g373"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="381.461416804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="381.46143"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use375" />
+                 y="380.57144"
+                 id="use375"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_48">
+             id="line2d_48"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g378">
+               id="g378"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="381.461416804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="381.46143"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use380" />
+                 y="44.099998"
+                 id="use380"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_24">
+           id="xtick_24"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_49">
+             id="line2d_49"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g384">
+               id="g384"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="426.734089646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="426.7341"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use386" />
+                 y="380.57144"
+                 id="use386"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_50">
+             id="line2d_50"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g389">
+               id="g389"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="426.734089646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="426.7341"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use391" />
+                 y="44.099998"
+                 id="use391"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_25">
+           id="xtick_25"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_51">
+             id="line2d_51"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g395">
+               id="g395"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="449.722583402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="449.7226"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use397" />
+                 y="380.57144"
+                 id="use397"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_52">
+             id="line2d_52"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g400">
+               id="g400"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="449.722583402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="449.7226"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use402" />
+                 y="44.099998"
+                 id="use402"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_26">
+           id="xtick_26"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_53">
+             id="line2d_53"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g406">
+               id="g406"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="466.033179293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="466.03317"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use408" />
+                 y="380.57144"
+                 id="use408"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_54">
+             id="line2d_54"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g411">
+               id="g411"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="466.033179293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="466.03317"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use413" />
+                 y="44.099998"
+                 id="use413"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_27">
+           id="xtick_27"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_55">
+             id="line2d_55"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g417">
+               id="g417"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="478.684660354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="478.68466"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use419" />
+                 y="380.57144"
+                 id="use419"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_56">
+             id="line2d_56"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g422">
+               id="g422"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="478.684660354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="478.68466"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use424" />
+                 y="44.099998"
+                 id="use424"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_28">
+           id="xtick_28"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_57">
+             id="line2d_57"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g428">
+               id="g428"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="489.021673049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="489.02167"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use430" />
+                 y="380.57144"
+                 id="use430"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_58">
+             id="line2d_58"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g433">
+               id="g433"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="489.021673049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="489.02167"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use435" />
+                 y="44.099998"
+                 id="use435"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_29">
+           id="xtick_29"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_59">
+             id="line2d_59"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g439">
+               id="g439"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="497.761492751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="497.76151"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use441" />
+                 y="380.57144"
+                 id="use441"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_60">
+             id="line2d_60"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g444">
+               id="g444"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="497.761492751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="497.76151"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use446" />
+                 y="44.099998"
+                 id="use446"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_30">
+           id="xtick_30"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_61">
+             id="line2d_61"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g450">
+               id="g450"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="505.332268939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="505.33228"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use452" />
+                 y="380.57144"
+                 id="use452"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_62">
+             id="line2d_62"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g455">
+               id="g455"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="505.332268939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="505.33228"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use457" />
+                 y="44.099998"
+                 id="use457"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_31">
+           id="xtick_31"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_63">
+             id="line2d_63"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g461">
+               id="g461"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="512.010166804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="512.01019"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use463" />
+                 y="380.57144"
+                 id="use463"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_64">
+             id="line2d_64"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g466">
+               id="g466"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="512.010166804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="512.01019"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use468" />
+                 y="44.099998"
+                 id="use468"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_32">
+           id="xtick_32"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_65">
+             id="line2d_65"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g472">
+               id="g472"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="557.282839646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="557.28284"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use474" />
+                 y="380.57144"
+                 id="use474"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_66">
+             id="line2d_66"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g477">
+               id="g477"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="557.282839646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="557.28284"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use479" />
+                 y="44.099998"
+                 id="use479"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_33">
+           id="xtick_33"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_67">
+             id="line2d_67"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g483">
+               id="g483"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="580.271333402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="580.27136"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use485" />
+                 y="380.57144"
+                 id="use485"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_68">
+             id="line2d_68"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g488">
+               id="g488"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="580.271333402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="580.27136"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use490" />
+                 y="44.099998"
+                 id="use490"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_34">
+           id="xtick_34"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_69">
+             id="line2d_69"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g494">
+               id="g494"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="596.581929293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="596.58191"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use496" />
+                 y="380.57144"
+                 id="use496"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_70">
+             id="line2d_70"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g499">
+               id="g499"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="596.581929293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="596.58191"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use501" />
+                 y="44.099998"
+                 id="use501"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_35">
+           id="xtick_35"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_71">
+             id="line2d_71"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g505">
+               id="g505"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="609.233410354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="609.2334"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use507" />
+                 y="380.57144"
+                 id="use507"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_72">
+             id="line2d_72"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g510">
+               id="g510"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="609.233410354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="609.2334"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use512" />
+                 y="44.099998"
+                 id="use512"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_36">
+           id="xtick_36"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_73">
+             id="line2d_73"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g516">
+               id="g516"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="619.570423049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="619.57043"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use518" />
+                 y="380.57144"
+                 id="use518"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_74">
+             id="line2d_74"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g521">
+               id="g521"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="619.570423049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="619.57043"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use523" />
+                 y="44.099998"
+                 id="use523"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_37">
+           id="xtick_37"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_75">
+             id="line2d_75"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g527">
+               id="g527"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="628.310242751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="628.31024"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use529" />
+                 y="380.57144"
+                 id="use529"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_76">
+             id="line2d_76"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g532">
+               id="g532"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="628.310242751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="628.31024"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use534" />
+                 y="44.099998"
+                 id="use534"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_38">
+           id="xtick_38"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_77">
+             id="line2d_77"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g538">
+               id="g538"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="635.881018939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="635.88104"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use540" />
+                 y="380.57144"
+                 id="use540"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_78">
+             id="line2d_78"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g543">
+               id="g543"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="635.881018939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="635.88104"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use545" />
+                 y="44.099998"
+                 id="use545"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_39">
+           id="xtick_39"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_79">
+             id="line2d_79"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g549">
+               id="g549"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="642.558916804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="642.5589"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use551" />
+                 y="380.57144"
+                 id="use551"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_80">
+             id="line2d_80"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g554">
+               id="g554"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="642.558916804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="642.5589"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use556" />
+                 y="44.099998"
+                 id="use556"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_40">
+           id="xtick_40"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_81">
+             id="line2d_81"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g560">
+               id="g560"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="687.831589646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="687.8316"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use562" />
+                 y="380.57144"
+                 id="use562"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_82">
+             id="line2d_82"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g565">
+               id="g565"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="687.831589646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="687.8316"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use567" />
+                 y="44.099998"
+                 id="use567"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_41">
+           id="xtick_41"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_83">
+             id="line2d_83"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g571">
+               id="g571"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="710.820083402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="710.82007"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use573" />
+                 y="380.57144"
+                 id="use573"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_84">
+             id="line2d_84"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g576">
+               id="g576"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="710.820083402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="710.82007"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use578" />
+                 y="44.099998"
+                 id="use578"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_42">
+           id="xtick_42"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_85">
+             id="line2d_85"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g582">
+               id="g582"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="727.130679293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="727.13068"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use584" />
+                 y="380.57144"
+                 id="use584"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_86">
+             id="line2d_86"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g587">
+               id="g587"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="727.130679293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="727.13068"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use589" />
+                 y="44.099998"
+                 id="use589"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_43">
+           id="xtick_43"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_87">
+             id="line2d_87"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g593">
+               id="g593"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="739.782160354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="739.78217"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use595" />
+                 y="380.57144"
+                 id="use595"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_88">
+             id="line2d_88"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g598">
+               id="g598"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="739.782160354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="739.78217"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use600" />
+                 y="44.099998"
+                 id="use600"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_44">
+           id="xtick_44"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_89">
+             id="line2d_89"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g604">
+               id="g604"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="750.119173049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="750.1192"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use606" />
+                 y="380.57144"
+                 id="use606"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_90">
+             id="line2d_90"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g609">
+               id="g609"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="750.119173049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="750.1192"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use611" />
+                 y="44.099998"
+                 id="use611"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_45">
+           id="xtick_45"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_91">
+             id="line2d_91"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g615">
+               id="g615"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="758.858992751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="758.85901"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use617" />
+                 y="380.57144"
+                 id="use617"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_92">
+             id="line2d_92"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g620">
+               id="g620"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="758.858992751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="758.85901"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use622" />
+                 y="44.099998"
+                 id="use622"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_46">
+           id="xtick_46"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_93">
+             id="line2d_93"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g626">
+               id="g626"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="766.429768939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="766.42975"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use628" />
+                 y="380.57144"
+                 id="use628"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_94">
+             id="line2d_94"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g631">
+               id="g631"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="766.429768939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="766.42975"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use633" />
+                 y="44.099998"
+                 id="use633"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_47">
+           id="xtick_47"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_95">
+             id="line2d_95"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g637">
+               id="g637"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="773.107666804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="773.10767"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use639" />
+                 y="380.57144"
+                 id="use639"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_96">
+             id="line2d_96"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g642">
+               id="g642"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="773.107666804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="773.10767"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use644" />
+                 y="44.099998"
+                 id="use644"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_48">
+           id="xtick_48"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_97">
+             id="line2d_97"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g648">
+               id="g648"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="818.380339646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="818.38031"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use650" />
+                 y="380.57144"
+                 id="use650"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_98">
+             id="line2d_98"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g653">
+               id="g653"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="818.380339646"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="818.38031"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use655" />
+                 y="44.099998"
+                 id="use655"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_49">
+           id="xtick_49"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_99">
+             id="line2d_99"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g659">
+               id="g659"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="841.368833402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="841.36884"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use661" />
+                 y="380.57144"
+                 id="use661"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_100">
+             id="line2d_100"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g664">
+               id="g664"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="841.368833402"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="841.36884"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use666" />
+                 y="44.099998"
+                 id="use666"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_50">
+           id="xtick_50"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_101">
+             id="line2d_101"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g670">
+               id="g670"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="857.679429293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="857.67944"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use672" />
+                 y="380.57144"
+                 id="use672"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_102">
+             id="line2d_102"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g675">
+               id="g675"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="857.679429293"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="857.67944"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use677" />
+                 y="44.099998"
+                 id="use677"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_51">
+           id="xtick_51"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_103">
+             id="line2d_103"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g681">
+               id="g681"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="870.330910354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="870.33093"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use683" />
+                 y="380.57144"
+                 id="use683"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_104">
+             id="line2d_104"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g686">
+               id="g686"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="870.330910354"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="870.33093"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use688" />
+                 y="44.099998"
+                 id="use688"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_52">
+           id="xtick_52"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_105">
+             id="line2d_105"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g692">
+               id="g692"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="880.667923049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="880.66791"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use694" />
+                 y="380.57144"
+                 id="use694"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_106">
+             id="line2d_106"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g697">
+               id="g697"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="880.667923049"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="880.66791"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use699" />
+                 y="44.099998"
+                 id="use699"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_53">
+           id="xtick_53"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_107">
+             id="line2d_107"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g703">
+               id="g703"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="889.407742751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="889.40771"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use705" />
+                 y="380.57144"
+                 id="use705"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_108">
+             id="line2d_108"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g708">
+               id="g708"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="889.407742751"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="889.40771"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use710" />
+                 y="44.099998"
+                 id="use710"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_54">
+           id="xtick_54"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_109">
+             id="line2d_109"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g714">
+               id="g714"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="896.978518939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="896.97852"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use716" />
+                 y="380.57144"
+                 id="use716"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_110">
+             id="line2d_110"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g719">
+               id="g719"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="896.978518939"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="896.97852"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use721" />
+                 y="44.099998"
+                 id="use721"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="xtick_55">
+           id="xtick_55"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_111">
+             id="line2d_111"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g725">
+               id="g725"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="903.656416804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="903.65643"
                  xlink:href="#m9ad4d917ad"
-                 y="380.571428571"
-                 id="use727" />
+                 y="380.57144"
+                 id="use727"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_112">
+             id="line2d_112"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g730">
+               id="g730"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
-                 x="903.656416804"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="903.65643"
                  xlink:href="#m69b1a1edd1"
-                 y="44.1"
-                 id="use732" />
+                 y="44.099998"
+                 id="use732"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
@@ -1800,54 +2176,66 @@
            xml:space="preserve"
            style="font-size:19.20000076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
            x="369.19501"
-           y="427.50421"
+           y="440.30426"
            id="text4353"
            sodipodi:linespacing="125%"><tspan
              sodipodi:role="line"
              id="tspan4355"
              x="369.19501"
-             y="427.50421">Sampling cost (arbitrary time)</tspan></text>
+             y="440.30426">Sampling cost (arbitrary time)</tspan></text>
       </g>
       <g
-         id="matplotlib.axis_2">
+         id="matplotlib.axis_2"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <g
-           id="ytick_1">
+           id="ytick_1"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_113">
+             id="line2d_113"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs821">
               <path
-                 d=" M0 0 L-4 0"
+                 d="M 0,0 -4,0"
                  id="m1a32005dea"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g824">
+               id="g824"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="380.571428571"
-                 id="use826" />
+                 y="380.57144"
+                 id="use826"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_114">
+             id="line2d_114"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <defs
                id="defs829">
               <path
-                 d=" M0 0 L4 0"
+                 d="M 0,0 4,0"
                  id="me8a85f7bf6"
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;" />
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0" />
             </defs>
             <g
-               id="g832">
+               id="g832"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="380.571428571"
-                 id="use834" />
+                 y="380.57144"
+                 id="use834"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <text
@@ -1919,151 +2307,263 @@
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-             x="120.78329"
-             y="403.01105"
+             x="117.58329"
+             y="412.61108"
              id="text3552-5-2-0-8-0-0"
              sodipodi:linespacing="125%"><tspan
                sodipodi:role="line"
                id="tspan3554-1-5-2-2-2-4"
-               x="120.78329"
-               y="403.01105">$10^{-1}$</tspan></text>
+               x="117.58329"
+               y="412.61108">$10^{-2}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="246.83092"
+             y="412.85751"
+             id="text3552-5-2-0-8-0-0-9"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1"
+               x="246.83092"
+               y="412.85751">$10^{-2}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="377.4389"
+             y="412.34241"
+             id="text3552-5-2-0-8-0-0-9-6"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1-8"
+               x="377.4389"
+               y="412.34241">$10^{-1}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="509.51401"
+             y="411.81174"
+             id="text3552-5-2-0-8-0-0-9-6-2"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1-8-3"
+               x="509.51401"
+               y="411.81174">$10^{0}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="640.31158"
+             y="410.85718"
+             id="text3552-5-2-0-8-0-0-9-6-2-2"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1-8-3-1"
+               x="640.31158"
+               y="410.85718">$10^{1}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="768.31903"
+             y="410.40457"
+             id="text3552-5-2-0-8-0-0-9-6-2-2-5"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1-8-3-1-2"
+               x="768.31903"
+               y="410.40457">$10^{2}$</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+             x="898.98053"
+             y="410.7424"
+             id="text3552-5-2-0-8-0-0-9-6-2-2-5-5"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3554-1-5-2-2-2-4-1-8-3-1-2-2"
+               x="898.98053"
+               y="410.7424">$10^{3}$</tspan></text>
         </g>
         <g
-           id="ytick_2">
+           id="ytick_2"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_115">
+             id="line2d_115"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g843">
+               id="g843"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="313.277142857"
-                 id="use845" />
+                 y="313.27713"
+                 id="use845"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_116">
+             id="line2d_116"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g848">
+               id="g848"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="313.277142857"
-                 id="use850" />
+                 y="313.27713"
+                 id="use850"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="text_10">
+             id="text_10"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <!-- 1 -->
           </g>
         </g>
         <g
-           id="ytick_3">
+           id="ytick_3"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_117">
+             id="line2d_117"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g859">
+               id="g859"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="245.982857143"
-                 id="use861" />
+                 y="245.98286"
+                 id="use861"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_118">
+             id="line2d_118"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g864">
+               id="g864"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="245.982857143"
-                 id="use866" />
+                 y="245.98286"
+                 id="use866"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="ytick_4">
+           id="ytick_4"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_119">
+             id="line2d_119"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g875">
+               id="g875"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="178.688571429"
-                 id="use877" />
+                 y="178.68857"
+                 id="use877"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_120">
+             id="line2d_120"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g880">
+               id="g880"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="178.688571429"
-                 id="use882" />
+                 y="178.68857"
+                 id="use882"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="ytick_5">
+           id="ytick_5"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_121">
+             id="line2d_121"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g891">
+               id="g891"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="111.394285714"
-                 id="use893" />
+                 y="111.39429"
+                 id="use893"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_122">
+             id="line2d_122"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g896">
+               id="g896"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="111.394285714"
-                 id="use898" />
+                 y="111.39429"
+                 id="use898"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
         <g
-           id="ytick_6">
+           id="ytick_6"
+           style="stroke-linecap:square;stroke-linejoin:round">
           <g
-             id="line2d_123">
+             id="line2d_123"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g910">
+               id="g910"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="126.3375"
                  xlink:href="#m1a32005dea"
-                 y="44.1"
-                 id="use912" />
+                 y="44.099998"
+                 id="use912"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
           <g
-             id="line2d_124">
+             id="line2d_124"
+             style="stroke-linecap:square;stroke-linejoin:round">
             <g
-               id="g915">
+               id="g915"
+               style="stroke-linecap:square;stroke-linejoin:round">
               <use
-                 style="stroke:#000000;stroke-linecap:butt;stroke-width:0.5;"
+                 style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
                  x="909.63"
                  xlink:href="#me8a85f7bf6"
-                 y="44.1"
-                 id="use917" />
+                 y="44.099998"
+                 id="use917"
+                 width="1010"
+                 height="441" />
             </g>
           </g>
         </g>
@@ -2085,32 +2585,40 @@
              id="tspan4369">(au)</tspan></text>
       </g>
       <g
-         id="patch_3">
+         id="patch_3"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
-           d=" M126.337 44.1 L909.63 44.1"
-           style="fill:none;stroke:#000000;"
-           id="path1028" />
+           d="m 126.337,44.1 783.293,0"
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
+           id="path1028"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="patch_4">
+         id="patch_4"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
-           d=" M909.63 380.571 L909.63 44.1"
-           style="fill:none;stroke:#000000;"
-           id="path1031" />
+           d="m 909.63,380.571 0,-336.471"
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
+           id="path1031"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="patch_5">
+         id="patch_5"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
-           d=" M126.337 380.571 L909.63 380.571"
-           style="fill:none;stroke:#000000;"
-           id="path1034" />
+           d="m 126.337,380.571 783.293,0"
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
+           id="path1034"
+           inkscape:connector-curvature="0" />
       </g>
       <g
-         id="patch_6">
+         id="patch_6"
+         style="stroke-linecap:square;stroke-linejoin:round">
         <path
-           d=" M126.337 380.571 L126.337 44.1"
-           style="fill:none;stroke:#000000;"
-           id="path1037" />
+           d="m 126.337,380.571 0,-336.471"
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
+           id="path1037"
+           inkscape:connector-curvature="0" />
       </g>
       <g
          id="text_16"
@@ -2226,11 +2734,12 @@
     <clipPath
        id="pebc2ae3c62">
       <rect
-         height="336.471428571"
-         width="783.2925"
+         height="336.47144"
+         width="783.29248"
          x="126.3375"
-         y="44.1"
-         id="rect1191" />
+         y="44.099998"
+         id="rect1191"
+         style="stroke-linecap:square;stroke-linejoin:round" />
     </clipPath>
   </defs>
 </svg>

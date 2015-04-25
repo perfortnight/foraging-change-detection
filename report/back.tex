@@ -5,17 +5,19 @@ Automating experiment design is not without precedent.  Kristine Smith started t
 It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
 
+% Can be compressed/merged with Multi-armed bandit section.
+% what is important here is precident for this type of decision making
+% But we don't use any of the results from it.
 \subsection{The Secretary Problem}
 
-The secretary problem\footnote{Also known as the fiance problem or the game of
-Googol} asks a decision maker to select the best candidate from sequentially
-presented candidates where it is not possible to return to previously rejected
-candidates.  In the original setting there is only one position to for the
-candidate to fill \cite{ferguson1989solved}, and the optimal strategy is to
-reject the first $\frac{N}{e}$ candidates and then take the first candidate who
-is ranked better than any of the previously seen candidates or hte final
-candidate.  In the original setting the decision maker was able to objectively
-rank the candidates.   
+The secretary problem asks a decision maker to select the best candidate from
+sequentially presented candidates where it is not possible to return to
+previously rejected candidates.  In the original setting there is only one
+position to for the candidate to fill \cite{ferguson1989solved}, and the
+optimal strategy is to reject the first $\frac{N}{e}$ candidates and then take
+the first candidate who is ranked better than any of the previously seen
+candidates or hte final candidate.  In the original setting the decision maker
+was able to objectively rank the candidates.   
 
 There have been many variations on this problem including selecting multiple
 candidates \cite{vanderbei1980optimal}, or when the total number of candidates
@@ -24,16 +26,6 @@ is an excellent source.  What distinguishes the secretary problem from the
 science autonomy problem we propose is that we do not know the value of a
 candidate, or class, when we encounter it.  Additionally repeatedly sampling
 the same class decreases the value to the decision maker. 
-
-
-% 		- Secretary problem
-% 			- They know what the value of their choice is, in many cases.
-% 			- They know how many candidates there are.
-% 			- We have rates of arrival, they just have a queue.
-% 			- While our sampling time cost implies an upper bound on the number of 
-% 			candidates we don't have a lower bound necessarily.
-% 
-% 			\cite{ferguson1989solved}, \cite{presman1972best}, \cite{vanderbei1980optimal}
 
 \subsection{Multi-armed bandits}
 
@@ -72,6 +64,7 @@ They choose actions that maximize the expected information gain with respect to
 some model they are learning.  The most valuable actions are the ones that
 result in the greatest shift in the distribution the learner is building.
 
+% This paragraph can go.
 Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
 requesting samples from the input space with the greatest classification
 error.  Classification error and uncertainty in function value
@@ -147,6 +140,7 @@ ours is that their decision maker can choose from which reservoirs to sample.  O
 % 				- This means that we could keep different distributions of classes per 
 % 					environment.
 
+% Can merge with above.
 \cite{kolling2012neural} studies how humans engage in a gambling task where
 they have to consider the option they have before them and the opportunities
 the environment provides.  In the described experiment subjects were repeatedly

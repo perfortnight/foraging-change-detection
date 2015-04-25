@@ -9,18 +9,19 @@ Second, when the sampling cost is large relative to the duration of the transect
 
 Thirdly, when the sampling cost gets sufficiently large foraging again becomes a competative algorithm.  The convergence in performance is mainly due to the very limited ability to sample and consequent poor performance of both algorithm.  
 
+This work does not address the problem of perceiving the environment and requires some system to parse local scenes to identify the classes available for the robot to sample.  This is a necessary stepping stone to fielding this algorithmon a robot.
 
-\subsection{Future Work}
-
-1. Implement on a real robot (of course).  Integrate some sensor processing algorithm (texturecam?) to abstract from images/whatever to categories as used in this paper.
-
-2. Multi-objective optimization (different sensors with different costs)
-
-3. Vary the arrival rates much more (have sims set up for that, haven't finished executing them yet.  Seriously! Yes, yes, write it in C next time.)
-
-4. Handle when the distributions change. 
-
-5. Handle when arrival rates change.
+Additionally the algorithm does not account for the following deviations in the problem setting: If there is more than one type of sensor with a different cost to use; Class arrival rates that change over time; Class distributions changing over time.  These need to be addressed in the future to make a more plausible robot scientist.  It is the desire of the authors to make the agent responsible not just for collecting data, but to generate and test hypotheses about the environment.
+% 
+% 1. Implement on a real robot (of course).  Integrate some sensor processing algorithm (texturecam?) to abstract from images/whatever to categories as used in this paper.
+% 
+% 2. Multi-objective optimization (different sensors with different costs)
+% 
+% 3. Vary the arrival rates much more (have sims set up for that, haven't finished executing them yet.  Seriously! Yes, yes, write it in C next time.)
+% 
+% 4. Handle when the distributions change. 
+% 
+% 5. Handle when arrival rates change.
 
 
 
