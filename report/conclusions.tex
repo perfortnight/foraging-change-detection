@@ -3,13 +3,11 @@
 
 In this paper we present a new algorithm created by combining sequential experiment selection and models of optimal foraging with an information theoretic reward function.  For certain regimes of operation the new algorithm is significantly better the control algorithm based on optimal experiment design alone.  Additionally this work continues the process of introducing sequential selection to the field of science autonomy.  
 
-We observe three things:
+From the experiment presented in this paper we can conclude three things.  First, for small sampling costs relative to the transect duration the foraging algorithm produces about a 50\% reduction in accumulated error.  For the small sampling costs the effect size is substantial and our Bayesian paired t-test gives us 95\% confidence that the increase in performance is non-zero.
 
-1. For small sampling costs relative to the duration of the transect the foraging algorithm produces about a 50\% reduction in accumulated error.  For the small sampling costs the effect size is substantial and our Bayesian paired t-test gives us 95\% confidence that the increase in performance is non-zero.
+Second, when the sampling cost is large relative to the duration of the transect Uniform sampling is as good as or better than foraging.  This makes sense, as the first samples one collects are the most informative about a distribution.  Distributing samples across the different classes of objects increases the overall rate of information gained, ensuring the greatest short-term reduction in error.
 
-2. When the sampling cost is large relative to the duration of the transect Uniform sampling is as good as or better than foraging.  This makes sense.  The early samples are the most informative.  By making sure you distribute the samples across the different classes of objects increases when your sampling time is limited will ensure the greatest short-term reduction in error.
-
-3. When the sampling cost gets sufficiently large foraging again becomes a competative algorithm.  It is the authors hope that with modification the gap can be reduced in future experiments.
+Thirdly, when the sampling cost gets sufficiently large foraging again becomes a competative algorithm.  The convergence in performance is mainly due to the very limited ability to sample and consequent poor performance of both algorithm.  
 
 
 \subsection{Future Work}

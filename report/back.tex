@@ -5,34 +5,6 @@ Automating experiment design is not without precedent.  Kristine Smith started t
 It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
 
-% 	Who else has done what?
-% 
-% - Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
-% 
-% 	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
-% 	- See also maximum entropy sampling
-% 	- See also mutual information sampling.
-% - Also consider active learning solutions (they all end up being the same anyway)
-% 
-% 	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
-% 	1. match templates.
-% 	2. seek improbable things.
-% 	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
-% 
-% 	1 and 2 say nothing about the information content of the material under investigation.
-% 	3 does not have the level of autonomy that we need for truly long-term or remote operations.
-% 
-% 	How?
-% 
-% 	What have we previously done:
-% 	- D.R. Thompson's work
-% 	- Only looking at satellite imagery.  Good but not sufficient.
-% 	- Trey's work
-% 	- Using POMDPs not scalable to a planet.
-% 	- Mine. Where does my previous work fall short?
-% - Not bayesian (not a big deal?)
-% 	- Still has the problem on knowing the number of sampling opportunities remaining.
-
 \subsection{The Secretary Problem}
 
 The secretary problem\footnote{Also known as the fiance problem or the game of
