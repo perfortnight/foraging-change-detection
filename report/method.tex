@@ -46,7 +46,7 @@ between a current opportunity, a hypothetical future, and any number of
 previously seen but unsampled opportunities is considered a more complex
 problem and outside the scope of this paper.
 
-In the experiment there are six different kinds of objects the agent may
+In the experiment there are six different classes of objects the agent may
 encounter.  They each have their own arrival rate and their appearance along
 the transect are generated with a poisson process.  In this paper the arrival
 rates of the different sampling opportunities do not change over the course of
@@ -54,17 +54,30 @@ the experiment.  While this is almost certainly not the case for long range
 traversals like those seen in the Life in the Atacama Desert Project it is a
 reasonable approximation for shorter-range traverses.
 
+\begin{table}[htpd!]
+	\centering
+	\begin{tabular}{l|ccc}
+		Class & Mean & Standard Deviation & Arrival Rate\\
+							 & (arbitrary units )  & (arbitrary units) & (arbitrary time)\\
+ 		\hline
+		1 & 0 & 1 & 1\\
+		2 & 10 & 0.1 & 0.8 \\
+		3 & 0 & 5 & 0.9\\
+		4 & 2 & 4 & 1.1\\
+		5 & -2 & 4 & 0.05\\
+		6 & 0 & 0.1 & 1.1\\
+		\hline
+	\end{tabular}
+	\caption{The classes the robot is investigating all have values derived from Gaussian random variables with means and standard deviation given.  Different instances of those classes are encountered in accordance to a Poisson process with the rates specified in the above table.  The units of the distribution's mean and variance can be ignored for the purposes of this experiment.  The arrival rate in this experiment is given in units of arbitrary time.  They can be scaled to the order of the mission at hand.}
+	\label{tbl:classes}
+\end{table}
+
 \subsection{Algorithms}
 
 	% This is only relevant in the larger work.
 	% - figure method.3: texture cam, raw image and texture labelled image.
 
-	The experiment builds on prior work.  Here we present three algorithms that are being testing on the simulated transect described above.
-
-\subsubsection{Exhaustive Sampling}
-
-The Exhaustive Sampling algorithm samples at every opportunity until the time limit on the mission expires.
-
+	The experiment builds on prior work.  Here we present two algorithms that are being testing on the simulated transect described above.
 
 \subsubsection{Uniform Sampling}
 
