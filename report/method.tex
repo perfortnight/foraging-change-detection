@@ -14,7 +14,7 @@ path that the robot travels along.
 
 \begin{figure}[htpd!]
 	\centering 
-	\includegraphics[width=0.8\textwidth]{transect}
+	\includegraphics[width=0.7\textwidth]{transect}
 	\caption{A cartoon illustrating a transect a robot might be encountering and how samping opportunities of different types may be distributed along it.  In the field the robot would start at one end of the path and follow it to the other end.  There is one path that the rover may follow across the terrain resulting in it encountering different types of sampling opportunities.}
 	\label{fig:transect}
 \end{figure}
@@ -114,7 +114,7 @@ zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the di
 
 \begin{figure}[htpd!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/cumulative-reward.png}
+	\includegraphics[width=0.7\textwidth]{images/cumulative-reward.png}
 	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
 	\label{fig:reward}
 \end{figure}
@@ -129,25 +129,25 @@ Where $\mathbb{E}_{T}\left[\cdot\right]$ is the empirical expected value over th
 
 
 
-	- Combining foraging models with bandit literature 
-		- The previous work on foraging assumed an inherent value to
-			options that the agent cared about.  Specifically, energy stored up.
-		- We use a valuation model taken from bandit literature.  
-		- We use the reward function from Koch's attention models
-		- We use the decision making process from foraging. 
-		- We add the concept of multi-arrival rate things, awareness of time limits.
-	- Previous work had a limit on the number of samples it could take
-		- We realized that the actual quantity that limits the exploration process
-			is time.
-		- By limiting the time and (in this case) relaxing the limit on sample sizes we more accurately deal with productivity.  
-	- This experiment models a type of prospecting where the number of samples isn't limited but they do take time. 
-	- To that end we are looking at productivity.
-
-	-  This experiment is more akin to contextual bandits.  
-	- The image represents a context, the NIRVSS 
-	- Apply texturecam classification of a scene, as the context
-	- the choice is to sample or continue
-
-	- Productivity 
+% 	- Combining foraging models with bandit literature 
+% 		- The previous work on foraging assumed an inherent value to
+% 			options that the agent cared about.  Specifically, energy stored up.
+% 		- We use a valuation model taken from bandit literature.  
+% 		- We use the reward function from Koch's attention models
+% 		- We use the decision making process from foraging. 
+% 		- We add the concept of multi-arrival rate things, awareness of time limits.
+% 	- Previous work had a limit on the number of samples it could take
+% 		- We realized that the actual quantity that limits the exploration process
+% 			is time.
+% 		- By limiting the time and (in this case) relaxing the limit on sample sizes we more accurately deal with productivity.  
+% 	- This experiment models a type of prospecting where the number of samples isn't limited but they do take time. 
+% 	- To that end we are looking at productivity.
+% 
+% 	-  This experiment is more akin to contextual bandits.  
+% 	- The image represents a context, the NIRVSS 
+% 	- Apply texturecam classification of a scene, as the context
+% 	- the choice is to sample or continue
+% 
+% 	- Productivity 
 
 
