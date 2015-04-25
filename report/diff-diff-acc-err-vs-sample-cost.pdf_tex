@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{1010bp}%
+    \setlength{\unitlength}{1010.69999556bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,13 +48,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.43663366)%
+  \begin{picture}(1,0.43959435)%
     \put(0,0){\includegraphics[width=\unitlength]{diff-diff-acc-err-vs-sample-cost.pdf}}%
-    \put(0.36553961,0.01336217){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Sampling cost (arbitrary time)}}}%
-    \put(0.07255124,0.22642142){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[b]{\smash{Average total error
+    \put(0.36528644,0.00395147){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Sampling cost (arbitrary time)}}}%
+    \put(0.1029845,0.39125681){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.10304727,0.3247383){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.10396534,0.25784582){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.10396534,0.191357){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.10396534,0.12486817){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.10406385,0.05884682){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.11633847,0.03135147){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{-2}$}}}%
+    \put(0.24421779,0.03110765){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{-2}$}}}%
+    \put(0.37344306,0.0316173){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{-1}$}}}%
+    \put(0.50411992,0.03214235){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{0}$}}}%
+    \put(0.63353278,0.0330868){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{1}$}}}%
+    \put(0.76018505,0.03353462){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{2}$}}}%
+    \put(0.88946327,0.03320037){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10^{3}$}}}%
+    \put(0.07250099,0.2295277){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[b]{\smash{Average total error
 (au)}}}}%
-    \put(0.27340008,0.4146943){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Accumulated Error vs Sampling Cost (N=21)}}}%
-    \put(0.18832817,0.35963954){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Uniform}}}%
-    \put(0.18848481,0.33231635){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Foraging}}}%
+    \put(0.27321072,0.41767018){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Accumulated Error vs Sampling Cost (N=21)}}}%
+    \put(0.18819773,0.36265356){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Uniform}}}%
+    \put(0.18835427,0.33534929){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Foraging}}}%
   \end{picture}%
 \endgroup%
