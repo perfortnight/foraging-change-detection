@@ -2,15 +2,15 @@
 \section{Introduction}
 \label{sec:intro}
 
-Human scientists have become accustomed to such luxuries as breathing, eating
-and drinking, and enduring atmospheric and gravitational forces that do not
+Human scientists have become accustomed to luxuries such as breathing, eating
+and drinking, and atmospheric and gravitational forces that do not
 vary significantly from ``1.''  Consequently, robots have become our scientific
 surrogates as we peer into the depths of the ocean or into our solar
 neighbourhood.  High-latency and low-bandwidth communication to these regions limits the situational awareness and reaction times of the scientists controlling such robots.  For this reason it is important to increase the ability of robotic explorers to independently make in-mission decisions.
 
-A common exploration activity is remote sensing, in which a robot is tasked with collecting sensor data by sampling the environment at various locations.  The nature of many specialized sensors often employed for activities such as biological collection and spectral mapping requires long energy-intensive sampling durations or the activation of single-use collection canisters.  Given constraints on mission length and payload capacity coupled with limited remote operator awareness, some autonomy in sampling location selection is vital to mission productivity and success.
+A common exploration activity is remote sensing, in which a robot is tasked with collecting sensor data by sampling the environment at various locations.  The nature of many specialized sensors employed for activities such as biological collection and spectral mapping requires long energy-intensive sampling durations or the activation of single-use collection canisters.  Constraints on mission length and payload capacity coupled with limited remote operator awareness, some autonomy in sampling location selection is vital to mission productivity and success.
 
-Currently fielded robots either depend highly on their operators for objectives or plan with considerable global knowledge.  Operating in such conditions constrains them to rely on either remote human decision-making (requiring often impractical levels of situational awareness) or significant amounts of prior scouting, obviating the need to send a robotic agent.  These limitations are mirrored in existing literature, which fails to provide principled reasoning about what to investigate \emph{in situ} without such reliances.
+Currently fielded robots either depend highly on operators for objectives or plan with considerable global knowledge.  Operating in such conditions constrains them to rely on either remote human decision-making (requiring often impractical levels of situational awareness) or significant amounts of prior scouting, obviating the need to send a robotic agent.  These limitations are mirrored in existing literature, which fails to provide principled reasoning about what to investigate \emph{in situ} without such reliances.
 
 This paper proposes an algorithm that addresses one common instance of such missions, in which objects or areas found in the environment lie within some respective class that is readily sensed, and each class possesses some underlying data distribution (e.g. spectral response or biochemical composition) that can only be sensed by activating the expensive specialized sensor.  The overall goal is to estimate the underlying distribution of each class with maximal accuracy.
 
