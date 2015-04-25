@@ -160,20 +160,20 @@ from.
 acquire information.  They modelled the rate of information gain and had their
 agent decide to leave the patch they were in when the rate of information gain
 was lower than that of the environment.  What differentiates their setting from
-ours is TODO
+ours is that their decision maker can choose from which reservoirs to sample.  Our exploring agent does not have that luxury.
 
-	- Piroli 1999 - has come up with a very similar formulation as the one that 
-		Mike and I came up with.
-		- Something to consider is that we only get to take one sample per patch 
-			because of science differentiation requirements (i.e. RP can't have 
-			samples closer than 10cm to each other, maybe as far as 1m)
-		- We could also incorporate the different cost it takes to identify things 
-			in the scene.
-		- We also have different times between patches.
-		- Should it come to multiple contexts then we have the contextual bandit 
-			problem
-				- This means that we could keep different distributions of classes per 
-					environment.
+% 	- Piroli 1999 - has come up with a very similar formulation as the one that 
+% 		Mike and I came up with.
+% 		- Something to consider is that we only get to take one sample per patch 
+% 			because of science differentiation requirements (i.e. RP can't have 
+% 			samples closer than 10cm to each other, maybe as far as 1m)
+% 		- We could also incorporate the different cost it takes to identify things 
+% 			in the scene.
+% 		- We also have different times between patches.
+% 		- Should it come to multiple contexts then we have the contextual bandit 
+% 			problem
+% 				- This means that we could keep different distributions of classes per 
+% 					environment.
 
 \cite{kolling2012neural} studies how humans engage in a gambling task where
 they have to consider the option they have before them and the opportunities
@@ -188,12 +188,12 @@ i.e. $p \approx 0$ or $p \approx 1$.
 
 \subsection{Science Autonomy}
 
-	- Yeorger (sp?) WHOI or MBARI has exactly this setup as a problem.
-	- Thompson, Asher Bender and Stephane Williams Group
-			- making selections based on maps.  
-			- Maximum entropy/mutual information smapling.
-			- They assume global knowledge, we don't have that.  It is reasonable
-			in many settings of interest, can reduce cost.
+% 	- Yeorger (sp?) WHOI or MBARI has exactly this setup as a problem.
+% 	- Thompson, Asher Bender and Stephane Williams Group
+% 			- making selections based on maps.  
+% 			- Maximum entropy/mutual information smapling.
+% 			- They assume global knowledge, we don't have that.  It is reasonable
+% 			in many settings of interest, can reduce cost.
 
 Thompson and Wettergreen \cite{thompson2008intelligent} maximize diversity of
 collected samples by using mutual information sampling.  This approach ensures
@@ -216,10 +216,13 @@ limited by a budgeting size of six ``gulpers'' -- devices for collecting
 seawater samples.
 
 
-	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
-			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
-			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
-
+Ferri \emph{et al.} \cite{ferri2010novel} present an approach to prospecting where an AUV follows a predefined track and needs to decide when deviate to sample anomalies.  The AUV in this work examines anomalies by engaging in a spiral search pattern, collecting data and characterizing the environment in that location.  In this case the rover is not limited in its sampling capacity.  However the decision to sample is based on a pre-programmed threshold.  While this may be an excellent way to encode subject matter experts' beliefs on what is interesting it is fragile in the face of a changing environment, and does not adapt to the actual environment the rover encounters.
+ 
+% 
+% 	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
+% 			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
+% 			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+% 
 
 In \cite{gridhar2013autonomous} and \cite{girdhar2013Aautonomous} Girdhar
 \emph{et al.} present an approach to autonomous exploration where the robot
