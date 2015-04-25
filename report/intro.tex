@@ -12,13 +12,13 @@ A common exploration activity is remote sensing, in which a robot is tasked with
 
 Currently fielded robots either depend highly on their operators for objectives or plan with considerable global knowledge.  Operating in such conditions constrains them to rely on either remote human decision-making (requiring often impractical levels of situational awareness) or significant amounts of prior scouting, obviating the need to send a robotic agent.  These limitations are mirrored in existing literature, which fails to provide principled reasoning about what to investigate \emph{in situ} without such reliances.
 
-This paper presents an algorithm that addresses one common instance of such missions, in which objects or areas found in the environment lie within some respective class that is readily sensed, and each class possesses some underlying data distribution (e.g. spectral response or biochemical composition) that can only be sensed by activating the expensive specialized sensor.  The overall goal is to estimate the underlying distribution of each class with maximal accuracy.
+This paper proposes an algorithm that addresses one common instance of such missions, in which objects or areas found in the environment lie within some respective class that is readily sensed, and each class possesses some underlying data distribution (e.g. spectral response or biochemical composition) that can only be sensed by activating the expensive specialized sensor.  The overall goal is to estimate the underlying distribution of each class with maximal accuracy.
 
 For scientific realism and general applicability, no global information such as a prior map of sampling opportunities is available, sensing opportunities are assumed to arise nondeterministically (e.g. from classes present along a pre-determined trajectory or as currents draw objects past the robot), and the robot cannot return to objects it did not choose to sample.  Thus, the problem can be thought of as a stream of sensing opportunities providing varying reward (information about the underlying distribution of a class), each requiring a decision to sample or move on.
 
-The use of this algorithm is motivated by observations of human and animal behavior, exemplified by geologists making decisions about investigating local phenomena without prior access to detailed maps, in which they are able to effectively choose between sampling from materials in front of them or moving on to potentially more profitable sampling locations.  While these decisions may not be globally optimal, they do demonstrate an ability that is lacking in current exploration robots: to make decisions to stop and engage with the environment or to continue traveling in the hope of finding more informative sampling locations.
+The proposed algorithm draws on a combination of techniques from optimal foraging theory and sequential experiment selection.  Its use is motivated by observations of human and animal behavior, exemplified by geologists making decisions about investigating local phenomena without prior access to detailed maps, in which they are able to effectively choose between sampling from materials in front of them or moving on to potentially more profitable sampling locations.  While these decisions may not be globally optimal, they do demonstrate an ability that is lacking in current exploration robots: to make decisions to stop and engage with the environment or to continue traveling in the hope of finding more informative sampling locations.
 
-
+The remainder of this document begins with a brief survey of the relevant literature.  This is followed by a detailed comparison of the proposed foraging algorithm and one based upon existing principles from the so-called optimal design of experiments literature.  Finally, discussion of experimental results from a simulated exploration scenario indicates that under limitations on sample collection and overall mission time, the foraging algorithm presents a significant improvement for a realistic range of sampling costs.
 
 
 %Why did I do the work?
@@ -32,4 +32,12 @@ The use of this algorithm is motivated by observations of human and animal behav
 %	While these decisions may not be globally optimal they do demonstrate an ability that is lacking from exploration robots: to make decisions to stop and engage with the environment or to continue travelling in the hopes of finding more informative sampling locations.
 
 
-
+% Why did I do the work?
+% 	Robots exploring the world right now either depend highly on their controllers to give them objectives or they are planning with some global knowledge.  Operating in these kinds of conditions puts constraints on robot exploration opterations by relying on either humans to make decisions or a significant amount of scouting.
+% 	Relying on humans to make decisions means that remote operators require considerable bandwidth to acquire sufficient situational awareness.  Conducting sufficient reconnaissance to make good decisions often obviates the need to send a robotic agent.
+% 	What is lacking in the literature are robots that make decisions about what to investigate \emph{in situ} without reliance on humans and without necessarily having global knowledge.
+% 	
+% 	
+% What were the central motivations and hypotheses?
+% 	
+% 
