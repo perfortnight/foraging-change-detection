@@ -14,18 +14,28 @@ capabilities for the purposes of conducting scientific inquiry.
 
 This paper presents an algorithm that enables a robot scientist to use samples
 to investigate different classes of objects in order to learn the distribution
-underlying that class.  To reflect a science exploration mission the robot has
+underlying that class.  To reflect a science exploration mission in a truely unknown environment the robot has
 no global information and cannot return to objects it did not choose to sample.
 
-Why did I do the work?
-	Robots exploring the world right now either depend highly on their controllers to give them objectives or they are planning with some global knowledge.  Operating in these kinds of conditions puts constraints on robot exploration opterations by relying on either humans to make decisions or a significant amount of scouting.
-	Relying on humans to make decisions means that remote operators require considerable bandwidth to acquire sufficient situational awareness.  Conducting sufficient reconnaissance to make good decisions often obviates the need to send a robotic agent.
-	What is lacking in the literature are robots that make decisions about what to investigate \emph{in situ} without reliance on humans and without necessarily having global knowledge.
-	
-	
-What were the central motivations and hypotheses?
-	Animals, e.g. human geologists, make decisions about investigating phenomena in the world without necessarily having access to high resolution satellite imagery.  Despite this lack they are able to chose between sampling from materials in front of them and moving on to determine more profitable sampling locations.
-	While these decisions may not be globally optimal they do demonstrate an ability that is lacking from exploration robots: to make decisions to stop and engage with the environment or to continue travelling in the hopes of finding more informative sampling locations.
+Animals, e.g. human geologists, make decisions about investigating phenomena in the world without necessarily having access to high resolution satellite imagery.  Despite this lack they are able to chose between sampling from materials in front of them and moving on to determine more profitable sampling locations.  While these decisions may not be globally optimal they do demonstrate an ability that is lacking from exploration robots: to make decisions to stop and engage with the environment or to continue travelling in the hopes of finding more informative sampling locations without access to global knowledge.
+
+The paper presents a simulated transect -- a path long which the robot is exploring -- where there are a fixed number of classes of objects for the rover to understand.  Two algorithms are compared in the experiment.  One, the uniform algorithm, is based on principles from optimal design of experiments.  The other, called the foraging algorithm, is based on a combination of techniques from optimal foraging theory and sequential experiment selection and attempts to maximize the productivity of the robot.
+
+The limitations placed on the rovers are the cost in time to collect a sample and the over all time limit on the mission.  We see that for a wide range of sampling costs the foraging algorithm performs at least as good as the uniform algorithm.  For a plausible range of sampling costs the foraging algorithm presents a significant improvement over the uniform algorithm.
+
+The remainder of this document presents a brief survey of the relevant literature, describes the experiments and algorithms used in this paper, and presents the results of the experiment.  
 
 
 
+
+
+
+% Why did I do the work?
+% 	Robots exploring the world right now either depend highly on their controllers to give them objectives or they are planning with some global knowledge.  Operating in these kinds of conditions puts constraints on robot exploration opterations by relying on either humans to make decisions or a significant amount of scouting.
+% 	Relying on humans to make decisions means that remote operators require considerable bandwidth to acquire sufficient situational awareness.  Conducting sufficient reconnaissance to make good decisions often obviates the need to send a robotic agent.
+% 	What is lacking in the literature are robots that make decisions about what to investigate \emph{in situ} without reliance on humans and without necessarily having global knowledge.
+% 	
+% 	
+% What were the central motivations and hypotheses?
+% 	
+% 

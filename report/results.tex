@@ -2,10 +2,12 @@
 \label{sec:results}
 
 
-- Figure results.1: Overall error at the end of the trial with unlimited sampling and without weighing by the rarity (1/prob of occurrence) of the class
-- Figure results.2: overall error at the end of the trial with unlimited sampling and with weighing by the rarity of the class
-- Figure results.3: Overall performance when combining limited time and limited sample budgets.
 
+
+% - Figure results.1: Overall error at the end of the trial with unlimited sampling and without weighing by the rarity (1/prob of occurrence) of the class
+% - Figure results.2: overall error at the end of the trial with unlimited sampling and with weighing by the rarity of the class
+% - Figure results.3: Overall performance when combining limited time and limited sample budgets.
+% 
 % Different arrival rates and different distributions.
 
 % \begin{figure}[htpd]
@@ -16,23 +18,25 @@
 % \end{figure}
 % 
 
+In the experiment the sampling cost is varied from $0.001$ to $150$.  This is a considerable range given the total length of a transect is $1000$ units of time.  When the sampling cost is small, relative to the duration of the transect, the performance of the foraging algorithm is significantly better, as in Figure \ref{fig:err}.  For a portion at the higher end of the spectrum the uniform algorithm outperforms the foraging algorithm.  However at the extreme end the algorithms' performance converges.  
+
+At a sampling cost of 100 time units only ten sampling actions can be taken during a transect that lasts for 1000 time units.  In this case one would expect performance to be limited, as it is difficult to learn much about six different random variables with only ten samples.  
+
+
 % Accumulated Error 
 \begin{figure}[htpd!]
 	\centering
 	\def\svgwidth{\columnwidth}
 	\input{plot_err-vs-cost.pdf_tex}
-	\caption{For sampling costs that are small, relative to the duration of the transect, the foraging algorithm presents a significant improvement over the uniform algorithm.}
+	\caption{For sampling costs that are small, relative to the duration of the transect, the foraging algorithm presents a significant improvement over the uniform algorithm.  The shaded region covers $1.96\times$ the standard error from the 21 trials, approximating a frequentist 95\% confidence interval, to indicate the variablility of the algorithms' performance.}
 	\label{fig:err}
 \end{figure}
-
 
 \subsection{Analysis}
 
 For each of the twenty-one trials the agents were scored on the data they collected when given a fixed sampling cost.  For each sampling cost the performance was tested with a Bayesian paired t-test \cite{baath2014bayesian}.  The paired t-test returns an average difference between the paired trials as well as a 95\% credible interval around that difference.  We accept that the difference is non-zero when the credible interval does not contain 0.  
 
-Additionally the test described in \cite{baath2015bayesian} returns a measure of effect size.  It uses the ratio of the mean difference to the standard deviation of the difference between the tests.  This is a variation of Cohen's $d$ value\cite{cohen2013statistical}.  With this number we consider a value greater than 1.3 to be very large, above 0.8 to be significant and below 0.5 to be insignificant.  Table \ref{tbl:ttest} gives the results of the Bayesian paired t-test at different values of sampling cost.
-
-
+The test described in \cite{baath2015bayesian} also gives an effect size.  The effect size is the ratio of the mean to the standard deviation of the difference between the paired trials.  This is a variation of Cohen's $d$ value\cite{cohen2013statistical}.  With this number we consider a value greater than 1.3 to be very large, above 0.8 to be significant and below 0.5 to be insignificant.  Table \ref{tbl:ttest} gives the results of the Bayesian paired t-test at different values of sampling cost.
 
 \begin{table}[htpd!]
 	\centering
