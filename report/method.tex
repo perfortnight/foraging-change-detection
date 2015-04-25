@@ -78,7 +78,7 @@ reasonable approximation for shorter-range traverses.
 	% This is only relevant in the larger work.
 	% - figure method.3: texture cam, raw image and texture labelled image.
 
-	The experiment builds on prior work.  Here we present two algorithms that are being testing on the simulated transect described above.
+The experiment builds on the prior work in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  Here we present two algorithms that are being testing on the simulated transect described above.
 
 \subsubsection{Uniform Sampling}
 
@@ -97,20 +97,20 @@ sampled an equal number of times.
 
 The foraging algorithm is an attempt to maximize the productivity of the learning agent along the transect.  We attempt to maximize the number of bits learned per unit time.
 
-The reward for sampling a class is an analog for the definition of surprise as
-defined by the Koch et al {cite papers}.  Koch looked at the change in the
-distribution that resulted in a Bayesian update.  Because this work uses a
-non-parametric kernel density estimation we compare
+The reward for sampling a class is an analog for surprise as
+defined by the Koch et al \cite{itti2009bayesian}.  Koch looked at the change
+in the distribution that resulted in a Bayesian update.  Because this work
+uses a non-parametric kernel density estimation we compare
 $\log\left(\frac{\hat{p}(x|D\cup \left\{x\right\})}{\hat{p}(x|D)}\right)$.  To
 be compatiable with optimal foraging algorithms, specifically the Marginal
-Value Theorem of Charnov \cite{charnov1973optimal} the reward function must
+Value Theorem of Charnov \cite{charnov1973optimal}, the reward function must
 have dimishing returns.  In the case of information update the Bayes Factor
 will eventually converge to approximately 1, likewise our estimated empirical
 bayes factor.  We take the log of this approximation such that it converges to
-zero as more samples are collected.
+zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the diminishing rewards of sampling a distribution using our reward function.
 
 
-	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
+% 	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
 
 \begin{figure}[htpd!]
 	\centering
@@ -118,6 +118,16 @@ zero as more samples are collected.
 	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
 	\label{fig:reward}
 \end{figure}
+
+The unique innovation in this work is comparing the productivity of an action.  Previous work in foraging maintained the variables of interest in the same units, energy consumed or spent in searching for and extracting resouces.  To enable the foraging agent to compare actions we measure productivity as the average suprise experienced from a sample per unit of time spent to acquire that sample.  In keeping with foraging work of \cite{charnov1973optimal} and \cite{pirolli1999information} the agent decides to move on when the productivity of the current sample is less than the expected productivity of exploring the environment.  Namely the decision rule is:
+
+\begin{align*}
+	\frac{\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]}{t_{cost}} &\geq \frac{\mathbb{E}_{K}\left[\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]\right]}{\mathbb{E}_{K}\left[t_{interarrival(k)}\right] + t_{cost}}\\
+\end{align*}
+
+Where $\mathbb{E}_{T}\left[\cdot\right]$ is the empirical expected value over the history of samples the agent has taken, $\mathbb{E}_{K}\left[\cdot\right]$ is the empirical expected value over the different classes. $surprise_{t}(k)$ is the surprise due to the $t$-th sampling of a class $k$.  $t_{cost}$ is the sampling cost in time, and $t_{interarrival(k)}$ is the average interarrival time for a class as the rover has encountered them.
+
+
 
 	- Combining foraging models with bandit literature 
 		- The previous work on foraging assumed an inherent value to
