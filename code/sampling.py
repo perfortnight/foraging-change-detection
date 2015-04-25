@@ -2,6 +2,8 @@ import numpy as np
 from collections import Counter
 from scipy.stats import gaussian_kde
 
+import koch_reward
+
 # Considering two different foraging algorithms.
 # The first is one that considers the arrival times of each
 # different sampling type and computes the environment value that way
@@ -22,16 +24,23 @@ class ForagingSampling:
 		self.samples = {}
 	### end __init__
 
-	def dist_value(self,symbol):
+
+	def productivity(self,symbol):
+		'''
+		Computes the value of the individual symbols, hence not accounting for IAT
+		'''
+		return np.mean(self.rewards[symbol])/(np.mean(self.cost[symbol]))
+	### end value
+
+
+	def dist_productivity(self,symbol):
 		# Consider predicting the next reward from the previous one.
 		# Should be able to learn a curve here.
 		return np.mean(self.rewards[symbol])/(np.mean(self.symbol_iat[symbol]) + np.mean(self.cost[symbol]))
-	### end value
+	### end dist_value
 
-	def value(self,symbol):
-		return np.mean(self.rewards[symbol])/np.mean(self.cost[symbol])
 
-	def env_value(self):
+	def env_productivity(self):
 		# should this be:
 		# rate_{symb} = avg_{symb}[value]/(avg_{symb}[iat]+sampling_time)
 		# We want this one ultimately:
@@ -40,7 +49,7 @@ class ForagingSampling:
 		# The other alternative would be avg_{symb}[value]/(avg[iat] + avg_{symb}[sampling_time])
 		# where we learn the probability of which symbol we'd encounter at any given time.
 		num_keys = len(self.samples.keys())
-		result = np.mean([self.dist_value(key) for key in self.samples.keys()])
+		result = np.mean([self.dist_productivity(key) for key in self.samples.keys()])
 		return result
 	### end env_value
 
@@ -57,10 +66,11 @@ class ForagingSampling:
 			retval = 'sample'
 		else:
 			sampling_cost = np.mean(self.cost[symb])
-			symbol_value = self.value(symb)
-			env_value = self.env_value()
+			symbol_value = self.productivity(symb)
+			env_value = self.env_productivity()
 # 			print symbol_value,sampling_cost, env_value
-			if symbol_value/sampling_cost >= env_value:
+# 			print symbol_value,env_value
+			if symbol_value >= env_value:
 				retval = 'sample'
 			### end
 
@@ -82,28 +92,13 @@ class ForagingSampling:
 		# In the default case we have to show some improvement.
 		# Make it the same for all of them so they have the same
 		# starting point, why not?
-		before = lambda x: 0.0000001
-		after = lambda x: 0.00001
-		if len(self.samples[symb]) > 1:
-			try:
-				before = gaussian_kde(self.samples[symb])
-# 			except (RuntimeError,TypeError,NameError,ValueError):
-			except np.linalg.linalg.LinAlgError:
-				print 'Before singular matrix:'
-				print self.samples
-		### end if
-		self.samples[symb].append(val)
-		if len(self.samples[symb]) > 1:
-			try:
-				after = gaussian_kde(self.samples[symb])
-# 			except (RuntimeError,TypeError,NameError,ValueError):
-			except np.linalg.linalg.LinAlgError:
-				print 'After singular matrix:'
-				print self.samples
-		### end if
 
-		reward = np.log(after(val)/before(val))
-		print symb, reward
+		len_before = len(self.samples[symb])
+		reward = koch_reward.reward(self.samples[symb],val)
+		len_after = len(self.samples[symb])
+		assert(len_before != len_after)
+
+# 		print symb, reward
 		### end if
 		self.rewards[symb].append(reward)
 
@@ -137,6 +132,41 @@ class UniformSampling:
 			retval = 'sample'
 			self.samples_taken += 1
 		### end 
+		return retval
+	### end query
+
+	def update(self,time,symb,val,cost):
+		self.current_time += cost
+		self.distribution.update([symb])
+		if not symb in self.samples.keys():
+			self.samples[symb] = []
+		### end
+		#print symb, self.samples[symb]
+		self.samples[symb].append(val)
+	### end update
+
+### end class UniformSampling
+
+class ExhaustiveSampling:
+	def __init__(self):
+		self.symbols = []
+		self.distribution = Counter()
+		self.samples_taken = 0
+		self.samples= {}
+		self.current_time = 0.
+	### end __init__
+
+	def __call__(self,time,symb):
+		retval = 'sample' 
+		self.current_time += time
+	
+# 		if len(self.distribution.values()) == 0:
+# 			retval = 'sample'
+# 		elif (self.distribution[symb] < max(self.distribution.values()) or \
+# 				  self.distribution[symb] == min(self.distribution.values()) ):
+# 			retval = 'sample'
+# 			self.samples_taken += 1
+# 		### end 
 		return retval
 	### end query
 

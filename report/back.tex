@@ -1,44 +1,166 @@
 \section{Background}
 \label{sec:background}
 
-	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
-			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
-			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+Automating experiment design is not without precedent.  Kristine Smith started the field of optimal experiment design in 1918 \cite{smith1918standard}.
+It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
-	Who else has done what?
 
-	- Work in the 1970's about foraging.  About making value judgements.
-		- Key point from Charnov's work is that there has to be diminishing returns
-		for extracting from a field (specifically towards an asymptote)
-		- Different from our setting is that diminishing your reward in one area 
-		contributes to diminishing your reward elsewhere. It isn't like picking
-		apples off one tree, and finding a new tree with unpicked apples.
+% 	Who else has done what?
+% 
+% - Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
+% 
+% 	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
+% 	- See also maximum entropy sampling
+% 	- See also mutual information sampling.
+% - Also consider active learning solutions (they all end up being the same anyway)
+% 
+% 	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
+% 	1. match templates.
+% 	2. seek improbable things.
+% 	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
+% 
+% 	1 and 2 say nothing about the information content of the material under investigation.
+% 	3 does not have the level of autonomy that we need for truly long-term or remote operations.
+% 
+% 	How?
+% 
+% 	What have we previously done:
+% 	- D.R. Thompson's work
+% 	- Only looking at satellite imagery.  Good but not sufficient.
+% 	- Trey's work
+% 	- Using POMDPs not scalable to a planet.
+% 	- Mine. Where does my previous work fall short?
+% - Not bayesian (not a big deal?)
+% 	- Still has the problem on knowing the number of sampling opportunities remaining.
 
-- Evidence that humans make (approximately) rational decisions (we over and under estimate low and high probabilities)
+\subsection{The Secretary Problem}
 
-	- Design of experiments has led to (amongst other things) multi-armed bandit models of sequential experiment design.
-	- See also maximum entropy sampling
-	- See also mutual information sampling.
-- Also consider active learning solutions (they all end up being the same anyway)
+The secretary problem\footnote{Also known as the fiance problem or the game of
+Googol} asks a decision maker to select the best candidate from sequentially
+presented candidates where it is not possible to return to previously rejected
+candidates.  In the original setting there is only one position to for the
+candidate to fill \cite{ferguson1989solved}, and the optimal strategy is to
+reject the first $\frac{N}{e}$ candidates and then take the first candidate who
+is ranked better than any of the previously seen candidates or hte final
+candidate.  In the original setting the decision maker was able to objectively
+rank the candidates.   
 
-	- Robotics research has made robots that conduct exploration, but the only ones that make decisions about whether to investigate something or not do one of three things:
-	1. match templates.
-	2. seek improbable things.
-	3. Engage in opportunistic science - they do something if they have the time.  They don't override human mission objectives.
+There have been many variations on this problem including selecting multiple
+candidates \cite{vanderbei1980optimal}, or when the total number of candidates
+is random \cite{presman1972best}, for more variations \cite{ferguson1989solved}
+is an excellent source.  What distinguishes the secretary problem from the
+science autonomy problem we propose is that we do not know the value of a
+candidate, or class, when we encounter it.  Additionally repeatedly sampling
+the same class decreases the value to the decision maker. 
 
-	1 and 2 say nothing about the information content of the material under investigation.
-	3 does not have the level of autonomy that we need for truly long-term or remote operations.
 
-	How?
+% 		- Secretary problem
+% 			- They know what the value of their choice is, in many cases.
+% 			- They know how many candidates there are.
+% 			- We have rates of arrival, they just have a queue.
+% 			- While our sampling time cost implies an upper bound on the number of 
+% 			candidates we don't have a lower bound necessarily.
+% 
+% 			\cite{ferguson1989solved}, \cite{presman1972best}, \cite{vanderbei1980optimal}
 
-	What have we previously done:
-	- D.R. Thompson's work
-	- Only looking at satellite imagery.  Good but not sufficient.
-	- Trey's work
-	- Using POMDPs not scalable to a planet.
-	- Mine. Where does my previous work fall short?
-- Not bayesian (not a big deal?)
-	- Still has the problem on knowing the number of sampling opportunities remaining.
+\subsection{Multi-armed bandits}
+
+Sequential experiment selection, a type of active learning, is addressed in the
+multi-armed bandit literature.  The multi-armed bandit was introduced in
+\cite{robbins1952some} as a means of sequentially selecting which experiments
+to conduct with a limited budget.  In Robbins' work \cite{robbins1952some}
+selecting experiments is modelled on determining the payouts of one-armed
+bandit machines -- each machine represents a different experiment.  The player
+has a fixed sampling budget and has to sequentially choose which machine to
+play, trading off exploiting the expected rewards for the different arms and
+exploring the different arms learning more accurately the payouts of those
+arms.  
+
+Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
+Bound (UCB) rule which values sampling opportunities with the sum of the
+expected reward for a sampling opportunity and a term that tries to balance the
+samples amongst all types of sampling opportunities.
+
+$$
+Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
+$$
+
+Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of
+times $i$ has been sampled, and $T$ is the total number of samples distributed.
+Work on proving the bounds of this algorithm has been continued by Agarawal
+\cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
+
+
+Other approaches to the bandit problem use reward plus the uncertainty of that
+reward to indicate value.  We see this in the work of Burnetas and Katehakis
+\cite{burnetas1997optimal} and Auer \cite{auer2003using}.  This is a sentiment
+seen in other work, like the optimistic planners of Jurgen Schmidhuber's group
+\cite{schmidhuber1997what,schmidhuber2003exploring,schmidhuber2009simple,sun2011planning}.
+They choose actions that maximize the expected information gain with respect to
+some model they are learning.  The most valuable actions are the ones that
+result in the greatest shift in the distribution the learner is building.
+
+Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
+requesting samples from the input space with the greatest classification
+error.  Classification error and uncertainty in function value
+are fungible quantities in this case.  An analogy can be drawn between
+the classifiers used in \cite{balcan2006agnostic} and the bandit arms used by
+Auer and Ortner\cite{auer2010ucb}.
+
+% 		- Multi-armed bandit
+% 			- Assumes you can access any arm at any time
+% 			- Many settings don't have a switching cost between arms.
+% 			- Gittins showed that if you have a switching cost and diminishing returns you can solve the problem.
+% 			- We say is we will be randomly assigned an arm and a switching cost.
+
+There are a number of distinguishing factors between the multi-armed bandit
+(MAB) setting and the setting explored in this paper.  First, in MAB the agent
+has access to any arm it chooses at any given time.  The arms in MAB are
+analogous to the classes in our setting.  The agent in our setting does not get
+to choose which of the classes it can investigate.  Any previously seen classes
+are no longer available and new classes are randomly assigned.  Additionally
+the standard MAB setting does not have switching costs, although there are some
+formulations which do account for switching costs
+\cite{switchingBanditPapersFindOne}.  In our setting there is a cost incurred
+with every choice to continue exploring, and it is a function of the arrival
+rates of the different classes.
+
+\subsection{Optimal Foraging}
+
+Foraging is the problem encountered by animals seeking to maximize the intake
+of energy when operating in an unknown environment.  The central question to
+solving the problem is: Is it more valuable to continue extracting resources
+from the current location or to seek out new locations to extract resources
+from?  Charnov introduced a technique for dealing with what he called
+``patchy'' environments, where there are localized regions that contain
+different classes of resources \cite{charnov1973optimal},
+\cite{charnov1976optimal}.  The forager can extract value from these patches,
+with diminishing returns, or choose to continue to wander randomly through the
+environment in the hopes of encountering a more valuable location.
+
+The time to leave the environment, according to the Marignal Value Theorem
+\cite{charnov1973optimal}, was when the expected return from continuing to
+sample from this patch is less than the expected return from wandering in the
+environment.  In this formulation the expected return from both the current
+patch and the environment are offset by the cost of extracting resources in
+this patch as well as the energy spent seeking a new patch to extract resources
+from.
+
+% 	- Work in the 1970's about foraging.  About making value judgements.  - Key
+% 	point from Charnov's work is that there has to be diminishing returns for
+% 	extracting from a field (specifically towards an asymptote) - Different from
+% 	our setting is that diminishing your reward in one area contributes to
+% 	diminishing your reward elsewhere. It isn't like picking apples off one tree,
+% 	and finding a new tree with unpicked apples.
+% 	\cite{charnov1973optimal},\cite{charnov1976optimal}.
+ 
+
+
+\cite{pirolli1999information} introduced a model of researchers attempting to
+acquire information.  They modelled the rate of information gain and had their
+agent decide to leave the patch they were in when the rate of information gain
+was lower than that of the environment.  What differentiates their setting from
+ours is TODO
 
 	- Piroli 1999 - has come up with a very similar formulation as the one that 
 		Mike and I came up with.
@@ -53,4 +175,81 @@
 				- This means that we could keep different distributions of classes per 
 					environment.
 
+\cite{kolling2012neural} studies how humans engage in a gambling task where
+they have to consider the option they have before them and the opportunities
+the environment provides.  In the described experiment subjects were repeatedly
+presented with a choice of playing a gambling game or being randomly presented
+with a different game.  Each game was a Bernoulli trial with some unknown
+probability of success.  Kolling \emph{et al.} identify possible neural
+substrates for foraging decision making in humans.  The behaviour was near
+optimal, with some skewing of probabilities at the extreme ends of the scale,
+i.e. $p \approx 0$ or $p \approx 1$.
 
+
+\subsection{Science Autonomy}
+
+	- Yeorger (sp?) WHOI or MBARI has exactly this setup as a problem.
+	- Thompson, Asher Bender and Stephane Williams Group
+			- making selections based on maps.  
+			- Maximum entropy/mutual information smapling.
+			- They assume global knowledge, we don't have that.  It is reasonable
+			in many settings of interest, can reduce cost.
+
+Thompson and Wettergreen \cite{thompson2008intelligent} maximize diversity of
+collected samples by using mutual information sampling.  This approach ensures
+diversity in the collected sample set, an act that reduces uncertainty in the
+input space of a function.  Neither mutual information nor maximum entropy
+sampling methods, when used with stationary Gaussian processes, take into
+account the dependent variable when selecting samples.  
+
+
+\cite{bender2013autonomous} makes a modification to the work of
+\cite{thompson2008intelligent}, in that it uses Gaussian processes to
+identified hypothesized distributions of life across the sea floor to direct
+exploratory actions.  The prior maps were generated by vessels passing over the
+sea floor prior to the robot's exploration mission, not unlike using satellite
+imagery in \cite{thompson2008intelligent}.  The advance of
+\cite{bender2013autonomous} is that it uses \emph{in situ} measurements to
+update the Gaussian process it is learning.  Bender \emph{et al.}'s rover can
+be said to be generating and testing hypotheses.  However they are severely
+limited by a budgeting size of six ``gulpers'' -- devices for collecting
+seawater samples.
+
+
+	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
+			- opportunistic science only takes advantage of what is immediately availble to the robot and with surplus sampling budget.
+			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
+
+
+In \cite{gridhar2013autonomous} and \cite{girdhar2013Aautonomous} Girdhar
+\emph{et al.} present an approach to autonomous exploration where the robot
+investigates a scene when it encounters phenomena that do not reflect its
+current model of the world.  Specifically they use topic models to describe
+scenes, and when they encounter scenes that do not fit into the topic models
+they have constructed.  In these works the vehicle has no limit on its sampling
+capacity and is always collecting data.  By slowing the vehicle down more
+samples are collected in anomalous scenes.  In this fashion this is very
+similar to the work in \cite{thompson2013adaptive}.
+
+Additionally Girdhar \emph{et al.} use their anomaly detection techniques in
+\cite{girdhar2013autonomous} to develop a path planning method to maximize
+information gain of paths \cite{girdhar2014curiosity}.  In that respect it is
+belongs with the family of curiosity-driven algorithms pioneered by
+Schmidh{\"u}ber \emph{et al.} \cite{schmidhuber1997what},
+\cite{schmidhuber2003exploring}, \cite{schmidhuber2009simple},
+\cite{sun2011planning}.  The fundamental concept behind these approaches is
+that an explorer should spend their time investigating regions of the world (or
+hypothesis space) where their models are the least certain.
+
+\subsubsection{Our Prior Work}
+		- Apply optimal foraging, specifically Charnov's marginal value theorem
+		model of foraging to the problem of science autonomy* in the following setting:	
+			- Limited sampling budget
+			- Attempting to learn distributions not acquire quantities of some object.
+			- Trying to learn information objectively without an objective. 
+			- Can't know the reward until you sample.
+			- It's a fusion of bandits and foraging.  The fact that we are focusing on gaining information gives us diminishing returns which lets us use 
+			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
+			- Don't have the choice of what objects you encounter.
+
+As seen above real robots may not be able to predict the rewards they will earn from their actions and have to deal with unreliable arrival rates for sampling opportunities.  These are concerns that are not modelled in typical sequential experiment selection algorithms such as the Multi-armed bandit or secretary problems.  This motivates the problem setting used in this paper, and that describe in detail in the following section.

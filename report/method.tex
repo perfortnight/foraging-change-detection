@@ -24,17 +24,16 @@ The primary objective of the robot is to learn distributions behind different
 classes of objects.  For example they may be the probability distribution
 governing the density of sub surface microbial life in different classes of
 soil.  Previous work have identified that texture information can successfully
-classify different types of soil material \cite{trey_and_thompson_image_return_paper}.
+classify different types of soil material \cite{dunlop2006automatic}.  
 We imagine that the classes of objects in
 this research could correspond to those soil classes.
-
 
 
 \subsection{Experiment}
 
 The experiment presented in this paper is a modification of the experiments
-presented in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  In the
-prior work agents were equipped with limited sampling budgets.  In this
+presented in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  In
+the prior work agents were equipped with limited sampling budgets.  In this
 experiment the agents have an unlimited capacity to take samples, but the time
 to take the sample is non-zero and there is an overall limit on the duration of
 the mission.
@@ -62,15 +61,23 @@ reasonable approximation for shorter-range traverses.
 
 	The experiment builds on prior work.  Here we present three algorithms that are being testing on the simulated transect described above.
 
+\subsubsection{Exhaustive Sampling}
+
+The Exhaustive Sampling algorithm samples at every opportunity until the time limit on the mission expires.
+
+
 \subsubsection{Uniform Sampling}
 
 The Uniform Sampling algorithm attempts to distribute the number of samples it
 can collect evenly between the different types of objects present on the
 transect.  This is chosen because it was a robustly successful algorithm, as
-seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014isairas}.
+seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014budgeting}.
 
 The Uniform Sampling algorithm does not consider the time remaining in the
-transect, nor the time to complete sampling.
+transect, nor the time to complete sampling.  In this setting the algorithm
+chooses to sample a class either if it does not have the most samples of all
+the encountered classes or if is the max and all other classes have been
+sampled an equal number of times.
 
 \subsubsection{Foraging}
 
@@ -90,6 +97,13 @@ zero as more samples are collected.
 
 
 	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
+
+\begin{figure}[htpd!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/cumulative-reward.png}
+	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
+	\label{fig:reward}
+\end{figure}
 
 	- Combining foraging models with bandit literature 
 		- The previous work on foraging assumed an inherent value to

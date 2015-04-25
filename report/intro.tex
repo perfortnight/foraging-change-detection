@@ -2,18 +2,30 @@
 \section{Introduction}
 \label{sec:intro}
 
-\begin{enumerate}
-\item Why did I do the work?
+Human scientists have become accustomed to such luxuries as breathing, eating
+and drinking, and enduring atmospheric and gravitational forces that do not
+vary signficantly from ``1''.  Consequently robots have become our scientific
+surrogates as we peer into the depths of the ocean or into our solar
+neighbourhood.  Travelling to these regions puts stresses on communications
+links which in turn limits the situational awarness and reaction times of the
+scientists controlling the robot.  For this reason it is important to increase
+the ability of robots to make decisions about how to deploy their sampling
+capabilities for the purposes of conducting scientific inquiry.
+
+This paper presents an algorithm that enables a robot scientist to use samples
+to investigate different classes of objects in order to learn the distribution
+underlying that class.  To reflect a science exploration mission the robot has
+no global information and cannot return to objects it did not choose to sample.
+
+Why did I do the work?
 	Robots exploring the world right now either depend highly on their controllers to give them objectives or they are planning with some global knowledge.  Operating in these kinds of conditions puts constraints on robot exploration opterations by relying on either humans to make decisions or a significant amount of scouting.
-
 	Relying on humans to make decisions means that remote operators require considerable bandwidth to acquire sufficient situational awareness.  Conducting sufficient reconnaissance to make good decisions often obviates the need to send a robotic agent.
-
 	What is lacking in the literature are robots that make decisions about what to investigate \emph{in situ} without reliance on humans and without necessarily having global knowledge.
-	\item What were the central motivations and hypotheses?
+	
+	
+What were the central motivations and hypotheses?
 	Animals, e.g. human geologists, make decisions about investigating phenomena in the world without necessarily having access to high resolution satellite imagery.  Despite this lack they are able to chose between sampling from materials in front of them and moving on to determine more profitable sampling locations.
-
 	While these decisions may not be globally optimal they do demonstrate an ability that is lacking from exploration robots: to make decisions to stop and engage with the environment or to continue travelling in the hopes of finding more informative sampling locations.
-	\end{enumerate}
 
 
 
