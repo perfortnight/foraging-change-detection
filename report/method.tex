@@ -118,7 +118,9 @@ zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the di
 
 \begin{figure}[htpd!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{images/cumulative-reward.png}
+	\def\svgwidth{\columnwidth}
+% 	\includegraphics[width=0.7\textwidth]{images/cumulative-reward.png}
+	\input{cumulative-reward.pdf_tex}
 	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
 	\label{fig:reward}
 \end{figure}
