@@ -5,12 +5,7 @@ The decision making agents in this paper are tested on several randomly
 generated transects.  They are repeatedly presented with an object to sample
 and have to make the choice to either take a sample or continue travelling
 along the transect.  Like the Robbins' secretary problem the agents are not
-permitted to backtrack to avail of a previous opportunity.
-
-
-Figure \ref{fig:transect} gives an example of a simulated transect. As we can
-see there are sampling opportunities of different types scattered along the
-path that the robot travels along.  
+permitted to backtrack to avail of a previous opportunity.  Figure \ref{fig:transect} gives an example of a simulated transect. Sampling opportunities of different types are scattered along the path that the robot travels.  
 
 \begin{figure}[htpd!]
 	\centering 
@@ -25,8 +20,7 @@ classes of objects.  For example they may be the probability distribution
 governing the density of sub surface microbial life in different classes of
 soil.  Previous work have identified that texture information can successfully
 classify different types of soil material \cite{dunlop2006automatic}.  
-We imagine that the classes of objects in
-this research could correspond to those soil classes.
+We imagine that the classes of objects in this research could correspond to those soil classes.
 
 
 \subsection{Experiment}
@@ -42,10 +36,8 @@ experiment the agents have an unlimited capacity to take samples, but the time
 to take the sample is non-zero and there is an overall limit on the duration of
 the mission.  The sampling cost and the overall mission time is given in units of arbitrary time.
 
-As with the previous experiments the agents are not permitted to back track in
-the hopes of getting a better opportunity.  The primary reason is to constantly
-drive the robot to the end of its exploration mission.  Coverage is an
-important part of exploration and permitting.  Additionally making decisions
+As with the previous experiments agents are not permitted to back track to previously seen objects.  Disallowing backtracking drives the robot to the end of the transect, as maximizing coverage is an
+important part of exploration.  Additionally, making decisions
 between a current opportunity, a hypothetical future, and any number of
 previously seen but unsampled opportunities is considered a more complex
 problem and outside the scope of this paper.
@@ -55,7 +47,7 @@ encounter.  They each have their own arrival rate and their appearance along
 the transect are generated with a poisson process.  In this paper the arrival
 rates of the different sampling opportunities do not change over the course of
 the experiment.  While this is almost certainly not the case for long range
-traversals like those seen in the Life in the Atacama Desert Project it is a
+traversals like those seen in the Life in the Atacama Desert project it is a
 reasonable approximation for shorter-range traverses.
 
 \begin{table}[htpd!]
@@ -76,6 +68,12 @@ reasonable approximation for shorter-range traverses.
 	\caption{The classes the robot is investigating all have values derived from Gaussian random variables with means and standard deviation given.  Different instances of those classes are encountered in accordance to a Poisson process with the rates specified in the above table.  The units of the distribution's mean and variance can be ignored for the purposes of this experiment.  The arrival rate in this experiment is given in units of arbitrary time.  All time quantities -- arrival rate, mission time, and sampling cost -- can be scaled to the order of the mission at hand.}
 	\label{tbl:classes}
 \end{table}
+
+It is the objective of the robot to learn the distritubions in Table \ref{tbl:classes}.  The algorithms' performance is scored on the L1 difference between the true and learned distribution, $p_k$ and $\hat{p}_k$, respectively.  Limits on the integral are placed keep the integration time reasonably small.  The integral of the L1 distance was chosen instead of the more usual KL divergence to permit a finite error measure in the case of a class never being observed.
+
+\begin{align*}
+	score &= \sum_{k=1}^{K} \int_{\mu_{k}-4\sigma_{k}}^{\mu_{k}+4\sigma_{k}} \left| p_{k}(x) - \hat{p}_{k}(x)\right| dx\\
+\end{align*}
 
 \subsection{Algorithms}
 
@@ -107,7 +105,7 @@ in the distribution that resulted in a Bayesian update.  Because this work
 uses a non-parametric kernel density estimation we compare
 $\log\left(\frac{\hat{p}(x|D\cup \left\{x\right\})}{\hat{p}(x|D)}\right)$.  To
 be compatiable with optimal foraging algorithms, specifically the Marginal
-Value Theorem of Charnov \cite{charnov1973optimal}, the reward function must
+Value Theorem of Charnov \cite{charnov1976optimal}, the reward function must
 have dimishing returns.  In the case of information update the Bayes Factor
 will eventually converge to approximately 1, likewise our estimated empirical
 bayes factor.  We take the log of this approximation such that it converges to
@@ -116,16 +114,16 @@ zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the di
 
 % 	- figure method.2: The reward function as samples are given to it, for two or three different distributions.
 
-\begin{figure}[htpd!]
+\begin{figure}%[htpd!]
 	\centering
-	\def\svgwidth{\columnwidth}
+	\def\svgwidth{0.8\columnwidth}
 % 	\includegraphics[width=0.7\textwidth]{images/cumulative-reward.png}
 	\input{cumulative-reward.pdf_tex}
-	\caption{The reward function plotted is the cumulative reward for sampling from a Gaussian distribution with mean 0 and variance 1.  The cumulative reward is averaged over five trials of 4000 samples.  As the number of samples from a distribution is increased the amount of information gained is reduced.  The reward at any point in time can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of incorporating that value into the learned distribution.  It is important to note that the returns of this reward function decrease with the time spent sampling a particular random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1973optimal}.}
+	\caption{The reward function plotted is the cumulative reward for sampling from a uniform distribution over $\left[0,1\right]$.  The cumulative reward is averaged over five trials of 4000 samples.  Increasing the number of samples from a distribution decreases the information gained per sample.  The reward can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of adding that value to the learned distribution.  The returns of the reward function diminish with more samples from the random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1976optimal}.}
 	\label{fig:reward}
 \end{figure}
 
-The unique innovation in this work is comparing the productivity of an action.  Previous work in foraging maintained the variables of interest in the same units, energy consumed or spent in searching for and extracting resouces.  To enable the foraging agent to compare actions we measure productivity as the average suprise experienced from a sample per unit of time spent to acquire that sample.  In keeping with foraging work of \cite{charnov1973optimal} and \cite{pirolli1999information} the agent decides to move on when the productivity of the current sample is less than the expected productivity of exploring the environment.  Namely the decision rule is:
+The innovation in this work is valuing actions in terms of productivity .  Previous work in foraging maintained the variables of interest in the same units, energy consumed or spent in searching for and extracting resouces.  To enable the foraging agent to compare actions we measure productivity as the average suprise experienced from a sample per unit of time spent to acquire that sample.  In keeping with foraging work of \cite{charnov1976optimal} and \cite{pirolli1999information} the agent decides to move on when the productivity of the current sample is less than the expected productivity of exploring the environment.  Namely the decision rule is:
 
 \begin{align*}
 	\frac{\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]}{t_{cost}} &\geq \frac{\mathbb{E}_{K}\left[\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]\right]}{\mathbb{E}_{K}\left[t_{interarrival(k)}\right] + t_{cost}}\\

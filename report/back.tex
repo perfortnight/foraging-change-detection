@@ -12,20 +12,20 @@ It is only recently that robots have been employed to conduct scientific explora
 
 The secretary problem asks a decision maker to select the best candidate from
 sequentially presented candidates where it is not possible to return to
-previously rejected candidates.  In the original setting there is only one
+rejected candidates.  In the original setting there is only one
 position to for the candidate to fill \cite{ferguson1989solved}, and the
 optimal strategy is to reject the first $\frac{N}{e}$ candidates and then take
 the first candidate who is ranked better than any of the previously seen
 candidates or hte final candidate.  In the original setting the decision maker
-was able to objectively rank the candidates.   
+was able to objectively rank the candidates without cost.  In our setting we do not know the value until sampling, and sampling a class incurrs a sampling cost.
 
-There have been many variations on this problem including selecting multiple
-candidates \cite{vanderbei1980optimal}, or when the total number of candidates
-is random \cite{presman1972best}, for more variations \cite{ferguson1989solved}
-is an excellent source.  What distinguishes the secretary problem from the
-science autonomy problem we propose is that we do not know the value of a
-candidate, or class, when we encounter it.  Additionally repeatedly sampling
-the same class decreases the value to the decision maker. 
+% There have been many variations on this problem including selecting multiple
+% candidates \cite{vanderbei1980optimal}, or when the total number of candidates
+% is random \cite{presman1972best}, for more variations \cite{ferguson1989solved}
+% is an excellent source.  What distinguishes the secretary problem from the
+% science autonomy problem we propose is that we do not know the value of a
+% candidate, or class, when we encounter it.  Additionally repeatedly sampling
+% the same class decreases the value to the decision maker. 
 
 \subsection{Multi-armed bandits}
 
@@ -36,41 +36,44 @@ to conduct with a limited budget.  In Robbins' work \cite{robbins1952some}
 selecting experiments is modelled on determining the payouts of one-armed
 bandit machines -- each machine represents a different experiment.  The player
 has a fixed sampling budget and has to sequentially choose which machine to
-play, trading off exploiting the expected rewards for the different arms and
-exploring the different arms learning more accurately the payouts of those
+play, trading off exploiting expected rewards for different arms and
+exploring different arms, learning more accurately the payouts of those
 arms.  
 
-Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
-Bound (UCB) rule which values sampling opportunities with the sum of the
-expected reward for a sampling opportunity and a term that tries to balance the
-samples amongst all types of sampling opportunities.
 
-$$
-Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
-$$
+Lai \emph{et al.} use a value function that sums the mean and the standard deviation of rewards for an arm, more uncertainty makes an arm more interesting.  Other techniques addressing the exploration/exploitation problem use uncertainty in a reward metric \cite{burnetas1997optimal}, \cite{auer2003using},\cite{balcan2006agnostic}.  In our setting, because the agent only needs to learn the distribution and not use it for anything uncertainty is the only necessary reward.
 
-Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of
-times $i$ has been sampled, and $T$ is the total number of samples distributed.
-Work on proving the bounds of this algorithm has been continued by Agarawal
-\cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
-
-
-Other approaches to the bandit problem use reward plus the uncertainty of that
-reward to indicate value.  We see this in the work of Burnetas and Katehakis
-\cite{burnetas1997optimal} and Auer \cite{auer2003using}.  This is a sentiment
-seen in other work, like the optimistic planners of Jurgen Schmidhuber's group
-\cite{schmidhuber1997what,schmidhuber2003exploring,schmidhuber2009simple,sun2011planning}.
-They choose actions that maximize the expected information gain with respect to
-some model they are learning.  The most valuable actions are the ones that
-result in the greatest shift in the distribution the learner is building.
-
-% This paragraph can go.
-Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
-requesting samples from the input space with the greatest classification
-error.  Classification error and uncertainty in function value
-are fungible quantities in this case.  An analogy can be drawn between
-the classifiers used in \cite{balcan2006agnostic} and the bandit arms used by
-Auer and Ortner\cite{auer2010ucb}.
+% Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
+% Bound (UCB) rule which values sampling opportunities with the sum of the
+% expected reward for a sampling opportunity and a term that tries to balance the
+% samples amongst all types of sampling opportunities.
+% 
+% $$
+% Value = \mathbb{E}\left[R_i\right] + \sqrt{\frac{2\ln t_i}{T}}
+% $$
+% 
+% Where $R_i$ is the reward for sampling opportunity $i$, $t_i$ is the number of
+% times $i$ has been sampled, and $T$ is the total number of samples distributed.
+% Work on proving the bounds of this algorithm has been continued by Agarawal
+% \cite{agrawal1995sample} and Auer and Ortner\cite{auer2010ucb}.  
+% 
+% 
+% Other approaches to the bandit problem use reward plus the uncertainty of that
+% reward to indicate value.  We see this in the work of Burnetas and Katehakis
+% \cite{burnetas1997optimal} and Auer \cite{auer2003using}.  This is a sentiment
+% seen in other work, like the optimistic planners of Jurgen Schmidhuber's group
+% \cite{schmidhuber1997what,schmidhuber2003exploring,schmidhuber2009simple,sun2011planning}.
+% They choose actions that maximize the expected information gain with respect to
+% some model they are learning.  The most valuable actions are the ones that
+% result in the greatest shift in the distribution the learner is building.
+% 
+% % This paragraph can go.
+% Balcan \cite{balcan2006agnostic} presents a method for learning classifiers by
+% requesting samples from the input space with the greatest classification
+% error.  Classification error and uncertainty in function value
+% are fungible quantities in this case.  An analogy can be drawn between
+% the classifiers used in \cite{balcan2006agnostic} and the bandit arms used by
+% Auer and Ortner\cite{auer2010ucb}.
 
 % 		- Multi-armed bandit
 % 			- Assumes you can access any arm at any time
@@ -79,7 +82,7 @@ Auer and Ortner\cite{auer2010ucb}.
 % 			- We say is we will be randomly assigned an arm and a switching cost.
 
 There are a number of distinguishing factors between the multi-armed bandit
-(MAB) setting and the setting explored in this paper.  First, in MAB the agent
+(MAB) setting and the problem explored in this paper.  First, in MAB the agent
 has access to any arm it chooses at any given time.  The arms in MAB are
 analogous to the classes in our setting.  The agent in our setting does not get
 to choose which of the classes it can investigate.  Any previously seen classes
@@ -98,13 +101,13 @@ solving the problem is: Is it more valuable to continue extracting resources
 from the current location or to seek out new locations to extract resources
 from?  Charnov introduced a technique for dealing with what he called
 ``patchy'' environments, where there are localized regions that contain
-different classes of resources \cite{charnov1973optimal},
-\cite{charnov1976optimal}.  The forager can extract value from these patches,
-with diminishing returns, or choose to continue to wander randomly through the
-environment in the hopes of encountering a more valuable location.
+different classes of resources \cite{charnov1976optimal}.  The forager can
+extract value from these patches, with diminishing returns, or choose to
+continue to wander randomly through the environment in the hopes of
+encountering a more valuable location.
 
 The time to leave the environment, according to the Marignal Value Theorem
-\cite{charnov1973optimal}, was when the expected return from continuing to
+\cite{charnov1976optimal}, was when the expected return from continuing to
 sample from this patch is less than the expected return from wandering in the
 environment.  In this formulation the expected return from both the current
 patch and the environment are offset by the cost of extracting resources in
@@ -117,7 +120,7 @@ from.
 % 	our setting is that diminishing your reward in one area contributes to
 % 	diminishing your reward elsewhere. It isn't like picking apples off one tree,
 % 	and finding a new tree with unpicked apples.
-% 	\cite{charnov1973optimal},\cite{charnov1976optimal}.
+% 	\cite{charnov1976optimal}.
  
 
 
@@ -190,7 +193,7 @@ Ferri \emph{et al.} \cite{ferri2010novel} present an approach to prospecting whe
 % 			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
 % 
 
-In \cite{girdhar2013autonomous} and \cite{girdhar2013Aautonomous} Girdhar
+In \cite{girdhar2013autonomous}  Girdhar
 \emph{et al.} present an approach to autonomous exploration where the robot
 investigates a scene when it encounters phenomena that do not reflect its
 current model of the world.  Specifically they use topic models to describe
@@ -204,21 +207,25 @@ Additionally Girdhar \emph{et al.} use their anomaly detection techniques in
 \cite{girdhar2013autonomous} to develop a path planning method to maximize
 information gain of paths \cite{girdhar2014curiosity}.  In that respect it is
 belongs with the family of curiosity-driven algorithms pioneered by
-Schmidh{\"u}ber \emph{et al.} \cite{schmidhuber1997what},
-\cite{schmidhuber2003exploring}, \cite{schmidhuber2009simple},
+Schmidh{\"u}ber \emph{et al.} 
+% \cite{schmidhuber1997what},
+% \cite{schmidhuber2003exploring}, \cite{schmidhuber2009simple},
 \cite{sun2011planning}.  The fundamental concept behind these approaches is
 that an explorer should spend their time investigating regions of the world (or
 hypothesis space) where their models are the least certain.
 
-\subsubsection{Our Prior Work}
-		- Apply optimal foraging, specifically Charnov's marginal value theorem
-		model of foraging to the problem of science autonomy* in the following setting:	
-			- Limited sampling budget
-			- Attempting to learn distributions not acquire quantities of some object.
-			- Trying to learn information objectively without an objective. 
-			- Can't know the reward until you sample.
-			- It's a fusion of bandits and foraging.  The fact that we are focusing on gaining information gives us diminishing returns which lets us use 
-			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
-			- Don't have the choice of what objects you encounter.
+% \subsubsection{Our Prior Work}
+
+Previous work with optimal foraging for science autonomy has looked at robots with limited sampling budgets \cite{furlong2014unknown} and had knew how many opportunities to sample would occur.  While the limited sampling budget is realistic the foreknowledge of the transect is not necessarily so.  This paper improves upon the prior work by using productivity to reason about sampling choices and gives a constraint of time instead of an unknowable number of sampling opportunities.
+
+% 		- Apply optimal foraging, specifically Charnov's marginal value theorem
+% 		model of foraging to the problem of science autonomy* in the following setting:	
+% 			- Limited sampling budget
+% 			- Attempting to learn distributions not acquire quantities of some object.
+% 			- Trying to learn information objectively without an objective. 
+% 			- Can't know the reward until you sample.
+% 			- It's a fusion of bandits and foraging.  The fact that we are focusing on gaining information gives us diminishing returns which lets us use 
+% 			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
+% 			- Don't have the choice of what objects you encounter.
 
 As seen above real robots may not be able to predict the rewards they will earn from their actions and have to deal with unreliable arrival rates for sampling opportunities.  These are concerns that are not modelled in typical sequential experiment selection algorithms such as the Multi-armed bandit or secretary problems.  This motivates the problem setting used in this paper, and that describe in detail in the following section.
