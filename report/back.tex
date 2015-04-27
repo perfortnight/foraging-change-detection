@@ -1,23 +1,23 @@
 \section{Background}
 \label{sec:background}
 
-Automating experiment design is not without precedent.  Kristine Smith started the field of optimal experiment design in 1918 \cite{smith1918standard}.
-It is only recently that robots have been employed to conduct scientific exploration autonomously \cite{wagner2001science},\cite{king2004functional}.  We will discuss below is how current robot scientists reliance on global information prevents them from operating in truly unknown environments.  Additionally, we will cover how previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
+Automating experiment design is not without precedent.  Kristine Smith started the field of optimal experiment design in 1918.~\cite{smith1918standard}
+It is only recently that robots have been employed to conduct scientific exploration autonomously.~\cite{wagner2001science,king2004functional}  Current robot scientists' reliance on global information prevents them from operating in truly unknown environments.  Additionally, previous approaches in sequential decision making from statistics do not necessarily reflect the settings that autonomous robots encounter in the real world.
 
 
 % Can be compressed/merged with Multi-armed bandit section.
-% what is important here is precident for this type of decision making
+% what is important here is precedent for this type of decision making
 % But we don't use any of the results from it.
 \subsection{The Secretary Problem}
 
 The secretary problem asks a decision maker to select the best candidate from
 sequentially presented candidates where it is not possible to return to
-rejected candidates.  In the original setting there is only one
-position to for the candidate to fill \cite{ferguson1989solved}, and the
-optimal strategy is to reject the first $\frac{N}{e}$ candidates and then take
+rejected candidates.  In the original setting, there is only one
+position for the candidate to fill,~\cite{ferguson1989solved} and the
+optimal strategy is to reject the first $\frac{N}{e}$ candidates and then accept
 the first candidate who is ranked better than any of the previously seen
-candidates or hte final candidate.  In the original setting the decision maker
-was able to objectively rank the candidates without cost.  In our setting we do not know the value until sampling, and sampling a class incurrs a sampling cost.
+candidates.  Further, the decision maker
+was able to objectively score the candidates without cost.  In our setting, we do not know the value until sampling, and sampling a class incurs a sampling cost.
 
 % There have been many variations on this problem including selecting multiple
 % candidates \cite{vanderbei1980optimal}, or when the total number of candidates
@@ -30,18 +30,16 @@ was able to objectively rank the candidates without cost.  In our setting we do 
 \subsection{Multi-armed bandits}
 
 Sequential experiment selection, a type of active learning, is addressed in the
-multi-armed bandit literature.  The multi-armed bandit was introduced in
-\cite{robbins1952some} as a means of sequentially selecting which experiments
-to conduct with a limited budget.  In Robbins' work \cite{robbins1952some}
+multi-armed bandit (MAB) literature.  This was introduced by Robbins~\cite{robbins1952some} as a means of sequentially selecting which experiments
+to conduct with a limited budget.  In Robbins' work,
 selecting experiments is modelled on determining the payouts of one-armed
-bandit machines -- each machine represents a different experiment.  The player
+bandit machines -- each machine representing a different experiment.  The player
 has a fixed sampling budget and has to sequentially choose which machine to
-play, trading off exploiting expected rewards for different arms and
+play, trading off exploiting expected rewards from well-studied arms against
 exploring different arms, learning more accurately the payouts of those
 arms.  
 
-
-Lai \emph{et al.} use a value function that sums the mean and the standard deviation of rewards for an arm, more uncertainty makes an arm more interesting.  Other techniques addressing the exploration/exploitation problem use uncertainty in a reward metric \cite{burnetas1997optimal}, \cite{auer2003using},\cite{balcan2006agnostic}.  In our setting, because the agent only needs to learn the distribution and not use it for anything uncertainty is the only necessary reward.
+Lai \emph{et al.}~\cite{lai1985asymptotically} use a value function that sums the mean and the standard deviation of rewards for an arm, in which uncertainty makes an arm more interesting.  Other techniques addressing the exploration/exploitation problem use uncertainty in a reward metric.~\cite{burnetas1997optimal,auer2003using,balcan2006agnostic}  In our setting, because the agent only needs to learn the distribution and not use it for anything, uncertainty is the only necessary reward.
 
 % Lai \emph{et al.} \cite{lai1985asymptotically} introduced the Upper Confidence
 % Bound (UCB) rule which values sampling opportunities with the sum of the
@@ -81,15 +79,13 @@ Lai \emph{et al.} use a value function that sums the mean and the standard devia
 % 			- Gittins showed that if you have a switching cost and diminishing returns you can solve the problem.
 % 			- We say is we will be randomly assigned an arm and a switching cost.
 
-There are a number of distinguishing factors between the multi-armed bandit
-(MAB) setting and the problem explored in this paper.  First, in MAB the agent
+There are a number of distinguishing factors between the MAB setting and the problem explored in this paper.  First, in MAB, the agent
 has access to any arm it chooses at any given time.  The arms in MAB are
 analogous to the classes in our setting.  The agent in our setting does not get
 to choose which of the classes it can investigate.  Any previously seen classes
-are no longer available and new classes are randomly assigned.  Additionally
+are no longer available, and new classes arrive per a random model.  Additionally,
 the standard MAB setting does not have switching costs, although there are some
-formulations which do account for switching costs
-\cite{jun2004survey}.  In our setting there is a cost incurred
+formulations which do include such costs.~\cite{jun2004survey}  In our setting, there is a cost incurred
 with every choice to continue exploring, and it is a function of the arrival
 rates of the different classes.
 
@@ -98,21 +94,18 @@ rates of the different classes.
 Foraging is the problem encountered by animals seeking to maximize the intake
 of energy when operating in an unknown environment.  The central question to
 solving the problem is: Is it more valuable to continue extracting resources
-from the current location or to seek out new locations to extract resources
-from?  Charnov introduced a technique for dealing with what he called
-``patchy'' environments, where there are localized regions that contain
-different classes of resources \cite{charnov1976optimal}.  The forager can
-extract value from these patches, with diminishing returns, or choose to
+from the current location or to seek out resources in new locations?  Charnov~\cite{charnov1976optimal} introduced a technique for dealing with what he called
+``patchy'' environments, in which there are localized regions that contain
+different classes of resources.  The forager can
+extract value from these patches, with diminishing returns (modeling resources consumed), or choose to
 continue to wander randomly through the environment in the hopes of
 encountering a more valuable location.
 
-The time to leave the environment, according to the Marignal Value Theorem
-\cite{charnov1976optimal}, was when the expected return from continuing to
-sample from this patch is less than the expected return from wandering in the
-environment.  In this formulation the expected return from both the current
+The optimal time to leave the environment, according to Charnov's Marignal Value Theorem, is when the expected return from continuing to
+sample from a particular patch is less than the expected return from wandering in the
+environment.  In this formulation, the expected return from both the current
 patch and the environment are offset by the cost of extracting resources in
-this patch as well as the energy spent seeking a new patch to extract resources
-from.
+this patch as well as the energy spent seeking a new patch.
 
 % 	- Work in the 1970's about foraging.  About making value judgements.  - Key
 % 	point from Charnov's work is that there has to be diminishing returns for
@@ -124,9 +117,9 @@ from.
  
 
 
-\cite{pirolli1999information} introduced a model of researchers attempting to
+Pirolli and Card~\cite{pirolli1999information} introduced a model of researchers attempting to
 acquire information.  They modelled the rate of information gain and had their
-agent decide to leave the patch they were in when the rate of information gain
+agent decide to leave a patch when the rate of information gain
 was lower than that of the environment.  What differentiates their setting from
 ours is that their decision maker can choose from which reservoirs to sample.  Our exploring agent does not have that luxury.
 
@@ -144,9 +137,8 @@ ours is that their decision maker can choose from which reservoirs to sample.  O
 % 					environment.
 
 % Can merge with above.
-\cite{kolling2012neural} studies how humans engage in a gambling task where
-they have to consider the option they have before them and the opportunities
-the environment provides.  In the described experiment subjects were repeatedly
+Kolling \emph{et al.}~\cite{kolling2012neural} studied how humans engage in a gambling task in which players have to consider the option they have before them and the opportunities
+the environment provides.  In the described experiment, subjects were repeatedly
 presented with a choice of playing a gambling game or being randomly presented
 with a different game.  Each game was a Bernoulli trial with some unknown
 probability of success.  Kolling \emph{et al.} identify possible neural
@@ -164,28 +156,25 @@ i.e. $p \approx 0$ or $p \approx 1$.
 % 			- They assume global knowledge, we don't have that.  It is reasonable
 % 			in many settings of interest, can reduce cost.
 
-Thompson and Wettergreen \cite{thompson2008intelligent} maximize diversity of
+Thompson and Wettergreen~\cite{thompson2008intelligent} maximize diversity of
 collected samples by using mutual information sampling.  This approach ensures
 diversity in the collected sample set, an act that reduces uncertainty in the
 input space of a function.  Neither mutual information nor maximum entropy
 sampling methods, when used with stationary Gaussian processes, take into
-account the dependent variable when selecting samples.  
+account the dependent variable (the underlying class distribution in our setting) when selecting samples.
 
 
-\cite{bender2013autonomous} makes a modification to the work of
-\cite{thompson2008intelligent}, in that it uses Gaussian processes to
+Bender \emph{et al.}~\cite{bender2013autonomous} make a modification to that work, instead using Gaussian processes to
 identified hypothesized distributions of life across the sea floor to direct
 exploratory actions.  The prior maps were generated by vessels passing over the
-sea floor prior to the robot's exploration mission, not unlike using satellite
-imagery in \cite{thompson2008intelligent}.  The advance of
-\cite{bender2013autonomous} is that it uses \emph{in situ} measurements to
-update the Gaussian process it is learning.  Bender \emph{et al.}'s rover can
-be said to be generating and testing hypotheses.  However they are severely
+sea floor prior to the robot's exploration mission, not unlike Thompson and Wettergreen's use of satellite imagery.  The advance of Bender \emph{et al.} is the use of \emph{in situ} measurements to
+update the Gaussian process being learned.  Their rover can thus
+be said to be generating and testing hypotheses.  However, they are severely
 limited by a budgeting size of six ``gulpers'' -- devices for collecting
 seawater samples.
 
 
-Ferri \emph{et al.} \cite{ferri2010novel} present an approach to prospecting where an AUV follows a predefined track and needs to decide when deviate to sample anomalies.  The AUV in this work examines anomalies by engaging in a spiral search pattern, collecting data and characterizing the environment in that location.  In this case the rover is not limited in its sampling capacity.  However the decision to sample is based on a pre-programmed threshold.  While this may be an excellent way to encode subject matter experts' beliefs on what is interesting it is fragile in the face of a changing environment, and does not adapt to the actual environment the rover encounters.  This exploration problem is an ideal application of the algorithm proposed in this paper.
+Ferri \emph{et al.}~\cite{ferri2010novel} present an approach to prospecting where an autonomous underwater vehicle (AUV) follows a predefined track and needs to decide when to deviate to sample anomalies.  The AUV in this work examines anomalies by engaging in a spiral search pattern, collecting data and characterizing the environment in that location.  In this case, the rover is not limited in its sampling capacity.  However the decision to sample is based on a pre-programmed threshold.  While this may be an excellent way to encode subject matter experts' beliefs on what is interesting, it is fragile in the face of a changing environment and does not adapt to the actual environment the rover encounters.  This exploration problem is an ideal application of the algorithm proposed in this paper.
  
 % 
 % 	- Previous work in robotic exploration is either dependent on global information or it does not make reasoned decisions about the rest of the world and the sampling opportunities that are immediately available to it.
@@ -193,30 +182,28 @@ Ferri \emph{et al.} \cite{ferri2010novel} present an approach to prospecting whe
 % 			- whoi and mbari follow set patterns (which is fine, the lawnmower is a good and noble thing) but they use an arbitrary threshold to make the decision to sample or not.  They do not take into account the rest of the environment.
 % 
 
-In \cite{girdhar2013autonomous}  Girdhar
-\emph{et al.} present an approach to autonomous exploration where the robot
+Likewise, Girdhar \emph{et al.}~\cite{girdhar2013autonomous} present an approach to autonomous exploration wherein a robot
 investigates a scene when it encounters phenomena that do not reflect its
-current model of the world.  Specifically they use topic models to describe
-scenes, and when they encounter scenes that do not fit into the topic models
-they have constructed.  In these works the vehicle has no limit on its sampling
-capacity and is always collecting data.  By slowing the vehicle down more
+current model of the world.  Specifically, they use topic models to describe
+scenes and sample when they encounter scenes that do not fit into the topic models
+they have constructed.  In these works, the vehicle has no limit on its sampling
+capacity and is always collecting data.  By slowing the vehicle down, more
 samples are collected in anomalous scenes.  In this fashion this is very
-similar to the work in \cite{thompson2013adaptive}.
+similar to later work by Thompson \emph{et al.}.~\cite{thompson2013adaptive}
 
-Additionally Girdhar \emph{et al.} use their anomaly detection techniques in
-\cite{girdhar2013autonomous} to develop a path planning method to maximize
-information gain of paths \cite{girdhar2014curiosity}.  In that respect it is
+Additionally, Girdhar \emph{et al.} build upon their anomaly detection techniques to develop a path planning method to maximize
+information gain of paths.~\cite{girdhar2014curiosity}  In that respect, it
 belongs with the family of curiosity-driven algorithms pioneered by
-Schmidh{\"u}ber \emph{et al.} 
+Schmidh{\"u}ber \emph{et al.}. 
 % \cite{schmidhuber1997what},
 % \cite{schmidhuber2003exploring}, \cite{schmidhuber2009simple},
-\cite{sun2011planning}.  The fundamental concept behind these approaches is
-that an explorer should spend their time investigating regions of the world (or
-hypothesis space) where their models are the least certain.
+~\cite{sun2011planning}  The fundamental concept behind these approaches is
+that an explorer should spend its time investigating regions of the world (or
+hypothesis space) where its models are the least certain.
 
 % \subsubsection{Our Prior Work}
 
-Previous work with optimal foraging for science autonomy has looked at robots with limited sampling budgets \cite{furlong2014unknown} and had knew how many opportunities to sample would occur.  While the limited sampling budget is realistic the foreknowledge of the transect is not necessarily so.  This paper improves upon the prior work by using productivity to reason about sampling choices and gives a constraint of time instead of an unknowable number of sampling opportunities.
+Previous work by the primary author with optimal foraging for science autonomy has considered robots with limited sampling budgets~\cite{furlong2014budgeting} and assumed knowledge of the number of sampling opportunities that would occur.  While the limited sampling budget is realistic, the foreknowledge of the transect is not necessarily so.  This paper improves upon the prior work by using productivity to reason about sampling choices and gives a constraint of time instead of an unknowable number of sampling opportunities.
 
 % 		- Apply optimal foraging, specifically Charnov's marginal value theorem
 % 		model of foraging to the problem of science autonomy* in the following setting:	
@@ -228,4 +215,5 @@ Previous work with optimal foraging for science autonomy has looked at robots wi
 % 			- Don't have access to all the arms at any given time, which is what makes it a foraging problem.
 % 			- Don't have the choice of what objects you encounter.
 
-As seen above real robots may not be able to predict the rewards they will earn from their actions and have to deal with unreliable arrival rates for sampling opportunities.  These are concerns that are not modelled in typical sequential experiment selection algorithms such as the Multi-armed bandit or secretary problems.  This motivates the problem setting used in this paper, and that describe in detail in the following section.
+As explained, real robots may not be able to predict the rewards they will earn from their actions and have to deal with unreliable arrival rates for sampling opportunities.  These are concerns that are not modelled in typical sequential experiment selection algorithms such as the multi-armed bandit or secretary problems.  This motivates the problem setting used in this paper, described in detail in the following section.
+

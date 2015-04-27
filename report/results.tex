@@ -18,28 +18,30 @@
 % \end{figure}
 % 
 
-In the experiment the sampling cost is varied from $0.001$ to $150$.  This is a considerable range given the total length of a transect is $1000$ units of time.  When the sampling cost is small, relative to the duration of the transect, the performance of the foraging algorithm is significantly better, as in Figure \ref{fig:err}.  For a portion at the higher end of the spectrum the uniform algorithm outperforms the foraging algorithm.  However at the extreme end the algorithms' performance converges.  
+Figure~\ref{fig:err} summarizes a comparison of the performance of the uniform and foraging algorithms, measured as total error in estimating underlying class distributions as specified in Equation~\ref{eq:score}, across a wide range of sampling cost.
+%In the experiment the sampling cost is varied from $0.001$ to $150$.  This is a considerable range given the total length of a transect is $1000$ units of time.
+When the sampling cost is small relative to the duration of the transect, the performance of the foraging algorithm is significantly better.  For a portion at the higher end of the spectrum, the uniform algorithm outperforms the foraging algorithm.  However, at the extreme end, the algorithms' performance converges.
 
-At a sampling cost of 100 time units only ten sampling actions can be taken during a transect that lasts for 1000 time units.  In this case one would expect performance to be limited, as it is difficult to learn much about six different random variables with only ten samples.  
+At a sampling cost of 100 time units, at the far end of this plot, only ten sampling actions can be taken during a transect that lasts for 1000 time units.  In this case, one would expect performance to be limited regardless of decision rule, as it is difficult to learn much about six different random variables with only ten samples.
 
 
 % Accumulated Error 
-\begin{figure}[htpd!]
+\begin{figure}[t!]%[htpd!]
 	\centering
 	\def\svgwidth{\columnwidth}
 % 	\input{plot_err-vs-cost.pdf_tex}
 	\input{diff-diff-acc-err-vs-sample-cost.pdf_tex}
-	\caption{For sampling costs that are small, relative to the duration of the transect, the foraging algorithm presents a significant improvement over the uniform algorithm.  The shaded region covers $1.96\times$ the standard error from the 21 trials, approximating a frequentist 95\% confidence interval, to indicate the variablility of the algorithms' performance.}
+	\caption{For sampling costs that are small, relative to the duration of the transect, the foraging algorithm presents a significant improvement over the uniform algorithm.  The shaded region covers $1.96\times$ the standard error from the 21 trials, approximating a frequentist 95\% confidence interval, to indicate the variablility of the algorithms' performance across trials.}
 	\label{fig:err}
 \end{figure}
 
 \subsection{Analysis}
 
-For each of the twenty-one trials the agents were scored on the data they collected when given a fixed sampling cost.  For each sampling cost the performance was tested with a Bayesian paired t-test \cite{baath2014bayesian}.  The paired t-test returns an average difference between the paired trials as well as a 95\% credible interval around that difference.  We accept that the difference is non-zero when the credible interval does not contain 0.  
+For each of the twenty-one trials, the agents were scored on the data they collected when given a fixed sampling cost.  For each sampling cost the performance was tested with a Bayesian paired t-test.~\cite{baath2014bayesian}  The paired t-test returns an average difference between the paired trials as well as a 95\% credible interval around that difference.  We accept that the difference is non-zero when the credible interval does not contain 0.  
 
-The test described in \cite{baath2014bayesian} also gives an effect size.  The effect size is the ratio of the mean to the standard deviation of the difference between the paired trials.  This is a variation of Cohen's $d$ value\cite{cohen2013statistical}.  With this number we consider a value greater than 1.3 to be very large, above 0.8 to be significant and below 0.5 to be insignificant.  Table \ref{tbl:ttest} gives the results of the Bayesian paired t-test at different values of sampling cost.
+This test also gives an effect size.  The effect size is the ratio of the mean to the standard deviation of the difference between the paired trials.  This is a variation of Cohen's $d$ value.~\cite{cohen2013statistical}  With this number, we consider a value greater than 1.3 to be very large, above 0.8 to be significant, and below 0.5 to be insignificant.  Table~\ref{tbl:ttest} gives the results of the Bayesian paired t-test at different values of sampling cost.
 
-\begin{table}[htpd!]
+\begin{table}[t!]%[htpd!]
 	\centering
 	\begin{tabular}{lccc}
 		Cost & Reduction in Error & Credible Interval & Effect Size \\
@@ -52,6 +54,6 @@ The test described in \cite{baath2014bayesian} also gives an effect size.  The e
 		100.0 & -0.27 & [-0.53,-0.006] & 0.48\\
 		\hline \\
 	\end{tabular}
-	\caption{Selected datapoints along the graph in Figure \ref{fig:err} along with the associated credible intervals of the difference and the effect size.  Bold rows are case where the foraging algorithm provides a statistically signficant improvement over the uniform sampling algorithm.}
+	\caption{Selected datapoints along the graph in Figure~\ref{fig:err} along with the associated credible intervals of the difference and the effect size.  Bold rows are cases where the foraging algorithm provides a statistically signficant improvement over the uniform sampling algorithm.}
 	\label{tbl:ttest}
 \end{table}

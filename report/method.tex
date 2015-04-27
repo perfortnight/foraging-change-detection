@@ -1,25 +1,25 @@
 \section{Method}
 \label{sec:method}
 
-The decision making agents in this paper are tested on several randomly
-generated transects.  They are repeatedly presented with an object to sample
+The decision-making agents in this paper are tested on several randomly
+generated transects -- one-dimensional paths representing a robot's trajectory.  They are repeatedly presented with an object to sample
 and have to make the choice to either take a sample or continue travelling
-along the transect.  Like the Robbins' secretary problem the agents are not
-permitted to backtrack to avail of a previous opportunity.  Figure \ref{fig:transect} gives an example of a simulated transect. Sampling opportunities of different types are scattered along the path that the robot travels.  
+along the transect.  As in the Robbins secretary problem, the agents are not
+permitted to backtrack to avail of a previous opportunity.  Figure~\ref{fig:transect} gives an example of a simulated transect. Sampling opportunities of different types are scattered along the path that the robot travels.  
 
 \begin{figure}[htpd!]
 	\centering 
 	\includegraphics[width=0.7\textwidth]{transect}
-	\caption{A cartoon illustrating a transect a robot might be encountering and how samping opportunities of different types may be distributed along it.  In the field the robot would start at one end of the path and follow it to the other end.  There is one path that the rover may follow across the terrain resulting in it encountering different types of sampling opportunities.}
+	\caption{A cartoon illustrating a transect a robot might be encountering and how sampling opportunities of different types may be distributed along it.  In the field, the robot would start at one end of the path and follow it to the other end.  This is one path that the rover may follow across the terrain resulting in it encountering different types of sampling opportunities.}
 	\label{fig:transect}
 \end{figure}
 
 
 The primary objective of the robot is to learn distributions behind different
-classes of objects.  For example they may be the probability distribution
-governing the density of sub surface microbial life in different classes of
-soil.  Previous work have identified that texture information can successfully
-classify different types of soil material \cite{dunlop2006automatic}.  
+classes of objects, for example, the probability distribution
+governing the density of sub-surface microbial life in different classes of
+soil.  Previous work has identified that texture information can successfully
+classify different types of soil material.~\cite{dunlop2006automatic}  
 We imagine that the classes of objects in this research could correspond to those soil classes.
 
 
@@ -30,25 +30,25 @@ We imagine that the classes of objects in this research could correspond to thos
 %The limitations placed on the rovers are the cost in time to collect a sample and the over all time limit on the mission.  We see that for a wide range of sampling costs the foraging algorithm performs at least as good as the uniform algorithm.  For a plausible range of sampling costs the foraging algorithm presents a significant improvement over the uniform algorithm.
 
 The experiment presented in this paper is a modification of the experiments
-presented in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  In
-the prior work agents were equipped with limited sampling budgets.  In this
-experiment the agents have an unlimited capacity to take samples, but the time
-to take the sample is non-zero and there is an overall limit on the duration of
-the mission.  The sampling cost and the overall mission time is given in units of arbitrary time.
+presented by Furlong and Wettergreen.~\cite{furlong2014sequential,furlong2014budgeting}  In
+that prior work, agents were equipped with limited sampling budgets.  In this
+experiment, the agents have an unlimited capacity to take samples, but the time
+to take the sample is non-zero, and there is an overall limit on the duration of
+the mission.  The sampling cost and the overall mission time are given in units of arbitrary time.
 
-As with the previous experiments agents are not permitted to back track to previously seen objects.  Disallowing backtracking drives the robot to the end of the transect, as maximizing coverage is an
+As in the previous experiments, agents are not permitted to backtrack to previously seen objects.  Disallowing backtracking drives the robot to the end of the transect, as maximizing coverage is an
 important part of exploration.  Additionally, making decisions
 between a current opportunity, a hypothetical future, and any number of
-previously seen but unsampled opportunities is considered a more complex
+previously seen but unsampled opportunities is considered a much more complex
 problem and outside the scope of this paper.
 
-In the experiment there are six different classes of objects the agent may
-encounter.  They each have their own arrival rate and their appearance along
-the transect are generated with a poisson process.  In this paper the arrival
+In this experiment, there are six different classes of objects the agent may
+encounter.  They each have their own arrival rate, and their appearance along
+the transect is generated with a Poisson process.  In this paper, the arrival
 rates of the different sampling opportunities do not change over the course of
-the experiment.  While this is almost certainly not the case for long range
-traversals like those seen in the Life in the Atacama Desert project it is a
-reasonable approximation for shorter-range traverses.
+the experiment.  While this is almost certainly not the case for long range desert
+traversals targeted by prior work, it is a
+reasonable approximation for shorter-range traverses.  A total transect length of $1000$ units is used, and sampling cost is varied from $0.001$ to $150$.
 
 \begin{table}[htpd!]
 	\centering
@@ -65,50 +65,53 @@ reasonable approximation for shorter-range traverses.
 		\hline 
 		\\
 	\end{tabular}
-	\caption{The classes the robot is investigating all have values derived from Gaussian random variables with means and standard deviation given.  Different instances of those classes are encountered in accordance to a Poisson process with the rates specified in the above table.  The units of the distribution's mean and variance can be ignored for the purposes of this experiment.  The arrival rate in this experiment is given in units of arbitrary time.  All time quantities -- arrival rate, mission time, and sampling cost -- can be scaled to the order of the mission at hand.}
+	\caption{The classes the robot is investigating all have values derived from Gaussian random variables with means and standard deviation given.  Different instances of those classes are encountered in accordance to a Poisson process with the rates specified in the above table.  All units are arbitrary, and all time quantities -- arrival rate, mission time, and sampling cost -- can be scaled to the order of the mission at hand.}
+%  The units of the distribution's mean and variance can be ignored for the purposes of this experiment.  The arrival rate in this experiment is given in units of arbitrary time.  All time quantities -- arrival rate, mission time, and sampling cost -- can be scaled to the order of the mission at hand.}
 	\label{tbl:classes}
 \end{table}
 
-It is the objective of the robot to learn the distritubions in Table \ref{tbl:classes}.  The algorithms' performance is scored on the L1 difference between the true and learned distribution, $p_k$ and $\hat{p}_k$, respectively.  Limits on the integral are placed keep the integration time reasonably small.  The integral of the L1 distance was chosen instead of the more usual KL divergence to permit a finite error measure in the case of a class never being observed.
+It is the objective of the robot to learn the true underlying distributions given in Table~\ref{tbl:classes}.  The algorithms' performance is scored as the L1 difference between the true and learned distribution, $p_k$ and $\hat{p}_k$, respectively.  Limits on the integral are placed keep the integration time reasonably small.  The integral of the L1 distance, summed over the $K$ known classes, was chosen instead of the more typical KL-divergence to permit a finite error measure in the case of a class never being observed.
 
-\begin{align*}
-	score &= \sum_{k=1}^{K} \int_{\mu_{k}-4\sigma_{k}}^{\mu_{k}+4\sigma_{k}} \left| p_{k}(x) - \hat{p}_{k}(x)\right| dx\\
-\end{align*}
+\begin{align}
+\label{eq:score}
+	score &= \sum_{k=1}^{K} \int_{\mu_{k}-4\sigma_{k}}^{\mu_{k}+4\sigma_{k}} \left| p_{k}(x) - \hat{p}_{k}(x)\right| dx
+\end{align}
 
 \subsection{Algorithms}
 
 	% This is only relevant in the larger work.
 	% - figure method.3: texture cam, raw image and texture labelled image.
 
-The experiment builds on the prior work in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  Here we present two algorithms that are being testing on the simulated transect described above.
+%The experiment builds on the prior work in \cite{furlong2014sequential} and \cite{furlong2014budgeting}.  Here we present two algorithms that are being testing on the simulated transect described above.
+
+Two algorithms are compared on the simulated transect described above.
 
 \subsubsection{Uniform Sampling}
 
 The Uniform Sampling algorithm attempts to distribute the number of samples it
-can collect evenly between the different types of objects present on the
+can collect evenly between the different classes of objects present on the
 transect.  This is chosen because it was a robustly successful algorithm, as
-seen in the prior work \cite{furlong2014sequential} and \cite{furlong2014budgeting}.
+seen in prior work.~\cite{furlong2014sequential,furlong2014budgeting}
 
 The Uniform Sampling algorithm does not consider the time remaining in the
-transect, nor the time to complete sampling.  In this setting the algorithm
+transect, nor the time to complete sampling.  In this setting, the algorithm
 chooses to sample a class either if it does not have the most samples of all
-the encountered classes or if is the max and all other classes have been
-sampled an equal number of times.
+the encountered classes or if all classes have been sampled an equal number of times.
 
 \subsubsection{Foraging}
 
-The foraging algorithm is an attempt to maximize the productivity of the learning agent along the transect.  We attempt to maximize the number of bits learned per unit time.
+The proposed foraging algorithm is an attempt to maximize the productivity of the learning agent along the transect.  We attempt to maximize the amount of information learned per unit time.
 
 The reward for sampling a class is an analog for surprise as
-defined by the Koch et al \cite{itti2009bayesian}.  Koch looked at the change
+defined by Koch \emph{et al}.~\cite{itti2009bayesian}  Koch looked at the change
 in the distribution that resulted in a Bayesian update.  Because this work
-uses a non-parametric kernel density estimation we compare
+uses an empirical non-parametric kernel density estimation for each class's distribution, we compare
 $\log\left(\frac{\hat{p}(x|D\cup \left\{x\right\})}{\hat{p}(x|D)}\right)$.  To
 be compatiable with optimal foraging algorithms, specifically the Marginal
-Value Theorem of Charnov \cite{charnov1976optimal}, the reward function must
-have dimishing returns.  In the case of information update the Bayes Factor
+Value Theorem of Charnov,~\cite{charnov1976optimal} the reward function must
+have diminishing returns.  In the case of information update, the Bayes Factor
 will eventually converge to approximately 1, likewise our estimated empirical
-bayes factor.  We take the log of this approximation such that it converges to
+Bayes factor.  We take the log of this approximation such that it converges to
 zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the diminishing rewards of sampling a distribution using our reward function.
 
 
@@ -119,17 +122,18 @@ zero as more samples are collected.  Figure \ref{fig:reward} demonstrates the di
 	\def\svgwidth{0.8\columnwidth}
 % 	\includegraphics[width=0.7\textwidth]{images/cumulative-reward.png}
 	\input{cumulative-reward.pdf_tex}
-	\caption{The reward function plotted is the cumulative reward for sampling from a uniform distribution over $\left[0,1\right]$.  The cumulative reward is averaged over five trials of 4000 samples.  Increasing the number of samples from a distribution decreases the information gained per sample.  The reward can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of adding that value to the learned distribution.  The returns of the reward function diminish with more samples from the random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov \cite{charnov1976optimal}.}
+	\caption{The reward function plotted is the cumulative reward for sampling from a uniform distribution over $\left[0,1\right]$.  The cumulative reward is averaged over five trials of 4000 samples.  Increasing the number of samples from a distribution decreases the information gained per sample.  The reward can be viewed as the reduction in Shannon surprise of an instantiation of the random variable as a result of adding that value to the learned distribution.  The returns of the reward function diminish with more samples from the random variable.  The diminishing returns are necessary to use the Marginal Value Theorem formulation from Charnov.~\cite{charnov1976optimal}}
 	\label{fig:reward}
 \end{figure}
 
-The innovation in this work is valuing actions in terms of productivity .  Previous work in foraging maintained the variables of interest in the same units, energy consumed or spent in searching for and extracting resouces.  To enable the foraging agent to compare actions we measure productivity as the average suprise experienced from a sample per unit of time spent to acquire that sample.  In keeping with foraging work of \cite{charnov1976optimal} and \cite{pirolli1999information} the agent decides to move on when the productivity of the current sample is less than the expected productivity of exploring the environment.  Namely the decision rule is:
+The innovation in this work is valuing actions in terms of productivity.  Previous work in foraging maintained the variables of interest in the same units, energy consumed or spent in searching for and extracting resources.  To enable the foraging agent to compare actions, we measure productivity as the average surprise experienced from a sample per unit of time spent to acquire that sample.  In keeping with foraging work of Charnov~\cite{charnov1976optimal} and Pirolli and Card,~\cite{pirolli1999information} the agent decides to move on when the productivity of the current sample is less than the expected productivity of exploring the environment.  Namely, the decision rule is
 
-\begin{align*}
-	\frac{\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]}{t_{cost}} &\geq \frac{\mathbb{E}_{K}\left[\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]\right]}{\mathbb{E}_{K}\left[t_{interarrival(k)}\right] + t_{cost}}\\
-\end{align*}
+\begin{align}
+\label{eq:decision_rule}
+	\frac{\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]}{t_{cost}} &\geq \frac{\mathbb{E}_{K}\left[\mathbb{E}_{T}\left[surprise_{t}\left(k\right)\right]\right]}{\mathbb{E}_{K}\left[t_{interarrival(k)}\right] + t_{cost}},
+\end{align}
 
-Where $\mathbb{E}_{T}\left[\cdot\right]$ is the empirical expected value over the history of samples the agent has taken, $\mathbb{E}_{K}\left[\cdot\right]$ is the empirical expected value over the different classes. $surprise_{t}(k)$ is the surprise due to the $t$-th sampling of a class $k$.  $t_{cost}$ is the sampling cost in time, and $t_{interarrival(k)}$ is the average interarrival time for a class as the rover has encountered them.
+where $\mathbb{E}_{T}\left[\cdot\right]$ is the empirical expected value over the history of samples the agent has taken, $\mathbb{E}_{K}\left[\cdot\right]$ is the empirical expected value over the different classes. $surprise_{t}(k)$ is the surprise due to the $t$-th sampling of a class $k$.  $t_{cost}$ is the sampling cost in time, and $t_{interarrival(k)}$ is the average inter-arrival time for a class as the rover has encountered them.
 
 
 

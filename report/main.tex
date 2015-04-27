@@ -28,9 +28,16 @@
 \usepackage{amssymb}
 
 \usepackage{url}
-\urldef{\mailsa}\path|{pmf, md}@tbd.com|
+
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
+
+%shrinky
+%\addtolength{\abovecaptionskip}{-3pt}
+%\addtolength{\belowcaptionskip}{-5pt}
+\addtolength{\textfloatsep}{-10pt}
+%%\addtolength{\intextsep}{-10pt}
+
 
 \begin{document}
 
@@ -48,16 +55,27 @@
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{P. Michael Furlong \and M. D. }
+\author{P. Michael Furlong \and Michael Dille
+}
 %
-\authorrunning{Furlong and D.}
+\authorrunning{Furlong and Dille}
 % (feature abused for this document to repeat the title also on left hand pages)
+
+\urldef{\mailsa}\path|padraig.m.furlong@nasa.gov|
 
 % the affiliations are given next; don't give your e-mail address
 % unless you accept that it will be published
-\institute{TBD\\
-\mailsa\\
-\url{http://www.tbd.com/}}
+\institute{
+\begin{tabular}{cp{0.1in}c}
+Intelligent Robotics Group & & Robotics Institute\\
+SGT / NASA Ames Research Center & & Carnegie Mellon University \\
+Moffett Field, CA 94035, USA & & Pittsburgh, PA 15213, USA\\
+\end{tabular} \\
+\vspace{0.1in}
+\mailsa
+}
+%\mailsa\\
+%\url{http://www.tbd.com/}}
 
 %
 % NB: a more complex sample for affiliations and the mapping to the
@@ -73,8 +91,7 @@
 
 \begin{abstract}
 % Max 150 words
-This paper presents a new algorithm for autonomous on-line exploration in unknown environments.  The objective of the algorithm is to free robot scientists from extensive preliminary site investigation while still being able to collect meaningful data.  We simulate an exploration task for an autonomous robot and compare its performance to a similarly global-information-denied algorithm.  The result of the experiment showed the new algorithm has a statistically signficant improvement in performance with a significant effect size for a range of costs for taking sampling actions.
-\emph{abstract} environment.
+This paper presents a new algorithm for autonomous on-line exploration in unknown environments.  The objective of the algorithm is to free robot scientists from extensive preliminary site investigation while still being able to collect meaningful data.  We simulate a common form of exploration task for an autonomous robot involving sampling the environment at various locations and compare performance with a simpler existing algorithm that is also denied global information.  The result of the experiment shows that the new algorithm has a statistically significant improvement in performance with a significant effect size for a range of costs for taking sampling actions.
 \keywords{foraging, active learning, planetary exploration}
 \end{abstract}
 
